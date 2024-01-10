@@ -16,4 +16,14 @@ public class Runner extends SuperSmoothMover
     {
         // Add your action code here.
     }
+    
+    
+    public void run(){
+        
+    }
+    
+    
+    public void jump(){
+        
+    }
 }
