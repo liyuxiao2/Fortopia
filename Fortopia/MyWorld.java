@@ -3,10 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
+ * @author Natalie
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class MyWorld extends ScrollingWorld
 {
 
     /**
@@ -14,8 +14,7 @@ public class MyWorld extends World
      * 
      */
     public MyWorld()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1024, 700, 1); 
+    {
+        super(1024, 700, 1);
     }
 }
