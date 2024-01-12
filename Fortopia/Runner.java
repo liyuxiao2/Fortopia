@@ -1,17 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Runner here.
+ * A user-controlled runner .
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Runner extends Actor
+public class Runner extends SuperSmoothMover
 {
-    final int jSpeed = 20; // the initial 'jump' speed
-    int ySpeed = 0, xSpeed = 0; // the initial vertical and horizontal speeds
-    boolean aboutFace; // the direction (left or right) the actor is facing
-    boolean onGround; // the state of the actor being set on an object
+    // the initial 'jump' speed
+    final int jSpeed = 20; 
+    // the initial vertical and horizontal speeds
+    int ySpeed = 0;
+    int xSpeed = 0; 
+    // boolean check for the direction (left or right) the actor is facing
+    boolean aboutFace; 
+    // boolean check for the state of the actor being set on an object
+    boolean onGround; 
     
     public void act()
     {
@@ -34,7 +39,6 @@ public class Runner extends Actor
             getImage().mirrorHorizontally();
             aboutFace = !aboutFace;
         }
-        
         // check for obstacles
         onGround = false; // initialize value
         // check below the actor
@@ -76,7 +80,6 @@ public class Runner extends Actor
         if (Greenfoot.isKeyDown("up") && onGround) // check jump
         {
             ySpeed -= jSpeed; // add jump speed
-
         }
     }
 }

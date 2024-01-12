@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Land
+comment0.text=\n\ The\ land\ is\ the\ surface\ where\ the\ runner\ can\ move\ on\n\ \n\ @Wendy\ Luo\n\ @01/11/2023\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=Land()
+numComments=3

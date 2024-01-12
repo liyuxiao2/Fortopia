@@ -8,20 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends SWorld
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1024, 700, 1,1000); 
+        // a new world of dimensions of 1024 by 700 is created.
+        // last parameter is for scroll width
+        super(700, 700, 1,1244); 
         // in the following statement, the main actor is placed in the center of the window
         setMainActor(new Runner(), 250, 300); // the int parameters are centered window x and y ranges
         // to start the main actor elsewhere
-        mainActor.setLocation(100, 342);
+        //mainActor.setLocation(100, 342);
+        // adding other objects that are also scrolling
         GreenfootImage bg = new GreenfootImage("scene.jpg");
         setScrollingBackground(bg); // set the scolling background image
+        addObject(new Land(), 1000,690);
     }
 }
