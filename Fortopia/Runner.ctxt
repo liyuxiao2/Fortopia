@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=Runner
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Runner\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ A\ user-controlled\ runner\ .\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Runner\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
-comment2.target=void\ run()
+comment2.target=void\ move()
+comment2.text=\n\ Moves\ the\ actor\ with\ appropriate\ image.\ \ Checks\ for\ obstacles\ and\ adjusts\n\ the\ position\ of\ the\ actor\ accordingly.\n
 comment3.params=
-comment3.target=void\ jump()
+comment3.target=void\ getDirection()
+comment3.text=\n\ Determines\ any\ changes\ in\ horizontal\ and\ vertical\ speeds\ for\ the\ actor.\n
 numComments=4
