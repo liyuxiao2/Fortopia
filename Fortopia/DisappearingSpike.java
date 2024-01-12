@@ -1,15 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Obstacles here.
+ * Write a description of class DisappearingSpike here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Obstacles extends Actor
+public class DisappearingSpike extends Obstacles
 {
+    public DisappearingSpike()
+    {
+        setImage("spike.png");
+    }
     public void act()
     {
-        // Add your action code here.
+        
     }
 }
