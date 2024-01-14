@@ -4,10 +4,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * This class is just an example. You can delete it or change the code.
  * It's not necessary for the scrolling system.
  */
-public class ExampleScrollingActor extends ScrollingActor
+public class Runner extends ScrollingActor
 {
     
-    public ExampleScrollingActor() {
+    public Runner() {
         
     }
     

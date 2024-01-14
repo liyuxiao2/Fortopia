@@ -31,6 +31,6 @@ public class ExampleWorld extends ScrollingWorld
                 addObject(new Enemy(), x, y);
             }
         }
-        addObject(new ExampleScrollingActor(), getWidth()/2, getHeight()/2);
+        addObject(new Runner(), getWidth()/2, getHeight()/2);
     }
 }
