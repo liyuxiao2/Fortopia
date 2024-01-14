@@ -18,9 +18,6 @@ public class Runner extends ScrollingActor
         if (Greenfoot.isKeyDown("up")) {
             setLocation(getX(), getY() - 3);
         }
-        if (Greenfoot.isKeyDown("down")) {
-            setLocation(getX(), getY() + 3);
-        }
         if (Greenfoot.isKeyDown("left")) {
             setLocation(getX() - 3, getY());
         }
