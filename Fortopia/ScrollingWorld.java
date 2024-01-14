@@ -1,340 +1,181 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
-import java.util.ArrayList;
 
 /**
- * SWorld is a super-class for a scrolling world (horizontal, vertical, or both).<br><br>
- * Author: danpost<br>Version: May 22, 2016 (v2.1)<br>
- * <br>
- * To implement this super-class:
- * <l><li>(1) create a sub-class of this class</li>
- * <li>(2) use a <i>super(....)</i> call to one of the constructors in this class</li>
- * <li>(3) create the main actor (one that always stays in view) and call the <i>setMainActor</i> method</li>
- * <br>
- * NOTE: if placing the main actor to a location where scrolling will end up taking place before moving it,
- * place a call the the 'act' method of this class at the end of the constructor of its subclass
- * using 'super.act();'<br><br>
- * <li>(4) (optional) set a scrolling background image using a call to <i>setScrollingBackground</i> or <i>fillScrollingBackground</i></li></l>
- * <br>
- * NOTE: the order of steps above is very important<br>
- * <br>
- * There are two methods to add other objects into the world:
- * <l><li>the standard method <i>addObject(Actor, int, int)</i> can be used to add a scrollable actor into the world</li>
- * <li>a secondary method <i>addObject(Actor, int, int, boolean)</i> which is equivalent to the standard method, except
- * that the boolean will indicate the scrollable state of the object.</li></l>
- *
- * The width and height dimensions for both the world and the universe of scenarios with a cell size greater than one 
- * will be raised to the nearest odd values to center the main actor.<br>
- * <br>
- * SPECIAL NOTE: if you decide to override the 'act' method of this class with an 'act' method in your sub-world, you will
- * need to follow the format below to run the scrolling of the scenario:
+ * This world contains the main part of the scrolling system.
  * 
- * <pre>        public void act()
- *        {
- *            // possibly some code here      
- *            super.act();
- *            // possibly some more code here
- *        }<pre>
- *        
- * @author danpost on Greenfoot
- * MODIFIED BY NATALIE
+ * Here you can also limit the world by changing the variables WORLD_WIDTH and WORLD_HEIGHT using the constructor of the class (see ExampleWorld).
+ * You can create scrolling worlds in every screen size (the size of the frame) and every scrolling size (the real size of the world).
  * 
+ * The GreenfootImage textur is the background image that is used for the scrolling background. You can use any image you want instead of this. 
+ * You just have to call the method setScrollingBackground in the constructor of your scrolling world (see ExampleWorld) with the GreenfootImage you want to use for the background.
+ * 
+ * The scenario will automaticly create a example world. You can delete this world and use another subclass of this world if you want to use the scrolling system in your scenario.
+ * 
+ * 
+ * You shouldn't change the code of this class because that will probably cause problems in the scrolling system.
  */
-public class ScrollingWorld extends World
+public abstract class ScrollingWorld extends World
 {
-    private int scrollWidth, scrollHeight; // dimensions of scrolling area
-    private int actorMinX, actorMaxX, actorMinY, actorMaxY; // limits for main actor within world coordinates
-    private int scrolledX, scrolledY; // horizontal and vertical scrolled amounts
-    private int scrollingType; // indicates scrolling directions (0=none, 1=horizontal, 2=vertical, 3=both)
-    Actor mainActor = null; // the actor that always stays visible
-    private List<Actor>genActors = new ArrayList(); // lists all generic scrolling actor objects
-    private GreenfootImage background = null;
+    //A maximum size of the Scrolling World. If the value for width or height is 0 the world is infinite in this direction.
+    //The variables are final so they have to be set before compiling the game and can't be set while executing the game.
+    public static int WORLD_WIDTH;
+    public static int WORLD_HEIGHT;
     
-    /**
-     * The constructor for a universal scroller.
-     * Creates an unbounded world and sets the size of the scrollable area.
-     *
-     * @param wide the window width
-     * @param high the window height
-     * @param cellSize the size of each cell
-     * @param scrollWide the scrollable width (minimum value is window width)
-     * @param scrollHigh the scrollable height (minimum value is window height)
-     */
-    public ScrollingWorld(int wide, int high, int cellSize, int scrollingWide, int scrollingHigh)
-    {
-        super(cellSize == 1 ? wide:(wide/2)*2+1, cellSize == 1 ? high : (high/2)*2+1, cellSize, false);
-        scrollingType = (scrollingWide > wide ? 1 : 0)+(scrollingHigh>high?2:0);
-        scrollWidth = scrollingType%2 == 1 ? scrollingWide : wide;
-        scrollHeight = scrollingType/2 == 1 ? scrollingHigh : high;
+    protected int totalXMovement = 0;
+    protected int totalYMovement = 0;
+    
+    //This image is used as the background image of the scrolling world.
+    //If you want to use another image just chang the path.
+    protected GreenfootImage textur;
+    
+    public ScrollingWorld(int screenWidth, int screenHeight) {
+        super(screenWidth, screenHeight, 1, false);
+        WORLD_WIDTH = 0;
+        WORLD_HEIGHT = 0;
+    }
+    public ScrollingWorld(int screenWidth, int screenHeight, int cellSize) {
+        super(screenWidth, screenHeight, cellSize, false);
+        WORLD_WIDTH = 0;
+        WORLD_HEIGHT = 0;
+    }
+    public ScrollingWorld(int screenWidth, int screenHeight, int scrollingWidth, int scrollingHeight) {
+        super(screenWidth, screenHeight, 1, false);
+        WORLD_WIDTH = scrollingWidth;
+        WORLD_HEIGHT = scrollingHeight;
+    }
+    public ScrollingWorld(int screenWidth, int screenHeight, int cellSize, int scrollingWidth, int scrollingHeight) {
+        super(screenWidth, screenHeight, cellSize, false);
+        WORLD_WIDTH = scrollingWidth;
+        WORLD_HEIGHT = scrollingHeight;
     }
     
     /**
-     * The constructor for a horizontal (side) scroller.
-     * Calls the universal scroller constructor with scrollHigh equal to the window height parameter.
-     *
-     * @param wide the window width
-     * @param high the window height
-     * @param cellSize the size of each cell
-     * @param scrollWide the scrollable width (minimum value is window width)
+     * Reset the position of the ScrollingActor and set the position of all other objects in the world.
      */
-    public ScrollingWorld(int wide, int high, int cellSize, int scrollingWide)
-    {
-        this(wide, high, cellSize, scrollingWide, high);
-    }
-    
-    /**
-     * Adds the main actor into the world at the center of the window and
-     * sets the range in movement within the window for the actor,<br>
-     * <br>
-     * NOTE: this method must be called prior to calling <i>setScrollingBackground</i>
-     * <br>
-     * NOTE 2: if placing the main actor to a location where scrolling will end up taking place before moving it,
-     * place a call the the 'act' method of this class at the end of the constructor of its subclass
-     * using 'super.act()'.<br>
-     *
-     * @param main the actor that is to always stay in view
-     * @param xRange the horizontal range of movement within the window
-     * @param yRange the vertical range of movement within the window
-     */
-    public void setMainActor(Actor main, int xRange, int yRange)
-    {
-        if (main == null)
-        {
-            System.out.println("Main actor MUST be supplied.");
-            System.out.println("");
-            return;
-        }
-        super.addObject(main, getWidth()/2, getHeight()/2);
-        mainActor = main;
-        xRange = (int)Math.min(xRange, getWidth());
-        yRange = (int)Math.min(yRange, getHeight());
-        actorMinX = getWidth()/2 - xRange/2;
-        actorMaxX = getWidth()/2 + xRange/2;
-        actorMinY = getHeight()/2 - yRange/2;
-        actorMaxY = getHeight()/2 + yRange/2;
-    }
-    
-    /**
-     * Adds a scrolling background to the world; see method description for notes on unwanted results.<br>
-     * <br>
-     * NOTE: for this method to work, the main actor must have previously been set with <i>setMainActor</i>.  The image will then
-     * be scaled to the appropriate size and is centered in the scrollable world.
-     *
-     * @param scrollingBackground the image to be used for the scrolling background of the world
-     */
-    public void setScrollingBackground(GreenfootImage scrollingBackground)    
-    {
-        if(mainActor==null)
-        {
-            System.out.println("'setMainActor' MUST be called prior to calling 'setScrollingBackground'.");
-            System.out.println("");
-            return;
-        }
-        background = new GreenfootImage(scrollingBackground);
-        background.scale(scrollWidth * getCellSize(), scrollHeight * getCellSize());
-        scrollBackground();
-    }
-    
-    /**
-     * Fills the background of the scrolling area with the <i>fillImage</i>.<br>
-     * <br>
-     * NOTE: for this method to work, the main actor must have previously been set with <i>setMainActor</i>.  The image will then
-     * be used to fill the background of the scrolling area and is centered in the scrollable world.
-     * 
-     * @param fillImage the image to fill the background of the scrolling area with
-     */
-    public void fillScrollingBackground(GreenfootImage fillImage)
-    {
-        if(mainActor==null)
-        {
-            System.out.println("'setMainActor' MUST be called prior to calling 'fillScrollingBackground'.");
-            System.out.println("");
-            return;
-        }
-        if (fillImage.getWidth() < getWidth() && fillImage.getHeight() < getHeight())
-        {
-            setBackground(new GreenfootImage(fillImage));
-            fillImage = getBackground();
-        }
-        
-        background = new GreenfootImage(scrollWidth*getCellSize(), scrollHeight*getCellSize());
-        
-        for (int x=0; x<background.getWidth(); x+=fillImage.getWidth()){
-            for (int y=0; y<background.getHeight(); y+=fillImage.getHeight()){
-                background.drawImage(fillImage, x, y);
+    public final void resetPlayersPosition(ScrollingActor scrollingActor) {
+        int xMovement = (int) ((double) getWidth()/2 - scrollingActor.getExactX());
+        int yMovement = (int) ((double) getHeight()/2 - scrollingActor.getExactY());
+        totalXMovement += xMovement;
+        totalYMovement += yMovement;
+        List<Actor> actors = getObjects(Actor.class);
+        for (Actor actor : actors) {
+            if (actor instanceof ScrollingActor) {
+                ((ScrollingActor) actor).setLocation(actor.getX() + xMovement, actor.getY() + yMovement, false);
+            }
+            else if (actor instanceof Menu || actor instanceof FixedObject) {
+                ;
+            }
+            else {
+                actor.setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
             }
         }
-        scrollBackground();
-    }
-        
-    /**
-     * Adds an object into the world, listing it in an the Actor array if it is a scrollable object
-     *
-     * @param obj the object to add to the world
-     * @param xLoc the x-coordinate to place the object
-     * @param yLoc the y-coordinate to place the object
-     * @param scroller a flag indicating whether this object is of scrollable type or not
-     */
-    public void addObject(Actor object, int xLocation, int yLocation, boolean scroller)
-    {
-        super.addObject(object, xLocation, yLocation);
-        if (scroller) genActors.add(object);
+        createTextur();
     }
     
     /**
-     * Adds a scrollable object into the world, listing them in the Actor array.
-     *
-     * @param obj the scrollable object to add to the world
-     * @param xLoc the x-coordinate to place the object
-     * @param yLoc the y-coordinate to place the object
+     * Creates a moving textur on the background image of the world.
      */
-    public void addObject(Actor object, int xLocation, int yLocation)
-    {
-        addObject(object, xLocation, yLocation, true);
-    }
-    
-    /**
-     * Removes an object from the world, re-defining fields as neccessary
-     *
-     * @param obj the object to be removed from the world
-     */
-    public void removeObject(Actor object)
-    {
-        if (object == null){
-          return;  
+    protected final void createTextur() {
+        int x;
+        int y;
+        if (totalXMovement > 0) {
+            for (x = totalXMovement; x > 0; x -= textur.getWidth()) {
+                ;
+            }
         }
-        
-        if (object.equals(mainActor)){
-           mainActor = null; 
-        } else {
-           genActors.remove(object);
+        else {
+            for (x = totalXMovement; x < 0; x += textur.getWidth()) {
+                ;
+            }
+            x -= textur.getWidth();
         }
-        
-        super.removeObject(object);
-    }
-    
-    /**
-     * Removes a collection of objects from the world, calling <i>removeObject(Actor)</i> for each one in the list
-     *
-     * @param objs the collection or list of objects to be removed from the world
-     */
-    public void removeObjects(List<Actor>objs)
-    {
-        for (Actor obj : objs) removeObject(obj);
-    }
-  
-    /**
-     * Runs the scrolling.
-     */
-    public void act()
-    {
-        scrollObjects();
-        scrollBackground();
-    }
-    
-    /**
-     * Scrolls the background image.
-     */
-    private void scrollBackground()
-    {
-        if (background == null){
-            return;
+        if (totalYMovement > 0) {
+            for (y = totalYMovement; y > 0; y -= textur.getHeight()) {
+                ;
+            }
         }
-        int width = getWidth();
-        int height = getHeight();
-        int cSize = getCellSize();
-        int bWidth = background.getWidth(), bHeight = background.getHeight();
-        getBackground().drawImage(background, (width * cSize - bWidth)/2 - scrolledX * cSize, (height * cSize - bHeight)/2 - scrolledY * cSize);
-    }
-    
-    /**
-     * Scrolls all scrollable object.  Determines how far outside boundary limits the main actor is, and moves all neccessary
-     * objects in the same direction, moving the main actor back within boundary limits.  A background can be
-     * made up of scrollable actor object(s) to produce a scrolling background; however, determining intersectors with object
-     * will have to include the background object as being one or more of them when using <i>null</i> for the class of intersector.
-     */
-    private void scrollObjects()
-    {
-        if (mainActor==null) return;
-        // determine how far the main actor is outside its standard window limits
-        int dx=0, dy=0;
-        if (mainActor.getX() < actorMinX) dx = actorMinX-mainActor.getX();
-        if (mainActor.getX() > actorMaxX) dx = actorMaxX-mainActor.getX();
-        if (mainActor.getY() < actorMinY) dy = actorMinY-mainActor.getY();
-        if (mainActor.getY() > actorMaxY) dy = actorMaxY-mainActor.getY();
-        if (dx == 0 && dy == 0) return; // not outside window limits
-        // ** outside standard window limits **
-        int dxSum = dx, dySum = dy; // hold changes in scroll amount
-        scrolledX -= dx; scrolledY -= dy;// track scroll amount
-        // move main actor back within standard window limits
-        mainActor.setLocation(mainActor.getX()+dx, mainActor.getY()+dy);
-        // determine how far the background is inside the world limits
-        dx=0; dy=0;
-        if (scrolledX > scrollWidth/2-getWidth()/2) dx = scrolledX-(scrollWidth/2-getWidth()/2);
-        if (scrolledX < getWidth()/2-scrollWidth/2) dx = scrolledX-(getWidth()/2-scrollWidth/2);
-        if (scrolledY > scrollHeight/2-getHeight()/2) dy = scrolledY-(scrollHeight/2-getHeight()/2);
-        if (scrolledY < getHeight()/2-scrollHeight/2) dy = scrolledY-(getHeight()/2-scrollHeight/2);
-        // ** background does not completely cover world limits
-        dxSum += dx; dySum += dy; // keep running sum of changes in scroll amount
-        scrolledX -= dx; scrolledY -= dy; // adjust scroll amount
-        // move all objects so background covers the world
-        mainActor.setLocation(mainActor.getX()+dx, mainActor.getY()+dy);
-        for (Object obj : genActors)
-        {
-            Actor actor = (Actor)obj;
-            actor.setLocation(actor.getX()+dxSum, actor.getY()+dySum);
+        else {
+            for (y = totalYMovement; y < 0; y += textur.getHeight()) {
+                ;
+            }
+            y -= textur.getHeight();
         }
-        // determine how far main actor is outside universal limits
-        dx = 0; dy = 0;
-        if (mainActor.getX() < 0) dx = 0-mainActor.getX();
-        if (mainActor.getX() > getWidth()-1) dx = (getWidth()-1)-mainActor.getX();
-        if (mainActor.getY() < 0) dy = 0-mainActor.getY();
-        if (mainActor.getY() > getHeight()-1) dy = (getHeight()-1)-mainActor.getY();
-        if (dx == 0 && dy == 0) return;
-        // ** outside universal limits
-        // move main actor back within world limits
-        mainActor.setLocation(mainActor.getX()+dx, mainActor.getY()+dy);
+        getBackground().clear();
+        for (int i = x; i < getWidth(); i += textur.getWidth()) {
+            for (int j = y; j < getHeight(); j += textur.getHeight()) {
+                getBackground().drawImage(textur, i, j);
+            }
+        }
     }
     
     /**
-     * Returns the horizonal offset from the left edge of the scrolling world to the
-     * left edge of the world window
-     *
-     * return the amount of scrollable background off the left edge of the world window
+     * Remove all objects that currently are in the world.
      */
-    public int getScrolledX()
-    {
-        return scrolledX;
+    public void removeAllObjects() {
+        removeObjects(getObjects(null));
     }
     
     /**
-     * Returns the vertical offset from the top edge of the scrolling world to the
-     * top edge of the world window
-     *
-     * return the amount of scrollable background off the top edge of the world window
+     * Remove all objects that currently are in the world with the exception of the actor given as parameter.
+     * 
+     * @param actor
+     *      The only object that will not be removed from the world.
      */
-    public int getScrolledY()
-    {
-        return scrolledY;
+    public void removeAllObjectsBut(Actor actor) {
+        List<Actor> allActors = getObjects(null);
+        for (Actor a : allActors) {
+            if (!a.equals(actor)) {
+                removeObject(a);
+            }
+        }
     }
     
     /**
-     * Returns the width of the scrolling area of the universe
-     *
-     * @return the width of the visible scrolling area
+     * Change the background image of the scrolling world to the given image.
+     * 
+     * @param bgImage
+     *      The new background image.
      */
-    public int getScrollingWidth()
-    {
-        return scrollWidth;
+    public void setScrollingBackground(GreenfootImage bgImage) {
+        textur = bgImage;
     }
     
     /**
-     * Returns the height of the scrolling area of the universe
-     *
-     * @return the height of the visible scrolling area
+     * Returns the width of to scrolling world. (0 => infinite).
+     * 
+     * @return
+     *      The width of the scrolling system. If 0 is returned the world width is infinite.
      */
-    public int getScrollingHeight()
-    {
-        return scrollHeight;
+    public int getScrollingWidth() {
+        return WORLD_WIDTH;
+    }
+    /**
+     * Returns the height of to scrolling world. (0 => infinite).
+     * 
+     * @return
+     *      The height of the scrolling system. If 0 is returned the world height is infinite.
+     */
+    public int getScrollingHeight() {
+        return WORLD_HEIGHT;
+    }
+    
+    /**
+     * Get the total movement in x direction.
+     * 
+     * @return
+     *      The total movement in x direction the scrolling actor has covered.
+     */
+    public int getTotalXMovement() {
+        return totalXMovement;
+    }
+    /**
+     * Get the total movement in y direction.
+     * 
+     * @return
+     *      The total movement in y direction the scrolling actor has covered.
+     */
+    public int getTotalYMovement() {
+        return totalYMovement;
     }
 }
