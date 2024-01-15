@@ -19,18 +19,6 @@ public class ExampleWorld extends ScrollingWorld
      * Creates an example world where the ScrollingActor can move.
      */
     public void createExampleWorld() {
-        for (int x = getWidth() * -3; x < getWidth() * 3; x += getWidth()/2) {
-            for (int y = getHeight() * -3; y < getHeight() * 3; y += getHeight()/2) {
-                if (x != getWidth()/2 || y != getHeight()/2) {
-                    addObject(new Rock(), x, y);
-                }
-            }
-        }
-        for (int x = getWidth() * -3 + getWidth()/2; x < getWidth() * 3; x += getWidth()) {
-            for (int y = getHeight() * -3 + getHeight()/4; y < getHeight() * 3; y += getHeight()) {
-                addObject(new Enemy(), x, y);
-            }
-        }
-        addObject(new ExampleScrollingActor(), getWidth()/2, getHeight()/2);
+        addObject(new Runner(), getWidth()/2, getHeight()/2);
     }
 }

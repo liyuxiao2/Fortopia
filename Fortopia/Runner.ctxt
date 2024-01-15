@@ -1,12 +1,9 @@
 #BlueJ class context
 comment0.target=Runner
-comment0.text=\n\ A\ user-controlled\ runner\ .\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ This\ class\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code.\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Runner()
 comment2.params=
-comment2.target=void\ move()
-comment2.text=\n\ Moves\ the\ actor\ with\ appropriate\ image.\ \ Checks\ for\ obstacles\ and\ adjusts\n\ the\ position\ of\ the\ actor\ accordingly.\n
-comment3.params=
-comment3.target=void\ getDirection()
-comment3.text=\n\ Determines\ any\ changes\ in\ horizontal\ and\ vertical\ speeds\ for\ the\ actor.\n
-numComments=4
+comment2.target=void\ act()
+comment2.text=\n\ Here\ you\ can\ tell\ your\ actor\ what\ he\ has\ to\ do.\n
+numComments=3
