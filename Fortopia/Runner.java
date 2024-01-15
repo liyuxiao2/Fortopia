@@ -42,19 +42,6 @@ public class Runner extends ScrollingActor
             fall();
         }
         animate();
-        /**if (Greenfoot.isKeyDown("up")) {
-        setLocation(getX(), getY() - 3);
-        }
-        if (Greenfoot.isKeyDown("down")) {
-        setLocation(getX(), getY() + 3);
-        }
-        if (Greenfoot.isKeyDown("left")) {
-        setLocation(getX() - 3, getY());
-        }
-        if (Greenfoot.isKeyDown("right")) {
-        setLocation(getX() + 3, getY());
-        }
-         */
     }
 
     public void checkKey()
@@ -104,22 +91,20 @@ public class Runner extends ScrollingActor
         if (ground != null) {
             vSpeed = 0; // Reset vertical speed
             jumping = false; // Set jumping state to false
-            setLocation(getX(),getY());
         }
+        
+        Block block = (Block)getOneObjectAtOffset(0, getImage().getHeight() / 2, Block.class);
+        if (block != null) {
+            vSpeed = 0; // Reset vertical speed
+            jumping = false; // Set jumping state to false
+        }
+        
     }
 
     public void jump(){
         vSpeed = vSpeed - jumpStrength;
         jumping = true;
         // Check for collisions with Ground
-        /**
-         * Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
-        if (ground != null) {
-            vSpeed = 0; // Reset vertical speed
-            jumping = false; // Set jumping state to false
-            setLocation(getX(),getY());
-        }
-         */
     }
 
     public void animateR(){
@@ -176,9 +161,9 @@ public class Runner extends ScrollingActor
         if (Greenfoot.isKeyDown("left")) {
                 setLocation(getX() - 3, getY());
         }
-            if (Greenfoot.isKeyDown("right")) {
+        if (Greenfoot.isKeyDown("right")) {
                 setLocation(getX() + 3, getY());
-            }
         }
+    }
 
 }
