@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Runner extends ScrollingActor
 {
+<<<<<<< HEAD:Infinite Scrolling World/Runner.java
     private int vSpeed = 0;
     private int acceleration = 1;
     private boolean jumping;
@@ -29,10 +30,18 @@ public class Runner extends ScrollingActor
 
     }
 
+=======
+    
+    public Runner() {
+        
+    }
+    
+>>>>>>> upstream/main:Fortopia/Runner.java
     /**
      * Here you can tell your actor what he has to do.
      */
     public void act() {
+<<<<<<< HEAD:Infinite Scrolling World/Runner.java
         checkKey();
         if(jumping){
             fall();
@@ -157,4 +166,16 @@ public class Runner extends ScrollingActor
         animationCounter++;
     }
 
+=======
+        if (Greenfoot.isKeyDown("up")) {
+            setLocation(getX(), getY() - 3);
+        }
+        if (Greenfoot.isKeyDown("left")) {
+            setLocation(getX() - 3, getY());
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            setLocation(getX() + 3, getY());
+        }
+    }
+>>>>>>> upstream/main:Fortopia/Runner.java
 }
