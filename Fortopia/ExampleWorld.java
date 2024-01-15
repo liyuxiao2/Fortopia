@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class ExampleWorld extends ScrollingWorld
 {
-    
+    /**
+     *   20 20 20 20 20 20
+     * {{1,2,0,0,0,0,0}
+     */
     public ExampleWorld() {
         super(600, 400, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
@@ -25,13 +28,12 @@ public class ExampleWorld extends ScrollingWorld
         for (int x = getWidth() * -3; x < getWidth() * 3; x += getWidth()/2) {
             for (int y = getHeight() * -3; y < getHeight() * 3; y += getHeight()/2) {
                 if (x != getWidth()/2 || y != getHeight()/2) {
-                    addObject(new Block(), x, y);
+                    addObject(new Ground(), 1000,500);
                 }
             }
         }
         
-        addObject(new Runner(), getWidth()/2, getHeight()/2);
-        addObject(new Ground(), 1000,500);
+        addObject(new Runner(), 300, 300);
         
     }
 }

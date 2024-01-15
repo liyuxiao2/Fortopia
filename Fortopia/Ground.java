@@ -7,7 +7,7 @@ import greenfoot.Actor;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ground extends ScrollingActor
+public class Ground extends Obstacles
 {
      public Ground(){
         GreenfootImage road = new GreenfootImage("road.jpg");
