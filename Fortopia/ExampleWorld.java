@@ -22,12 +22,11 @@ public class ExampleWorld extends ScrollingWorld
      * Creates an example world where the ScrollingActor can move.
      */
     public void createGameWorld() {
-        for (int x = getWidth() * -3; x < getWidth() * 3; x += getWidth()/2) {
-            for (int y = getHeight() * -3; y < getHeight() * 3; y += getHeight()/2) {
-                if (x != getWidth()/2 || y != getHeight()/2) {
-                    addObject(new Block(), x, y);
-                }
-            }
+        int groundWidth = 1040; // Width of the ground image
+        int groundHeight = new Ground().getImage().getHeight(); // Height of the ground image
+        int numGroundInstances = getWidth() / groundWidth + 2;
+         for (int i = 0; i < numGroundInstances; i++) {
+            addObject(new Ground(), i * groundWidth, getHeight() - groundHeight / 2);
         }
         
         addObject(new Runner(), getWidth()/2, getHeight()/2);

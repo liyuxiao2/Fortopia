@@ -74,11 +74,11 @@ public abstract class ScrollingWorld extends World
      * Creates a moving textur on the background image of the world.
      */
     protected final void createTextur() {
-        int x;
+        int x = Math.max(totalXMovement,0);
         int y;
         
         //set x so it only crolls to the right
-        x=Math.max(totalXMovement,0);
+        //x=Math.max(totalXMovement,0);
         /**if (totalXMovement > 0) {
             for (x = totalXMovement; x > 0; x -= textur.getWidth()) {
                 ;

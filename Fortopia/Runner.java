@@ -99,17 +99,27 @@ public class Runner extends ScrollingActor
             vSpeed = vSpeed + acceleration;
         }
         jumping = true;
+        
+        Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
+        if (ground != null) {
+            vSpeed = 0; // Reset vertical speed
+            jumping = false; // Set jumping state to false
+            setLocation(getX(),getY());
+        }
     }
 
     public void jump(){
         vSpeed = vSpeed - jumpStrength;
         jumping = true;
         // Check for collisions with Ground
-        Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
+        /**
+         * Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
         if (ground != null) {
             vSpeed = 0; // Reset vertical speed
             jumping = false; // Set jumping state to false
+            setLocation(getX(),getY());
         }
+         */
     }
 
     public void animateR(){
