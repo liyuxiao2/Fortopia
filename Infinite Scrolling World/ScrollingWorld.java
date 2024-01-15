@@ -79,7 +79,10 @@ public abstract class ScrollingWorld extends World
     protected final void createTextur() {
         int x;
         int y;
-        if (totalXMovement > 0) {
+        
+        //set x so it only crolls to the right
+        x=Math.max(totalXMovement,0);
+        /**if (totalXMovement > 0) {
             for (x = totalXMovement; x > 0; x -= textur.getWidth()) {
                 ;
             }
@@ -89,7 +92,7 @@ public abstract class ScrollingWorld extends World
                 ;
             }
             x -= textur.getWidth();
-        }
+        }*/
         if (totalYMovement > 0) {
             for (y = totalYMovement; y > 0; y -= textur.getHeight()) {
                 ;
