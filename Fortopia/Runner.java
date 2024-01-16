@@ -38,9 +38,7 @@ public class Runner extends ScrollingActor
      */
     public void act() {
         checkKey();
-        if(jumping){
-            fall();
-        }
+        fall();
         animate();
     }
 

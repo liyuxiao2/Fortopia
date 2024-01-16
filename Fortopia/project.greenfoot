@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.Runner.image=wombat.png
+class.Runner.image=run0.png
 dependency1.from=ScrollingWorld
 dependency1.to=ScrollingActor
 dependency1.type=UsesDependency
@@ -24,10 +24,10 @@ dependency7.type=UsesDependency
 dependency8.from=Runner
 dependency8.to=Ground
 dependency8.type=UsesDependency
-editor.fx.0.height=844
+editor.fx.0.height=772
 editor.fx.0.width=1352
 editor.fx.0.x=0
-editor.fx.0.y=34
+editor.fx.0.y=35
 height=568
 package.numDependencies=8
 package.numTargets=12
