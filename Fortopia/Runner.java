@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * This class is just an example. You can delete it or change the code.
  * It's not necessary for the scrolling system.
  */
-public class Runner extends ScrollingActor
+public class Runner extends Actor
 {
     private int vSpeed = 0;
     private int acceleration = 1;
@@ -38,10 +38,9 @@ public class Runner extends ScrollingActor
      */
     public void act() {
         checkKey();
-        if(jumping){
-            fall();
-        }
+        fall();
         animate();
+        
     }
 
     public void checkKey()
