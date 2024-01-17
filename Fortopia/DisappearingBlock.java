@@ -14,6 +14,7 @@ public class DisappearingBlock extends Obstacles
     }
     public void act()
     {
+        super.act();
         // Add your action code here.
     }
 }

@@ -48,7 +48,7 @@ public class ExampleWorld extends World
                            };
     
     public ExampleWorld() {
-        super(1000, 700, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
+        super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
 
@@ -67,9 +67,22 @@ public class ExampleWorld extends World
         }
         
         
-        addObject(new Block(), 200,100);
         
         addObject(new Runner(), 0, 400);
         
+    }
+    
+    public void addObstacles(){
+        addObject(new Block(), 200,100);
+    }
+    
+    
+    
+    public void act(){
+        counter++;
+        if(counter == 60){
+            addObstacles();
+            counter = 0;
+        }
     }
 }
