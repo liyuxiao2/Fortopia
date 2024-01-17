@@ -3,13 +3,7 @@ comment0.target=ExampleWorld
 comment0.text=\r\n\ This\ subclass\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code\ if\ you\ want.\r\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\r\n\ \r\n\ @danpost\ code\r\n\ MODIFIED\ BY\ Natalie\r\n
 comment1.params=
 comment1.target=ExampleWorld()
-<<<<<<< Updated upstream
-=======
-comment1.text=\r\n\ \ \ 20\ 20\ 20\ 20\ 20\ 20\r\n\ {{1,2,0,0,0,0,0}\r\n
->>>>>>> Stashed changes
 comment2.params=
 comment2.target=void\ createGameWorld()
 comment2.text=\r\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\r\n
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+numComments=3
