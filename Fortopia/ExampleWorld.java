@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 
-public class ExampleWorld extends ScrollingWorld
+public class ExampleWorld extends World
 {
+    int counter = 0;
     // 20*20, world by blocks is 50*35
     String[][] arrayMap =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
@@ -57,7 +58,6 @@ public class ExampleWorld extends ScrollingWorld
 >>>>>>> Stashed changes
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
-        setScrollingBackground(new GreenfootImage("weave.jpg"));
 
         createGameWorld();//this method just adds some objects to the world.
         
@@ -91,6 +91,8 @@ public class ExampleWorld extends ScrollingWorld
             }
 >>>>>>> Stashed changes
         }
+        
+        
         addObject(new Block(), 200,100);
         
 <<<<<<< Updated upstream
