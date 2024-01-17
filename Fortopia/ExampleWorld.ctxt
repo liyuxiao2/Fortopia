@@ -2,9 +2,10 @@
 comment0.target=ExampleWorld
 comment0.text=\n\ This\ subclass\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code\ if\ you\ want.\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\n
 comment1.params=
-comment1.target=ExampleWorld()
-comment1.text=\n\ \ \ 20\ 20\ 20\ 20\ 20\ 20\n\ {{1,2,0,0,0,0,0}\n
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ createGameWorld()
-comment2.text=\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\n
-numComments=3
+comment2.target=ExampleWorld()
+comment3.params=
+comment3.target=void\ createGameWorld()
+comment3.text=\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\n
+numComments=4

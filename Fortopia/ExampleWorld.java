@@ -8,16 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class ExampleWorld extends ScrollingWorld
 {
-    
+    int count = 0;
+    Counter counter = new Counter();
+    public void act(){
+        count++;
+    }
     public ExampleWorld() {
         super(600, 400, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
         setScrollingBackground(new GreenfootImage("weave.jpg"));
-
         createGameWorld();//this method just adds some objects to the world.
     }
-    
     /**
      * Creates an example world where the ScrollingActor can move.
      */
