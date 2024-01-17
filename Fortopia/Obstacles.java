@@ -12,7 +12,7 @@ public class Obstacles extends Actor
      * Act - do whatever the Obstacles wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int speed = 5;
+    int speed = 10;
     public void act()
     {
         setLocation(getX() - speed, getY());
