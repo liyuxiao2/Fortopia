@@ -24,11 +24,6 @@ public class Runner extends Actor
     private GreenfootImage run4l = new GreenfootImage("run4l.png");
     private int frame = 1;
     private int animationCounter = 0;
-
-    
-
-
-    
     public Runner() {
         
     }
