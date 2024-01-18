@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Runner
+<<<<<<< Updated upstream
 comment0.text=\n\ This\ class\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code.\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\n\ @Wendy\ Luo,\ Liyu\ Xiao\n
+=======
+comment0.text=\n\ This\ class\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code.\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\n
+>>>>>>> Stashed changes
 comment1.params=
 comment1.target=Runner()
 comment10.params=
