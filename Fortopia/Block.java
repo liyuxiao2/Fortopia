@@ -17,4 +17,5 @@ public class Block extends Obstacles
     {
         super.act();
     }
+    
 }
