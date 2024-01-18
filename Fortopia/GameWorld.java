@@ -78,7 +78,7 @@ public class GameWorld extends World
         if(counter % 2 == 0){
             addObject(new GreyPlatform(),515,315);
         }
-        addObject(new Runner(), 300, 525);
+        addObject(new Runner(), 300, 380);
         if(counter == 60){
             addObstacles();
             counter = 0;
