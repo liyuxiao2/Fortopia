@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=WelcomeWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ WelcomeWorld\ here.\r\n\ \r\n<<<<<<<\ Updated\ upstream\r\n\ @Natalie\ \r\n\=\=\=\=\=\=\=\r\n\ @author\ (your\ name)\ \r\n>>>>>>>\ Stashed\ changes\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WelcomeWorld\ here.\r\n\ \r\n\ @Natalie\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=WelcomeWorld()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ WelcomeWorld.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3
