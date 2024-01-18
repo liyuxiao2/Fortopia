@@ -16,19 +16,9 @@ public class GameWorld extends World
                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x"}
+                             
                            };
-    public void act(){
-        counter++;
-        
-    }
     public GameWorld() {
         super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
@@ -45,12 +35,11 @@ public class GameWorld extends World
         int groundHeight = new Ground().getImage().getHeight(); // Height of the ground image
         int numGroundInstances =10;
         for (int i = 0; i < numGroundInstances; i++) {
-<<<<<<< Updated upstream:Fortopia/GameWorld.java
             addObject(new Ground(), i * groundWidth,600);
         }
-        for (int i = 0; i < arrayMap.length; i++) {
-            for(int j = 0; j < arrayMap[i].length; j++){
-                if(arrayMap[i][j].equals("o")){
+        for (int i = 0; i < arrayMap1.length; i++) {
+            for(int j = 0; j < arrayMap1[i].length; j++){
+                if(arrayMap1[i][j].equals("o")){
                     addObject(new Block(), j*40, i*40);
                 }
             }
@@ -58,16 +47,12 @@ public class GameWorld extends World
         if(counter % 2 == 0){
             addObject(new GreyPlatform(),515,315);
         }
-        addObject(new Runner(), 300, 525);
-=======
-            addObject(new Ground(), i * groundWidth,650);
-        }
-        
-        
-        
-        addObject(new Runner(), 500, 450);
-        
+        addObject(new Runner(), 300, 405);
     }
+        
+        
+     
+    
     
     
     public void addObstacles(){
@@ -84,14 +69,10 @@ public class GameWorld extends World
     
     public void act(){
         counter++;
->>>>>>> Stashed changes:Fortopia/ExampleWorld.java
         if(counter == 60){
             addObstacles();
             counter = 0;
         }
-    }
-    public void addObstacles(){
-        addObject(new Block(), 1000,400);
     }
     
 }
