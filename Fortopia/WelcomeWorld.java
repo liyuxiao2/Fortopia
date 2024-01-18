@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class WelcomeWorld extends World
 {
-    Button start = new Button();
-    
+    Button next = new Button();
     
     /**
      * Constructor for objects of class WelcomeWorld.
@@ -18,11 +17,11 @@ public class WelcomeWorld extends World
     public WelcomeWorld()
     {    
         super(1000, 700, 1); 
-        addObject(start, 640, 470);
+        addObject(next, 640, 470);
     }
     
     public void act(){
-        if(Greenfoot.mouseClicked(start)){
+        if(Greenfoot.mouseClicked(next)){
             Greenfoot.setWorld(new StoryWorld());
         }
     }

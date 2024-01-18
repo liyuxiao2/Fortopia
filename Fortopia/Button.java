@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Button extends Actor
 {
-    private GreenfootImage button1 = new GreenfootImage("redbutton.png");
-    private GreenfootImage button2 = new GreenfootImage("greenbutton.png");
+    private GreenfootImage button1 = new GreenfootImage("nextbutton.png");
+    private GreenfootImage button2 = new GreenfootImage("nextbutton2.png");
     private boolean mouseDown;
      
     public Button() {
