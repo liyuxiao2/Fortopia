@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 
-public class ExampleWorld extends ScrollingWorld
+public class ExampleWorld extends World
 {
     // 20*20, world by blocks is 50*35
     String[][] arrayMap =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
@@ -50,7 +50,6 @@ public class ExampleWorld extends ScrollingWorld
         super(1000, 700, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
-        setScrollingBackground(new GreenfootImage("weave.jpg"));
 
         createGameWorld();//this method just adds some objects to the world.
     }
@@ -66,6 +65,9 @@ public class ExampleWorld extends ScrollingWorld
             addObject(new Ground(), i * groundWidth,450);
         }
         addObject(new Block(), 200,100);
+        addObject(new Spike(), 200, 50);
+        addObject(new Block(), 250, 100);
+        addObject(new Block(), 250, 50);
         
         addObject(new Runner(), 0, 400);
         

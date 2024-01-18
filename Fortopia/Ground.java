@@ -9,11 +9,18 @@ import greenfoot.Actor;
  */
 public class Ground extends Obstacles
 {
-     public Ground(){
-        GreenfootImage road = new GreenfootImage("road.jpg");
+    public Ground(){
+        /*GreenfootImage road = new GreenfootImage("road.jpg");
         GreenfootImage image = new GreenfootImage(1040, road.getHeight());
         int w=road.getWidth();
         for (int offset=0; offset<1040; offset+=w) {
+            image.drawImage(road, offset, 0);
+        }
+        setImage(image);*/
+        GreenfootImage road = new GreenfootImage("ground.png");
+        GreenfootImage image = new GreenfootImage(1040, road.getHeight());
+        int w=road.getWidth();
+        for (int offset=0; offset<2*1040; offset+=w) {
             image.drawImage(road, offset, 0);
         }
         setImage(image);
