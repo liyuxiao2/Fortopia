@@ -123,6 +123,6 @@ target9.x=190
 target9.y=70
 version=3.0.0
 width=1440
-world.lastInstantiated=WelcomeWorld
+world.lastInstantiated=ExampleWorld
 xPosition=0
 yPosition=0

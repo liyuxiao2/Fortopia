@@ -49,7 +49,7 @@ public class ExampleWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                            };
-    
+                           
     public ExampleWorld() {
         super(1000, 700, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
         //super(800, 600, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
@@ -62,7 +62,7 @@ public class ExampleWorld extends World
          * Actor ground = new Ground();
         addObject(ground, 0, getHeight()-ground.getImage().getHeight()/2);
         addObject(new Ground(), ground.getImage().getWidth(), ground.getY());
-         */
+        */
     }
     
     /**
@@ -88,6 +88,7 @@ public class ExampleWorld extends World
             addObject(new Block(), 200,100);
             addObject(new Runner(), 0, 400);
             addObject(new Runner(), 600, 300);
+            addObject(new Ground(), 1000, 500);
         }
     }
 }
