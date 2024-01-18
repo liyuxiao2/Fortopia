@@ -8,7 +8,7 @@ import greenfoot.Actor;
  * MODIFIED BY Natalie
  * @version (a version number or a date)
  */
-public class Ground extends Obstacles
+public class Ground extends Actor
 {
     //private int unitWidth, imageWidth, worldWidth;
     public Ground(){

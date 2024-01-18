@@ -3,9 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * This subclass is just an example. You can delete it or change the code if you want.
  * It's not necessary for the scrolling system.
- * 
- * @danpost code
- * MODIFIED BY Natalie
  */
 
 
@@ -19,6 +16,10 @@ public class ExampleWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
@@ -35,12 +36,8 @@ public class ExampleWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","o"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
@@ -49,20 +46,13 @@ public class ExampleWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                            };
-                           
+    
     public ExampleWorld() {
-        super(1000, 700, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
-        //super(800, 600, 1);//creates an infinite scrolling world with a screen size of 600 x 400;
+        super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
 
         createGameWorld();//this method just adds some objects to the world.
-        
-        /**
-         * Actor ground = new Ground();
-        addObject(ground, 0, getHeight()-ground.getImage().getHeight()/2);
-        addObject(new Ground(), ground.getImage().getWidth(), ground.getY());
-        */
     }
     
     /**
@@ -73,22 +63,32 @@ public class ExampleWorld extends World
         int groundHeight = new Ground().getImage().getHeight(); // Height of the ground image
         int numGroundInstances =10;
         for (int i = 0; i < numGroundInstances; i++) {
-            addObject(new Ground(), i * groundWidth,450);
-            Actor ground = new Ground();
-            for (int x = getWidth() * -3; x < getWidth() * 3; x += getWidth()/2) {
-                for (int y = getHeight() * -3; y < getHeight() * 3; y += getHeight()/2) {
-                    if (x != getWidth()/2 || y != getHeight()/2) {
-                        //addObject(ground, 0, getHeight()-ground.getImage().getHeight()/2);
-                        //addObject(new Ground(), ground.getImage().getWidth(), ground.getY());
-                        //addObject(new Ground(), ground.getImage().getWidth(),  getHeight()-ground.getImage().getHeight()/2);
-                        addObject(new Ground(), 1000,500);
-                    }
+            addObject(new Ground(), i * groundWidth,500);
+        }
+        for (int i = 0; i < arrayMap.length; i++) {
+            for(int j = 0; j < arrayMap[i].length; j++){
+                if(arrayMap[i][j].equals("o")){
+                    addObject(new Block(), j*40, i*40);
                 }
             }
-            addObject(new Block(), 200,100);
-            addObject(new Runner(), 0, 400);
-            addObject(new Runner(), 600, 300);
-            addObject(new Ground(), 1000, 500);
+        }
+        
+        
+        addObject(new Runner(), 500, 450);
+        
+    }
+    
+    public void addObstacles(){
+        addObject(new Block(), 1000,400);
+    }
+    
+    
+    
+    public void act(){
+        counter++;
+        if(counter == 60){
+            addObstacles();
+            counter = 0;
         }
     }
 }

@@ -14,6 +14,6 @@ public class DisappearingSpike extends Obstacles
     }
     public void act()
     {
-        
+        super.act();
     }
 }

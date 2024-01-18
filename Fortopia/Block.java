@@ -11,9 +11,10 @@ public class Block extends Obstacles
     public Block()
     {
         setImage("block.png");
+        
     }
     public void act()
     {
-        
+        super.act();
     }
 }
