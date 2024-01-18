@@ -40,20 +40,11 @@ public class Runner extends Actor
         checkKey();
         fall();
         animate();
+        moveR();
     }
 
     public void checkKey()
     {
-        if(Greenfoot.isKeyDown("right"))
-        {
-            direction = 1;
-            moveR();
-        }
-        if(Greenfoot.isKeyDown("left"))
-        {
-            direction = -1;
-            moveL();
-        }
         if(Greenfoot.isKeyDown("up") && jumping == false)
         {
             jump();
@@ -61,20 +52,12 @@ public class Runner extends Actor
     }
 
     public void moveR(){
-        setLocation(getX()+speed, getY());
         if(animationCounter % 4 == 0)
         {
             animateR();
         }
     }
 
-    public void moveL(){
-        setLocation(getX()-speed, getY());
-        if(animationCounter %4 == 0)
-        {
-            animateL();
-        }
-    }
 
     public void fall()
     {
@@ -155,12 +138,6 @@ public class Runner extends Actor
 
         if(Greenfoot.isKeyDown("up")) {
                 setLocation(getX(), getY() - 3);
-        }
-        if (Greenfoot.isKeyDown("left")) {
-                setLocation(getX() - 3, getY());
-        }
-        if (Greenfoot.isKeyDown("right")) {
-                setLocation(getX() + 3, getY());
         }
     }
 

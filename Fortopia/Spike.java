@@ -14,10 +14,13 @@ public class Spike extends Obstacles
     }
     public void act()
     {
+        super.act();
         Runner runner = (Runner)getOneIntersectingObject(Runner.class);//change to offset later
         if(runner != null)
         {
             //runner.subtractLife();
         }
+        
+        
     }
 }
