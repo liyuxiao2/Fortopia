@@ -1,6 +1,7 @@
 #Greenfoot project file
 class.Counter.image=Counter.png
 class.GameWorld.image=cell.jpg
+class.GreyPlatform.image=platform.png
 class.MovingPlatforms.image=platform.png
 class.Runner.image=run1r.png
 class.WelcomeWorld.image=Fortopia.jpg
@@ -26,8 +27,8 @@ dependency7.from=Spike
 dependency7.to=Runner
 dependency7.type=UsesDependency
 editor.fx.0.height=944
-editor.fx.0.width=1457
-editor.fx.0.x=55
+editor.fx.0.width=1068
+editor.fx.0.x=222
 editor.fx.0.y=38
 height=851
 package.numDependencies=7
@@ -155,4 +156,4 @@ version=3.0.0
 width=1295
 world.lastInstantiated=GameWorld
 xPosition=222
-yPosition=38
+yPosition=85
