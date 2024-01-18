@@ -3,6 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * This class is just an example. You can delete it or change the code.
  * It's not necessary for the scrolling system.
+ * @Wendy Luo, Liyu Xiao
  */
 public class Runner extends Actor
 {
@@ -24,8 +25,12 @@ public class Runner extends Actor
     private GreenfootImage run4l = new GreenfootImage("run4l.png");
     private int frame = 1;
     private int animationCounter = 0;
+    private long keyPressedTime;
+
+
+    
     public Runner() {
-        
+
     }
 
     /**
@@ -40,11 +45,30 @@ public class Runner extends Actor
 
     public void checkKey()
     {
-        if(Greenfoot.isKeyDown("up") && jumping == false)
-        {
-            jump();
+        if (Greenfoot.isKeyDown("space") && !jumping) {
+            if (keyPressedTime == 0) {
+                //key pressed
+                keyPressedTime = System.currentTimeMillis();
+            } else {
+                // as key is held down, get time
+                long elapsedTime = System.currentTimeMillis() - keyPressedTime;
+                // adjust jump height according to time for power space jump
+                int jumpHeight = calculateJumpHeight(elapsedTime);
+                jump(jumpHeight);
+            }
+        } else if (!Greenfoot.isKeyDown("space") && jumping) {
+            // key is now released, reset timer
+            keyPressedTime = 0;
+            jumping = false;
         }
+        /**old jump key
+         * if(Greenfoot.isKeyDown("space") && jumping == false)
+        {
+        jump();
+        if(checkKeyPress()
+        } */
     }
+
 
     public void moveR(){
         if(animationCounter % 4 == 0)
@@ -52,7 +76,6 @@ public class Runner extends Actor
             animateR();
         }
     }
-
 
     public void fall()
     {
@@ -62,22 +85,49 @@ public class Runner extends Actor
             vSpeed = vSpeed + acceleration;
         }
         jumping = true;
-        
+
         Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
         if (ground != null) {
             vSpeed = 0; // Reset vertical speed
             jumping = false; // Set jumping state to false
         }
-        
+
         Block block = (Block)getOneObjectAtOffset(0, getImage().getHeight() / 2, Block.class);
         if (block != null) {
             vSpeed = 0; // Reset vertical speed
             jumping = false; // Set jumping state to false
         }
-        
+
     }
 
-    public void jump(){
+    
+    private void checkKeyPress() {
+        if (Greenfoot.isKeyDown("space")) {
+            if (keyPressedTime == 0) {
+                // Key has just been pressed
+                keyPressedTime = System.currentTimeMillis();
+            } else {
+                // Key is still held down, calculate how long it's been held
+                long elapsedTime = System.currentTimeMillis() - keyPressedTime;
+                System.out.println("Time held down: " + elapsedTime + " milliseconds");
+            }
+        } else {
+            // Key is not pressed, reset the timer
+            keyPressedTime = 0;
+        }
+    }
+
+    private int calculateJumpHeight(long elapsedTime) {
+        // Adjust this function based on how you want the jump height to change over time
+        // This is just a basic example, you can use a formula or lookspace table for more control
+        int maxJumpHeight = 300; // can be adjusted if higher jumps needed
+        int jumpDuration = 3000; // 3 seconds
+
+        double ratio = Math.min(1.0, (double) elapsedTime / jumpDuration);
+        return (int) (maxJumpHeight * ratio);
+    }
+
+    public void jump(int jumpHeight){
         vSpeed = vSpeed - jumpStrength;
         jumping = true;
         // Check for collisions with Ground
@@ -131,8 +181,8 @@ public class Runner extends Actor
         // Add any additional animation logic here
         animationCounter++;
 
-        if(Greenfoot.isKeyDown("up")) {
-                setLocation(getX(), getY() - 3);
+        if(Greenfoot.isKeyDown("space")) {
+            setLocation(getX(), getY() - 3);
         }
     }
 
