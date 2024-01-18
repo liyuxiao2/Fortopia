@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Runner
-comment0.text=\n\ This\ class\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code.\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\n\ @Wendy\ Luo,\ Liyu\ Xiao\n
+comment0.text=\r\n\ This\ class\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code.\r\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\r\n\ @Wendy\ Luo,\ Liyu\ Xiao\r\n
 comment1.params=
 comment1.target=Runner()
 comment10.params=
@@ -9,7 +9,7 @@ comment11.params=
 comment11.target=void\ animate()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ Here\ you\ can\ tell\ your\ actor\ what\ he\ has\ to\ do.\n
+comment2.text=\r\n\ Here\ you\ can\ tell\ your\ actor\ what\ he\ has\ to\ do.\r\n
 comment3.params=
 comment3.target=void\ checkKey()
 comment4.params=
