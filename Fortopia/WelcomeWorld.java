@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class WelcomeWorld here.
  * 
- * @Natalie 
- * @version (a version number or a date)
+ * @Natalie Huang
+ * @January 2024
  */
 public class WelcomeWorld extends World
 {

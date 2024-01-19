@@ -7,7 +7,7 @@ import greenfoot.Actor;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ground extends Actor
+public class Ground extends Obstacles
 {
     public Ground(){
         GreenfootImage road = new GreenfootImage("ground.png");

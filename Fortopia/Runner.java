@@ -1,9 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * This class is just an example. You can delete it or change the code.
- * It's not necessary for the scrolling system.
- * @Wendy Luo, Liyu Xiao
+ * 
+ * 
+ * 
+ * @authors Liyu Xiao, Wendy Luo
+ * @version January 2024
  */
 public class Runner extends Actor
 {
@@ -116,7 +118,17 @@ public class Runner extends Actor
             keyPressedTime = 0;
         }
     }
-
+    
+    
+    /**
+     * Checks how long the player has been jumping
+     * 
+     * 
+     * @param elapsedTime:  How long the user has been holding down the space bar key
+     * 
+     * @return int:         returns the final jump height depending on how long the user has been holding down
+     *                      space bar
+     */
     private int calculateJumpHeight(long elapsedTime) {
         // Adjust this function based on how you want the jump height to change over time
         // This is just a basic example, you can use a formula or lookspace table for more control
