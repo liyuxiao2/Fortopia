@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=GameWorld
-comment0.text=\n\ This\ subclass\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code\ if\ you\ want.\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\n
+comment0.text=\n\ This\ is\ the\ game\ world\ for\ the\ runner\ game\ \n\ \n\ \n\ \n\ \n\ @authors\ Liyu\ Xiao,\ Natalie\ Huang,\ Gisele\ Huang,\ Wendy\ Luo\n\ @version\ January\ 2024\n\ \n
 comment1.params=
-comment1.target=GameWorld()
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ createGameWorld()
-comment2.text=\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\n
+comment2.target=GameWorld()
+comment2.text=\n\ Constructor\ for\ the\ game\ world\n
 comment3.params=
-comment3.target=void\ addObstacles()
-comment4.params=
-comment4.target=void\ act()
-numComments=5
+comment3.target=void\ createGameWorld()
+comment3.text=\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\n
+comment4.params=x
+comment4.target=void\ addObstacles(java.lang.String[][])
+comment5.params=
+comment5.target=java.lang.String[][]\ checkMap()
+numComments=6

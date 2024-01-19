@@ -1,6 +1,12 @@
 #BlueJ class context
 comment0.target=Obstacles
-comment0.text=\n\ Write\ a\ description\ of\ class\ Obstacles\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Obstacles\ here.\n\ \n@author\ Gisele\ Huang,Liyu\ Xiao\n@version\ January\ 2024\n
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment1.text=\n\ Implements\ both\ the\ obstacles\ moving\ and\ checking\ if\ its\ touching\n\ \n
+comment2.params=
+comment2.target=boolean\ checkHitBlock()
+comment2.text=\n\ Returns\ whether\ the\ block\ has\ hit\ the\ runner\n\ \n\ @return\ boolean\ \ True\ if\ the\ block\ is\ touching\ a\ runner\n
+comment3.params=
+comment3.target=void\ setSpeed()
+numComments=4
