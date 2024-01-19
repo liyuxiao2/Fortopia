@@ -64,8 +64,12 @@ public class GameWorld extends World
                            };
                         
     String[][][] listOfMaps = {arrayMap0, arrayMap1,arrayMap2, arrayMap3};
-
-    
+    private Sky sky1 = new Sky();
+    private Sky sky2 = new Sky();
+    private Trees trees1 = new Trees();
+    private Trees trees2 = new Trees();
+    private Clouds clouds1 = new Clouds();
+    private Clouds clouds2 = new Clouds();
     public void act(){
         counter++;
         if(counter == 120){
@@ -91,7 +95,12 @@ public class GameWorld extends World
         super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
-
+        addObject(sky1, 500, 90);
+        addObject(sky2, 1500, 90);
+        addObject(clouds1, 500, 90);
+        addObject(clouds2, 1500, 90);
+        addObject(trees1, 500, 110);
+        addObject(trees2, 1500, 110);
         createGameWorld();//this method just adds some objects to the world.
     }
     
