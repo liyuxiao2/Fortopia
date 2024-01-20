@@ -141,7 +141,7 @@ public class GameWorld extends World
             addObject(new Ground(), i * groundWidth,600);
         }
         if(counter % 2 == 0){
-            addObject(new GreyPlatform(),515,315);
+            addObject(new GreyPlatform(),515,210);
         }
         addObject(new Runner(), 300, 380);
     }

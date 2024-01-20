@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Obstacles extends Actor
 {
-    private static int speed = 5;
+    private static int speed = 8;
     
     
     /**
