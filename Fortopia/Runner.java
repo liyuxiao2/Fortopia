@@ -13,7 +13,7 @@ public class Runner extends Actor
     private int acceleration = 1;
     private boolean jumping;
     private int jumpStrength = 16;
-    private int speed = 4;
+    private int speed = 1;
     private int direction = 1; // 1 = right and -1 = left
 
     //load the runner images for animation
@@ -41,6 +41,7 @@ public class Runner extends Actor
     public void act() {
         checkKey();
         fall();
+        checkOnPlatforms();
         animate();
         moveR();
     }
@@ -51,6 +52,7 @@ public class Runner extends Actor
             if (keyPressedTime == 0) {
                 //key pressed
                 keyPressedTime = System.currentTimeMillis();
+                Greenfoot.playSound("jump.wav");
             } else {
                 // as key is held down, get time
                 long elapsedTime = System.currentTimeMillis() - keyPressedTime;
@@ -78,6 +80,12 @@ public class Runner extends Actor
             animateR();
         }
     }
+    
+    protected boolean onPlatforms()
+    {                                   //Width= 0 (X) ,Height/2 (Y)- getImage().getHeight()/2, applying to the class Platforms
+        Actor onPlatform = getOneObjectAtOffset(0,getImage().getHeight()/2,Platforms.class);
+        return onPlatform !=null; // returns only if diffent from null
+    }
 
     public void fall()
     {
@@ -99,7 +107,19 @@ public class Runner extends Actor
             vSpeed = 0; // Reset vertical speed
             jumping = false; // Set jumping state to false
         }
+        
+        
+        
 
+    }
+    public void checkOnPlatforms(){
+        //check if the player is on the platform
+        if(onPlatforms()==false)// if not on Platforms enable gravity().
+        {fall();
+        }
+        //need to reset the vSpeed because it would increase to infinite doing multiple jumps.
+        else
+        vSpeed=0;
     }
 
     

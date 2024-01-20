@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GreyPlatform extends MovingPlatforms
 {
-    private GreenfootImage platform = new GreenfootImage("platform.png");
+    private GreenfootImage platform = new GreenfootImage("wood.png");
     
     public void act()
     {
@@ -18,8 +18,7 @@ public class GreyPlatform extends MovingPlatforms
     public GreyPlatform()
     {
         platformSize();
-        setImage("platform.png");
-        //setImage.scale(50,50);
+        setImage("wood.png");
     }
     
 }
