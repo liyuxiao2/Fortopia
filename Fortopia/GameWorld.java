@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
+import java.util.Queue;
+import java.util.LinkedList;
 
 /**
  * This is the game world for the runner game 
@@ -20,6 +22,7 @@ public class GameWorld extends World
     private static int mapCount = 0;
     
     int counter = 0;
+    
     // 20*20, world by blocks is 20*14
     String[][] arrayMap0 =  {{"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
@@ -66,21 +69,25 @@ public class GameWorld extends World
                             {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
                            };
                         
-    String[][][] listOfMaps = {arrayMap0, arrayMap1,arrayMap2, arrayMap3};
+    
+    LinkedList <String[][]> maps = new LinkedList<String[][]>();
+    
+    
+    
+    
 
     
     public void act(){
         counter++;
         if(counter == 120){
             
-            if(mapCount >= listOfMaps.length-1){
+            if(mapCount >= maps.size()-1){
                 counter = 0;
                 mapCount = 0;
-                addObstacles(checkMap());
-                Obstacles.setSpeed();
+                addObstacles(maps.poll());
             }
             else{
-              addObstacles(checkMap());
+              addObstacles(maps.poll());
               mapCount++;
               counter = 0; 
               addObject(new Ground(), 2000, 600);
@@ -100,6 +107,13 @@ public class GameWorld extends World
         
         
         addObject(actCounter, 100, 20);
+        
+        maps.add(arrayMap0);
+        maps.add(arrayMap1);
+        maps.add(arrayMap2);
+        maps.add(arrayMap3);
+        
+        
     }
     
     /**
@@ -137,11 +151,7 @@ public class GameWorld extends World
         }
     }
     
-    //checks which map count the world is at
     
-    public String[][] checkMap(){
-        return listOfMaps[mapCount];
-    }
     
     
     public void addHearts(){
@@ -149,6 +159,11 @@ public class GameWorld extends World
     }
     
     public void stopWorld(){
-        this.stopped();
+        try{
+           Obstacles.setSpeed(0);
+        }
+        catch(NullPointerException e){
+            Greenfoot.setWorld(new WelcomeWorld());
+        }
     }
 }
