@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * 
@@ -42,16 +43,12 @@ public class Runner extends Actor
      * Here you can tell your actor what he has to do.
      */
     public void act() {
-        /**if(endGame()){
-            world.stopWorld();
-        }**/
-        pushBack();
+        //pushBack();
         checkKey();
         fall();
         animate();
         moveR();
         checkBlockPlayer();
-        checkSpikePlayer();
     }
 
     public void checkKey()
@@ -103,10 +100,25 @@ public class Runner extends Actor
             jumping = false; // Set jumping state to false
         }
 
-        Block block = (Block)getOneObjectAtOffset(0, getImage().getHeight() / 2, Block.class);
-        if (block != null) {
-            vSpeed = 0; // Reset vertical speed
-            jumping = false; // Set jumping state to false
+        Block p = (Block)getOneObjectAtOffset(0, getImage().getHeight()/2, Block.class);
+        Block p2 = (Block)getOneObjectAtOffset(getImage().getWidth()/2, (getImage().getHeight())/2, Block.class);
+        Block p3 = (Block)getOneObjectAtOffset(-getImage().getWidth()/2, (getImage().getHeight())/2, Block.class);
+        Block p4 = (Block)getOneObjectAtOffset(0, -(getImage().getHeight())/2, Block.class);
+        Block p5 = (Block)getOneObjectAtOffset(getImage().getWidth()/2, -(getImage().getHeight())/2, Block.class);
+        Block p6 = (Block)getOneObjectAtOffset(-getImage().getWidth()/2, -(getImage().getHeight())/2, Block.class);
+        
+        ArrayList <Block> blocks = new ArrayList<>();
+        blocks.add(p);
+        blocks.add(p2);
+        blocks.add(p3);
+        blocks.add(p4);
+        blocks.add(p5);
+        blocks.add(p6);
+        for(Block x: blocks){
+            if(x != null){
+                vSpeed = 0;
+                jumping = false;
+            }
         }
 
     }
@@ -211,21 +223,38 @@ public class Runner extends Actor
      * 
      */
     public void checkBlockPlayer(){
-        while(isTouching(Block.class)){
+        while(checkHitBlock()){
             setLocation(getX()-Obstacles.getSpeed(), getY());
         }
     }
     
-    public void checkSpikePlayer(){
-        while(isTouching(Block.class)){
-            //world.addHearts();
-        }
-    }
+    
     
     public void pushBack(){
         if(this.getX() < 0){
             setLocation(500,380);
         }
     }
+    
+    
+    public boolean checkHitBlock () {
+        Block p = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, 0, Block.class);
+        Block p2 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, (getImage().getHeight())/2, Block.class);
+        Block p3 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, -((getImage().getHeight())/2), Block.class);
+        
+        ArrayList <Block> peds = new ArrayList<>();
+        
+        peds.add(p);
+        peds.add(p2);
+        peds.add(p3);
+        
+        for(Block x : peds){
+            if ((x != null))
+            {//stops bus from moving
 
+                return true;
+            }
+        }
+        return false;
+    }
 }
