@@ -19,7 +19,7 @@ public class GreyPlatform extends MovingPlatforms
     public GreyPlatform()
     {
         platformSize();
-        setImage("platform.png");
+        //setImage("platform.png");
         //setImage.scale(50,50);
     }
     

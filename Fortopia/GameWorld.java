@@ -15,13 +15,16 @@ import java.util.ArrayList;
 
 public class GameWorld extends World
 {
+    Counter actCounter= new Counter("Heart Counter: ");
+    
     private static int mapCount = 0;
+    
     int counter = 0;
     // 20*20, world by blocks is 20*14
     String[][] arrayMap0 =  {{"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
-                            {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"w","x","x","x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","o"},
@@ -74,12 +77,13 @@ public class GameWorld extends World
                 counter = 0;
                 mapCount = 0;
                 addObstacles(checkMap());
+                Obstacles.setSpeed();
             }
             else{
-              Obstacles.setSpeed();
               addObstacles(checkMap());
               mapCount++;
-              counter = 0;  
+              counter = 0; 
+              addObject(new Ground(), 2000, 600);
             }
         }
     }
@@ -93,6 +97,9 @@ public class GameWorld extends World
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
 
         createGameWorld();//this method just adds some objects to the world.
+        
+        
+        addObject(actCounter, 100, 20);
     }
     
     /**
@@ -134,5 +141,14 @@ public class GameWorld extends World
     
     public String[][] checkMap(){
         return listOfMaps[mapCount];
+    }
+    
+    
+    public void addHearts(){
+        actCounter.add(1);
+    }
+    
+    public void stopWorld(){
+        this.stopped();
     }
 }
