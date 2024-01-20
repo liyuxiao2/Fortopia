@@ -70,6 +70,8 @@ public class GameWorld extends World
     private Trees trees2 = new Trees();
     private Clouds clouds1 = new Clouds();
     private Clouds clouds2 = new Clouds();
+    Class[] paintOrder={ Actor.class };
+    Class[] actorClasses={ Actor.class };
     public void act(){
         counter++;
         if(counter == 120){
@@ -86,6 +88,7 @@ public class GameWorld extends World
               counter = 0;  
             }
         }
+        if(Greenfoot.mouseClicked(null)) Greenfoot.setWorld(new Pause(this, actorClasses, paintOrder));
     }
     
     /**

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Panel
+comment0.text=\r\n\ <h2>Class\ Panel</h2>\r\n\ <b>A\ class\ to\ dislay\ text\ and\ run\ a\ restart\ time\ while\ a\ world\ is\ paused.</b>\r\n\ <p>Displays\ a\ 'game\ paused'\ message\ until\ click\ on;\ then\ gives\ a\ 'restart\ in\ 3...2...1'\ message\ before\ re-activating\ the\ paused\ world.</p>\r\n
+comment1.params=world
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment1.text=\r\n\ Used\ for\ getting\ the\ dimensions\ of\ the\ world\ to\ determine\ size\ of\ image\ to\ create.\r\n\r\n\ @param\ world\ the\ world\ to\ be\ visually\ duplicated\r\n
+comment2.params=
+comment2.target=void\ updateImage()
+comment2.text=\r\n\ Builds\ the\ image\ to\ display.\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Checks\ for\ timer\ start\ and\ then\ runs\ the\ timer.\r\n
+numComments=4
