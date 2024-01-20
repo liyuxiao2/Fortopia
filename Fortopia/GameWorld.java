@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * This is the game world for the runner game 
@@ -62,8 +63,29 @@ public class GameWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
                            };
-                        
-    String[][][] listOfMaps = {arrayMap0, arrayMap1,arrayMap2, arrayMap3};
+    String[][] arrayMap4 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
+                           };
+    String[][] arrayMap5 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
+                           };
+    
+    LinkedList <String[][]> maps = new LinkedList<String[][]>();
+    
     private Sky sky1 = new Sky();
     private Sky sky2 = new Sky();
     private Trees trees1 = new Trees();
@@ -76,14 +98,13 @@ public class GameWorld extends World
         counter++;
         if(counter == 120){
             
-            if(mapCount >= listOfMaps.length-1){
+            if(mapCount >= maps.size()-1){
                 counter = 0;
                 mapCount = 0;
-                addObstacles(checkMap());
+                addObstacles(maps.get(mapCount));
             }
             else{
-              Obstacles.setSpeed();
-              addObstacles(checkMap());
+              addObstacles(maps.get(mapCount));
               mapCount++;
               counter = 0;  
             }
@@ -105,6 +126,10 @@ public class GameWorld extends World
         addObject(trees1, 500, 110);
         addObject(trees2, 1500, 110);
         createGameWorld();//this method just adds some objects to the world.
+        
+        maps.add(arrayMap0);
+        maps.add(arrayMap1);
+        maps.add(arrayMap2);
     }
     
     /**
@@ -142,9 +167,5 @@ public class GameWorld extends World
         }
     }
     
-    //checks which map count the world is at
     
-    public String[][] checkMap(){
-        return listOfMaps[mapCount];
-    }
 }
