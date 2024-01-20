@@ -28,7 +28,10 @@ public class Runner extends Actor
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
-
+    
+    
+    
+    private GameWorld world = (GameWorld)getWorld();
 
     
     public Runner() {
@@ -39,10 +42,16 @@ public class Runner extends Actor
      * Here you can tell your actor what he has to do.
      */
     public void act() {
+        /**if(endGame()){
+            world.stopWorld();
+        }**/
+        pushBack();
         checkKey();
         fall();
         animate();
         moveR();
+        checkBlockPlayer();
+        checkSpikePlayer();
     }
 
     public void checkKey()
@@ -195,6 +204,27 @@ public class Runner extends Actor
 
         if(Greenfoot.isKeyDown("space")) {
             setLocation(getX(), getY() - 3);
+        }
+    }
+    
+    /**
+     * 
+     */
+    public void checkBlockPlayer(){
+        while(isTouching(Block.class)){
+            setLocation(getX()-Obstacles.getSpeed(), getY());
+        }
+    }
+    
+    public void checkSpikePlayer(){
+        while(isTouching(Block.class)){
+            world.addHearts();
+        }
+    }
+    
+    public void pushBack(){
+        if(this.getX() < 0){
+            setLocation(500,380);
         }
     }
 

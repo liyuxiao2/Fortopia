@@ -50,7 +50,11 @@ public class Obstacles extends Actor
         return false;
     }
     
-    public static void setSpeed(){
-        speed++;
+    public static void setSpeed(int x){
+        speed = x;
+    }
+    
+    public static int getSpeed(){
+        return speed;
     }
 }

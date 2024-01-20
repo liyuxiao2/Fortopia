@@ -23,4 +23,7 @@ public class Spike extends Obstacles
         
         
     }
+    
+    
+    //remove hearts act
 }
