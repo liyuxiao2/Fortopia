@@ -42,9 +42,10 @@ public class Runner extends Actor
      * Here you can tell your actor what he has to do.
      */
     public void act() {
-        if(endGame()){
+        /**if(endGame()){
             world.stopWorld();
-        }
+        }**/
+        pushBack();
         checkKey();
         fall();
         animate();
@@ -221,11 +222,10 @@ public class Runner extends Actor
         }
     }
     
-    public boolean endGame(){
+    public void pushBack(){
         if(this.getX() < 0){
-            return true;
+            setLocation(500,380);
         }
-        return false;
     }
 
 }
