@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Runner
-comment0.text=\r\n\ This\ class\ is\ just\ an\ example.\ You\ can\ delete\ it\ or\ change\ the\ code.\r\n\ It's\ not\ necessary\ for\ the\ scrolling\ system.\r\n\ @Wendy\ Luo,\ Liyu\ Xiao\r\n
+comment0.text=\n\ \n\ \n\ \n\ @authors\ Liyu\ Xiao,\ Wendy\ Luo\n\ @version\ January\ 2024\n
 comment1.params=
 comment1.target=Runner()
 comment10.params=
@@ -9,7 +9,7 @@ comment11.params=
 comment11.target=void\ animate()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Here\ you\ can\ tell\ your\ actor\ what\ he\ has\ to\ do.\r\n
+comment2.text=\n\ Here\ you\ can\ tell\ your\ actor\ what\ he\ has\ to\ do.\n
 comment3.params=
 comment3.target=void\ checkKey()
 comment4.params=
@@ -20,6 +20,7 @@ comment6.params=
 comment6.target=void\ checkKeyPress()
 comment7.params=elapsedTime
 comment7.target=int\ calculateJumpHeight(long)
+comment7.text=\n\ Checks\ how\ long\ the\ player\ has\ been\ jumping\n\ \n\ \n\ @param\ elapsedTime\:\ \ How\ long\ the\ user\ has\ been\ holding\ down\ the\ space\ bar\ key\n\ @return\ int\:\ \ \ \ \ \ \ \ \ returns\ the\ final\ jump\ height\ depending\ on\ how\ long\ the\ user\ has\ been\ holding\ down\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ space\ bar\n
 comment8.params=jumpHeight
 comment8.target=void\ jump(int)
 comment9.params=
