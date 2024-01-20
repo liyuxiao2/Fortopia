@@ -43,8 +43,9 @@ public class Runner extends Actor
      * Here you can tell your actor what he has to do.
      */
     public void act() {
-        //pushBack();
+        endGame();
         checkKey();
+        checkOnPlatforms();
         fall();
         animate();
         moveR();
@@ -229,12 +230,7 @@ public class Runner extends Actor
     }
     
     
-    
-    public void pushBack(){
-        if(this.getX() < 0){
-            setLocation(500,380);
-        }
-    }
+
     
     
     public boolean checkHitBlock () {
@@ -257,4 +253,27 @@ public class Runner extends Actor
         }
         return false;
     }
+    
+    public void checkOnPlatforms(){
+        //check if the player is on the platform
+        if(onPlatforms()==false)// if not on Platforms enable gravity().
+        {fall();
+        }
+        //need to reset the vSpeed because it would increase to infinite doing multiple jumps.
+        else
+        vSpeed=0;
+    }
+    
+    public void endGame(){
+        if(this.isAtEdge()){
+            Greenfoot.stop();
+        }
+    }
+    
+    protected boolean onPlatforms()
+    {                                   //Width= 0 (X) ,Height/2 (Y)- getImage().getHeight()/2, applying to the class Platforms
+        Actor onPlatform = getOneObjectAtOffset(0,getImage().getHeight()/2,Platforms.class);
+        return onPlatform !=null; // returns only if diffent from null
+    }
+    
 }
