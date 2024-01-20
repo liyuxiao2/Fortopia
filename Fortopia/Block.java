@@ -19,15 +19,8 @@ public class Block extends Obstacles
     public void act()
     {
         super.act();
-        if(checkHitBlock()){
-            
-        }
     }
     
     
-    
-    //block players movement
-    public void blockPlayer(){
-        
-    }
+
 }

@@ -9,4 +9,6 @@ comment2.target=boolean\ checkHitBlock()
 comment2.text=\n\ Returns\ whether\ the\ block\ has\ hit\ the\ runner\n\ \n\ @return\ boolean\ \ True\ if\ the\ block\ is\ touching\ a\ runner\n
 comment3.params=
 comment3.target=void\ setSpeed()
-numComments=4
+comment4.params=
+comment4.target=int\ getSpeed()
+numComments=5

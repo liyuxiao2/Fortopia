@@ -53,4 +53,8 @@ public class Obstacles extends Actor
     public static void setSpeed(){
         speed++;
     }
+    
+    public static int getSpeed(){
+        return speed;
+    }
 }
