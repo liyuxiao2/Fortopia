@@ -218,7 +218,7 @@ public class Runner extends Actor
     
     public void checkSpikePlayer(){
         while(isTouching(Block.class)){
-            world.addHearts();
+            //world.addHearts();
         }
     }
     
