@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Pause
+comment0.text=\r\n\ <h1>Class\ Pause</h1>\r\n\ <b>This\ class\ can\ be\ used\ as\ a\ support\ class\ to\ <i>visually</i>\ (and\ truly)\ 'pause'\ a\ scenario.</b><br><br>\r\n\ <p>This\ world\ copies\ onto\ its\ background\ image\ the\ background\ of\ the\ world\ supplied\ and\ the\ images\ of\ all\ its\ actors\ as\ they\r\n\ currently\ appear.\ \ If\ the\ world\ supplied\ was\ the\ active\ world,\ then\ not\ only\ is\ the\ state\ of\ the\ world\ paused\ due\ to\ changing\r\n\ worlds,\ but\ it\ will\ visually\ appear\ to\ be\ paused,\ even\ though\ a\ different\ world\ (this\ world)\ is\ active.\ \ You\ can\ either\ \r\n\ modify\ the\ 'act'\ method\ in\ this\ class\ or\ override\ it\ in\ a\ sub-class\ of\ the\ Pause\ class.</p>\r\n
+comment1.params=world\ actorClasses\ paintOrder
+comment1.target=Pause(greenfoot.World,\ java.lang.Class[],\ java.lang.Class[])
+comment1.text=\r\n\ Creates\ a\ background\ image\ of\ the\ current\ visual\ state\ of\ the\ given\ world.\r\n\r\n\ @param\ world\ the\ given\ world\ whose\ visual\ state\ is\ to\ be\ duplicated\ in\ the\ background\ of\ this\ world\r\n\ @param\ actorClasses\ an\ array\ of\ all\ actor\ classes\ in\ the\ given\ world\r\n\ @param\ paintOrder\ an\ array\ of\ actor\ classes\ specifying\ the\ paint\ order\ in\ the\ given\ world\r\n
+comment2.params=actor\ order
+comment2.target=boolean\ isPaintOrderActor(greenfoot.Actor,\ java.lang.Class[])
+comment2.text=\r\n\ Only\ returns\ true\ if\ the\ given\ actor\ is\ of\ a\ class\ that\ is\ specified\ in\ the\ paint\ order;\r\n\r\n\ @param\ actor\ the\ actor\ whose\ class\ is\ to\ be\ checked\ among\ the\ paint\ order\ classes\r\n\ @param\ order\ an\ array\ of\ actor\ classes\ specifying\ the\ paint\ order\r\n\ @return\ the\ state\ of\ the\ class\ of\ the\ given\ actor\ being\ specified\ in\ the\ paint\ order\r\n
+comment3.params=actor
+comment3.target=void\ drawActorImage(greenfoot.Actor)
+comment3.text=\r\n\ Draws\ the\ image\ of\ the\ given\ actor\ onto\ the\ background\ image\ of\ this\ world\ at\ the\ same\ location\ as\ it\ appears\ in\ its\ world\r\n\ \r\n\ @param\ actor\ the\ actor\ whose\ image\ is\ to\ be\ drawn\r\n
+comment4.params=
+comment4.target=void\ act()
+comment4.text=\r\n\ Resumes\ paused\ world\ when\ no\ Panel\ object\ remain\ in\ the\ world\r\n
+comment5.params=actor
+comment5.target=greenfoot.GreenfootImage\ getActorImage(greenfoot.Actor)
+comment5.text=\r\n\ gets\ an\ image\ that\ represents\ the\ current\ visual\ state\ of\ the\ image\ of\ an\ actor\r\n\r\n\ @param\ actor\ the\ actor\ whose\ current\ visual\ image\ state\ is\ to\ be\ represented\ in\ an\ image\ object\r\n\ @return\ the\ image\ the\ represents\ the\ current\ visual\ state\ of\ the\ image\ of\ an\ actor\r\n
+numComments=6
