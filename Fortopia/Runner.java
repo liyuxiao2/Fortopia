@@ -44,8 +44,8 @@ public class Runner extends Actor
     public void act() {
         endGame();
         checkKey();
-        fall();
         checkOnPlatforms();
+        fall();
         animate();
         moveR();
         checkBlockPlayer();
@@ -241,7 +241,7 @@ public class Runner extends Actor
     
     public void endGame(){
         if(this.isAtEdge()){
-            world.stopWorld();
+            Greenfoot.stop();
         }
     }
 
