@@ -10,6 +10,7 @@ public class StoryWorld extends World
 {
     private int storyFrame = 1;
     Button next = new Button();
+    private GreenfootImage image;
     
     /**
      * Constructor for objects of class StoryWorld.
@@ -23,27 +24,37 @@ public class StoryWorld extends World
     
     public void act(){
         frames();
+        if(storyFrame < 4 && Greenfoot.mouseClicked(next)){
+            storyFrame++;
+        } else if(storyFrame == 4 && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+        } else if(storyFrame == 5 && Greenfoot.mouseClicked(next)) {
+            storyFrame++;
+        } else if(storyFrame == 6) {
+            storyFrame++;
+        }
     }
     
     public void frames(){
         if(storyFrame == 1){
-            //setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 699, 600);
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            addObject(next, 850, 600);
         } else if(storyFrame == 2){
-            addObject(next, 699, 600);
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            addObject(next, 850, 600);
         } else if(storyFrame == 3){
-            addObject(next, 699, 600);
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            addObject(next, 850, 600);
         } else if(storyFrame == 4){
-            addObject(next, 699, 600);
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            addObject(next, 850, 600);
         } else if(storyFrame == 5){
-            addObject(next, 699, 600);
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            addObject(next, 850, 600);
         } else if(storyFrame == 6){
-            addObject(next, 699, 600);
+            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
+            addObject(next, 850, 600);
         } else if(storyFrame == 7){
-            addObject(next, 699, 600);
-        } else if(storyFrame == 8){
-            addObject(next, 699, 600);
-        } else if(storyFrame == 9){
             Greenfoot.setWorld(new GameWorld());
         }
     }

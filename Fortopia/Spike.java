@@ -20,7 +20,5 @@ public class Spike extends Obstacles
         {
             //runner.subtractLife();
         }
-        
-        
     }
 }

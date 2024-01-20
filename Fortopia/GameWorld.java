@@ -49,6 +49,15 @@ public class GameWorld extends World
     public void act(){
         counter++;
         
+        //if player gets pushed off screen
+
+        //if it hits spike 3 times it dies
+        
+        if (Greenfoot.isKeyDown("p")){
+            PauseWorld pw = new PauseWorld (this);
+            Greenfoot.setWorld(pw);
+            //will take you to the pause world if you press "p"
+        }
     }
     public GameWorld() {
         super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
