@@ -1,7 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
-import java.util.Queue;
-import java.util.LinkedList;
 
 /**
  * This is the game world for the runner game 
@@ -17,17 +15,13 @@ import java.util.LinkedList;
 
 public class GameWorld extends World
 {
-    Counter actCounter= new Counter("Heart Counter: ");
-    
     private static int mapCount = 0;
-    
     int counter = 0;
-    
     // 20*20, world by blocks is 20*14
     String[][] arrayMap0 =  {{"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o"},
+                            {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"w","x","x","x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","o"},
@@ -68,102 +62,28 @@ public class GameWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
                            };
-                           
-    String[][] arrayMap4 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","o","o","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","o","x","x","o","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","o","x","x","x","x","o","x","x","x","x","x","x","x"},
-                            {"o","o","o","x","x","x","x","o","x","x","x","x","x","x","o","o","x","o","o","o","o"},
-                            {"o","w","o","o","o","o","o","x","x","x","x","x","x","x","x","x","w","x","x","x","x"},
-                           };
-                           
-    String[][] arrayMap5 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
-                           };
-    String[][] arrayMap6 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
-                           };
-    String[][] arrayMap7 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
-                           };
-    String[][] arrayMap8 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
-                           };
-    String[][] arrayMap9 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
-                           };
-                           
-    String[][] arrayMap10 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
-                           };
                         
-    
-    LinkedList <String[][]> maps = new LinkedList<String[][]>();
-    
-    
-    
-    
-
-    
+    String[][][] listOfMaps = {arrayMap0, arrayMap1,arrayMap2, arrayMap3};
+    private Sky sky1 = new Sky();
+    private Sky sky2 = new Sky();
+    private Trees trees1 = new Trees();
+    private Trees trees2 = new Trees();
+    private Clouds clouds1 = new Clouds();
+    private Clouds clouds2 = new Clouds();
     public void act(){
         counter++;
         if(counter == 120){
             
-            if(mapCount >= maps.size()-1){
+            if(mapCount >= listOfMaps.length-1){
                 counter = 0;
                 mapCount = 0;
-                addObstacles(maps.poll());
+                addObstacles(checkMap());
             }
             else{
-              addObstacles(maps.poll());
+              Obstacles.setSpeed();
+              addObstacles(checkMap());
               mapCount++;
-              counter = 0; 
-              addObject(new Ground(), 2000, 600);
+              counter = 0;  
             }
         }
     }
@@ -175,24 +95,13 @@ public class GameWorld extends World
         super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
-
+        addObject(sky1, 500, 90);
+        addObject(sky2, 1500, 90);
+        addObject(clouds1, 500, 90);
+        addObject(clouds2, 1500, 90);
+        addObject(trees1, 500, 110);
+        addObject(trees2, 1500, 110);
         createGameWorld();//this method just adds some objects to the world.
-        
-        
-        addObject(actCounter, 100, 20);
-        
-        maps.add(arrayMap0);
-        maps.add(arrayMap1);
-        maps.add(arrayMap2);
-        maps.add(arrayMap3);
-        maps.add(arrayMap4);
-        maps.add(arrayMap5);
-        maps.add(arrayMap6);
-        maps.add(arrayMap7);
-        maps.add(arrayMap8);
-        maps.add(arrayMap9);
-        maps.add(arrayMap10);
-        
     }
     
     /**
@@ -202,7 +111,7 @@ public class GameWorld extends World
         //initializes the worl
         int groundWidth = 1040; // Width of the ground image
         int groundHeight = new Ground().getImage().getHeight(); // Height of the ground image
-        int numGroundInstances = 10;
+        int numGroundInstances = 20;
         for (int i = 0; i < numGroundInstances; i++) {
             addObject(new Ground(), i * groundWidth,600);
         }
@@ -230,19 +139,9 @@ public class GameWorld extends World
         }
     }
     
+    //checks which map count the world is at
     
-    
-    
-    public void addHearts(){
-        actCounter.add(1);
-    }
-    
-    public void stopWorld(){
-        try{
-           Obstacles.setSpeed(0);
-        }
-        catch(NullPointerException e){
-            Greenfoot.setWorld(new WelcomeWorld());
-        }
+    public String[][] checkMap(){
+        return listOfMaps[mapCount];
     }
 }
