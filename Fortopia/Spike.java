@@ -21,4 +21,7 @@ public class Spike extends Obstacles
             //runner.subtractLife();
         }
     }
+    
+    
+    //remove hearts act
 }
