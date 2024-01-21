@@ -10,9 +10,9 @@ public class Block extends Obstacles
 {
     
     
-    public Block()
+    public Block(int level)
     {
-        setImage("block.png");
+        setImage("block" + level + ".png");
 
     }
     

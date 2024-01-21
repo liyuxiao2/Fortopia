@@ -543,16 +543,17 @@ public class GameWorld extends World
     LinkedList <String[][]> maps = new LinkedList<String[][]>();
     Class[] paintOrder={ Actor.class };
     Class[] actorClasses={ Actor.class };
+    private int level;
     public void act(){
         counter++;
         if(mapCount > maps.size()-1){
             mapCount = 0;
-            addObstacles(maps.get(mapCount));
+            addObstacles(maps.get(mapCount), level);
             mapCount++;
             counter = 0;
         }
         if(counter == 120){
-            addObstacles(maps.get(mapCount));
+            addObstacles(maps.get(mapCount), level);
             mapCount++;
             counter = 0;
         }
@@ -567,7 +568,8 @@ public class GameWorld extends World
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
         //if(mouse.clicked
-        createGameWorld(3);//this method just adds some objects to the world.
+        this.level = 4;//ONCE MENU WORKS THIS WILL CHANGE TO this.level = level; AND THERE WILL BE A PARAMETER IN THIS CONSTRUCTOR FOR THAT
+        createGameWorld(level);//this method just adds some objects to the world.
 
         maps.add(arrayMap0);
         maps.add(arrayMap1);
@@ -663,22 +665,22 @@ public class GameWorld extends World
         }
     }
 
-    public void addObstacles(String[][] x){
+    public void addObstacles(String[][] x, int level){
         //adds the obstacles according to the 2d array
         for (int i = 0; i < x.length; i++) {
             for(int j = 0; j < x[i].length; j++){
                 //checks which obstacles to add
                 if(x[i][j].equals("o")){
-                    addObject(new Block(), 1000+j*50, i*50);
+                    addObject(new Block(level), 1000+j*50, i*50);
                 }
                 else if(x[i][j].equals("w")){
-                    addObject(new Spike(), 1000+j*50, i*50);
+                    addObject(new Spike(level), 1000+j*50, i*50);
                 }
                 else if(x[i][j].equals("r")){
-                    addObject(new UpsideDownSpike(), 1000+j*50, i*50);
+                    addObject(new UpsideDownSpike(level), 1000+j*50, i*50);
                 }
                 else if(x[i][j].equals("e")){
-                    addObject(new EndBorder(), 1000+j*50, i*50);
+                    addObject(new EndBorder(level), 1000+j*50, i*50);
                 }
             }
         }

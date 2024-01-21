@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spike extends Obstacles
 {
-    public Spike()
+    public Spike(int level)
     {
-        setImage("spike.png");
+        setImage("spike" + level + ".png");
     }
     public void act()
     {

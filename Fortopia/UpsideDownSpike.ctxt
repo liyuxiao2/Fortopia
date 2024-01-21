@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=UpsideDownSpike
-comment0.text=\n\ \n\ \n\ \n@author\ Gisele\ Huang\n@version\ January\ 2024\n
-comment1.params=
-comment1.target=UpsideDownSpike()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ UpsideDownSpike\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ \r\n\ \r\n\ \r\n@author\ Gisele\ Huang\r\n@version\ January\ 2024\r\n
+comment1.params=level
+comment1.target=UpsideDownSpike(int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ UpsideDownSpike\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3
