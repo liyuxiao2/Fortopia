@@ -3,12 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Coins here.
  * 
- * @author (your name) 
+ * @Wendy Luo
  * @version (a version number or a date)
  */
 public class Coins extends Consumables
 {
-    int collected =0;
+    static int collected =0;
     int speed = 5;
     public void act()
     {
@@ -25,4 +25,5 @@ public class Coins extends Consumables
             collected++;
         }
     }
+    
 }

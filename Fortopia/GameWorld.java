@@ -18,6 +18,8 @@ public class GameWorld extends World
 {
     private static int mapCount = 0;
     int counter = 0;
+    
+
     // 20*20, world by blocks is 20*14
     String[][] arrayMap0 =  {{"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
@@ -130,6 +132,20 @@ public class GameWorld extends World
         maps.add(arrayMap0);
         maps.add(arrayMap1);
         maps.add(arrayMap2);
+    }
+    
+    public GameWorld(String savedFile){
+        super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
+        GameInfo.loadCoins(savedFile);
+        GameInfo.loadCompletedWorlds(savedFile);
+        
+        addObject(sky1, 500, 90);
+        addObject(sky2, 1500, 90);
+        addObject(clouds1, 500, 90);
+        addObject(clouds2, 1500, 90);
+        addObject(trees1, 500, 110);
+        addObject(trees2, 1500, 110);
+        createGameWorld();//this method just adds some objects to the world.
     }
     
     /**
