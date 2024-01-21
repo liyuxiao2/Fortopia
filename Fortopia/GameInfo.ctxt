@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=GameInfo
+comment0.text=\n\ Write\ a\ description\ of\ class\ GameInfo\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=GameInfo()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameInfo\n
+comment2.params=fileName
+comment2.target=void\ loadCoins(java.lang.String)
+comment3.params=fileName
+comment3.target=void\ loadCompletedWorlds(java.lang.String)
+comment4.params=
+comment4.target=void\ saveGame()
+numComments=5
