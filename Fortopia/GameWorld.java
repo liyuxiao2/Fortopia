@@ -567,7 +567,7 @@ public class GameWorld extends World
         //if you want to limitate the scrolling world you have to use this constructor:
         //super(600, 400, 1, scrollingWidth, scrollingHeight);
         //if(mouse.clicked
-        createGameWorld(1);//this method just adds some objects to the world.
+        createGameWorld(3);//this method just adds some objects to the world.
 
         maps.add(arrayMap0);
         maps.add(arrayMap1);
@@ -595,16 +595,16 @@ public class GameWorld extends World
         addObject(new Trees(level), 1500, 110);
         //initializes the world
         int groundWidth = 1040; // Width of the ground image
-        int groundHeight = new Ground().getImage().getHeight(); // Height of the ground image
+        int groundHeight = new Ground(level).getImage().getHeight(); // Height of the ground image
         int numGroundInstances = 22;
         for (int i = 0; i < numGroundInstances; i++) {
-            addObject(new Ground(), i * groundWidth,600);
+            addObject(new Ground(level), i * groundWidth,600);
         }
         if(counter % 2 == 0){
             addObject(new GreyPlatform(),515,210);
         }
         addObject(new Runner(), 300, 380);
-        addObject(new HorryfyingMonkeys(), 500, 350);
+        addObject(new HorryfyingMonkeys(level), 500, 350);
         if(level == 1){
             maps.add(arrayMap0);
             maps.add(arrayMap1);
