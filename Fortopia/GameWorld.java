@@ -18,29 +18,27 @@ public class GameWorld extends World
 {
     private static int mapCount = 0;
     int counter = 0;
-    
-
     // 20*20, world by blocks is 20*14
     String[][] arrayMap0 =  {{"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                             {"x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","o"},
-                            {"x","x","x","c","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","c","x","x","x","x","x","x","x"},
-                            {"w","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","c","x","h","x","x"},
-                            {"o","x","h","x","x","x","x","o","x","h","x","o","x","x","h","x","x","x","x","x","o"},
-                            {"o","x","x","c","h","x","x","o","x","x","h","o","x","x","x","h","h","x","x","x","o"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"w","x","x","x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","o"},
+                            {"o","x","x","x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","o"},
+                            {"o","x","x","x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","o"},
                            };
                            
     String[][] arrayMap1 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","c","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","c","x","x","x","x","x","x","x","x","x","x","x","w"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","w"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o"},
-                            {"x","h","c","x","c","x","x","h","x","x","c","x","x","h","x","x","x","x","c","x","o"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o"},
                            };
                            
     
@@ -48,11 +46,11 @@ public class GameWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","c","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","o","c","x","x","x","x","x","x","x","x","x","x","x","x","x","c","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","w","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","c"},
-                            {"x","c","x","x","x","x","c","x","x","o","x","x","x","x","c","x","c","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x"},
                            };
                            
     String[][] arrayMap3 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
@@ -65,15 +63,15 @@ public class GameWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
                            };
-    String[][] arrayMap4 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
+    String[][] arrayMap4 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","o","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","o","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","o","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","o","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","o","o","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","r","r","r","x","x","x","x"},
+                            {"x","x","o","o","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","o","o","o","o","x","x","o","o","o","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"o","o","o","o","o","o","o","o","o","o","o","x","x","x","x","x","x","x","o","x","x"},
                            };
     String[][] arrayMap5 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
@@ -83,9 +81,74 @@ public class GameWorld extends World
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
                             {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-                            {"x","x","x","w","x","x","x","w","x","w","x","x","x","x","x","x","","x","w","x","x"},
+                            {"x","x","x","x","x","x","x","w","x","x","x","x","x","x","x","x","x","x","w","x","x"},
                            };
-    
+    String[][] arrayMap6 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","w","x","x","x","x","x","w","x","x","x","x","x","x","w","x","x","x","x","x","x"},
+                           };
+                           
+    String[][] arrayMap7 =  {{"x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","r","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","w","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","o","x","x","x","w","x","w","x","x","x","x","x","x","o","o","o","x","x"},
+                           };
+    String[][] arrayMap8 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x","x","x","x"},
+                            {"x","o","o","o","x","x","x","x","x","x","w","o","x","x","x","x","o","x","x","x","x"},
+                           };
+                           
+    String[][] arrayMap9 =  {
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                            {"x","w","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","o","x","x","x"},
+                            {"x","o","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","o","x","x","x"},
+                            {"x","o","x","x","x","x","x","o","x","x","x","o","o","o","x","x","x","o","x","x","x"},
+                           };
+                           
+    String[][] arrayMap10 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","w","x","e"},
+                           };
+                           
+    String[][] arrayMap11 =  {{"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                              {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
+                           };
+                           
     LinkedList <String[][]> maps = new LinkedList<String[][]>();
     
     private Sky sky1 = new Sky();
@@ -98,18 +161,16 @@ public class GameWorld extends World
     Class[] actorClasses={ Actor.class };
     public void act(){
         counter++;
+        if(mapCount > maps.size()-1){
+            mapCount = 0;
+            addObstacles(maps.get(mapCount));
+            mapCount++;
+            counter = 0;
+        }
         if(counter == 120){
-            
-            if(mapCount >= maps.size()-1){
-                counter = 0;
-                mapCount = 0;
-                addObstacles(maps.get(mapCount));
-            }
-            else{
               addObstacles(maps.get(mapCount));
               mapCount++;
-              counter = 0;  
-            }
+              counter = 0;
         }
         if(Greenfoot.mouseClicked(null)) Greenfoot.setWorld(new Pause(this, actorClasses, paintOrder));
     }
@@ -129,23 +190,9 @@ public class GameWorld extends World
         addObject(trees2, 1500, 110);
         createGameWorld();//this method just adds some objects to the world.
         
-        maps.add(arrayMap0);
-        maps.add(arrayMap1);
-        maps.add(arrayMap2);
-    }
-    
-    public GameWorld(String savedFile){
-        super(1000, 700, 1,false);//creates an infinite scrolling world with a screen size of 600 x 400;
-        GameInfo.loadCoins(savedFile);
-        GameInfo.loadCompletedWorlds(savedFile);
         
-        addObject(sky1, 500, 90);
-        addObject(sky2, 1500, 90);
-        addObject(clouds1, 500, 90);
-        addObject(clouds2, 1500, 90);
-        addObject(trees1, 500, 110);
-        addObject(trees2, 1500, 110);
-        createGameWorld();//this method just adds some objects to the world.
+        maps.add(arrayMap10);
+        maps.add(arrayMap11);
     }
     
     /**
@@ -155,7 +202,7 @@ public class GameWorld extends World
         //initializes the worl
         int groundWidth = 1040; // Width of the ground image
         int groundHeight = new Ground().getImage().getHeight(); // Height of the ground image
-        int numGroundInstances = 20;
+        int numGroundInstances = 22;
         for (int i = 0; i < numGroundInstances; i++) {
             addObject(new Ground(), i * groundWidth,600);
         }
@@ -178,10 +225,9 @@ public class GameWorld extends World
                 }
                 else if(x[i][j].equals("r")){
                     addObject(new UpsideDownSpike(), 1000+j*50, i*50);
-                }else if(x[i][j].equals("c")){
-                    addObject(new Coins(), 1000+j*50, i*50);
-                }else if(x[i][j].equals("h")){
-                    addObject(new Hearts(), 1000+j*50, i*50);
+                }
+                else if(x[i][j].equals("e")){
+                    addObject(new EndBorder(), 1000+j*50, i*50);
                 }
             }
         }

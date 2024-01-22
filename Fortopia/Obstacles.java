@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *@author Gisele Huang,Liyu Xiao
  *@version January 2024
  */
-public class Obstacles extends Actor
+public class Obstacles extends Movable
 {
     private static int speed = 8;
     
@@ -18,7 +18,7 @@ public class Obstacles extends Actor
      */
     public void act()
     {
-        setLocation(getX() - speed, getY());
+        super.act();
         checkHitBlock();
     }
     
@@ -41,20 +41,11 @@ public class Obstacles extends Actor
         for(Runner x : runner){
             if ((x != null))
             {
-        
-            
-    
+                
                 return true;
             }
         }
         return false;
     }
     
-    public static void setSpeed(int x){
-        speed = x;
-    }
-    
-    public static int getSpeed(){
-        return speed;
-    }
 }

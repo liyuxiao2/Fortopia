@@ -29,16 +29,21 @@ public class Runner extends Actor
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
-
+    
+    
     
     private GameWorld world = (GameWorld)getWorld();
 
+    
     public Runner() {
+
     }
+
     /**
      * Here you can tell your actor what he has to do.
      */
     public void act() {
+        pushBack();
         endGame();
         checkKey();
         checkOnPlatforms();
@@ -46,16 +51,7 @@ public class Runner extends Actor
         animate();
         moveR();
         checkBlockPlayer();
-    }
-
-    public void checkOnPlatforms(){
-        //check if the player is on the platform
-        if(onPlatforms()==false)// if not on Platforms enable gravity().
-        {fall();
-        }
-        //need to reset the vSpeed because it would increase to infinite doing multiple jumps.
-        else
-            vSpeed=0;
+        checkDoorPlayer();
     }
 
     public void checkKey()
@@ -76,13 +72,8 @@ public class Runner extends Actor
             keyPressedTime = 0;
             jumping = false;
         }
-        /**old jump key
-         * if(Greenfoot.isKeyDown("space") && jumping == false)
-        {
-        jump();
-        if(checkKeyPress()
-        } */
     }
+
 
     public void moveR(){
         if(animationCounter % 4 == 0)
@@ -106,13 +97,13 @@ public class Runner extends Actor
             jumping = false; // Set jumping state to false
         }
 
-        Block p = (Block)getOneObjectAtOffset(0, getImage().getHeight()/2, Block.class);
-        Block p2 = (Block)getOneObjectAtOffset(getImage().getWidth()/2, (getImage().getHeight())/2, Block.class);
-        Block p3 = (Block)getOneObjectAtOffset(-getImage().getWidth()/2, (getImage().getHeight())/2, Block.class);
+        Block p = (Block)getOneObjectAtOffset(0, getImage().getHeight()/2+1, Block.class);
+        Block p2 = (Block)getOneObjectAtOffset((getImage().getWidth()/2)+1, ((getImage().getHeight())/2)+1, Block.class);
+        Block p3 = (Block)getOneObjectAtOffset(-getImage().getWidth()/2, ((getImage().getHeight())/2) + 1, Block.class);
         Block p4 = (Block)getOneObjectAtOffset(0, -(getImage().getHeight())/2, Block.class);
-        Block p5 = (Block)getOneObjectAtOffset(getImage().getWidth()/2, -(getImage().getHeight())/2, Block.class);
+        Block p5 = (Block)getOneObjectAtOffset((getImage().getWidth()/2) + 1, -(getImage().getHeight())/2, Block.class);
         Block p6 = (Block)getOneObjectAtOffset(-getImage().getWidth()/2, -(getImage().getHeight())/2, Block.class);
-
+        
         ArrayList <Block> blocks = new ArrayList<>();
         blocks.add(p);
         blocks.add(p2);
@@ -129,6 +120,7 @@ public class Runner extends Actor
 
     }
 
+    
     private void checkKeyPress() {
         if (Greenfoot.isKeyDown("space")) {
             if (keyPressedTime == 0) {
@@ -144,7 +136,8 @@ public class Runner extends Actor
             keyPressedTime = 0;
         }
     }
-
+    
+    
     /**
      * Checks how long the player has been jumping
      * 
@@ -222,7 +215,7 @@ public class Runner extends Actor
             setLocation(getX(), getY() - 3);
         }
     }
-
+    
     /**
      * 
      */
@@ -231,20 +224,21 @@ public class Runner extends Actor
             setLocation(getX()-Obstacles.getSpeed(), getY());
         }
     }
+    
+    
 
-
+    
     
     public boolean checkHitBlock () {
         Block p = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, 0, Block.class);
-        Block p2 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, (getImage().getHeight())/2, Block.class);
-        Block p3 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, -((getImage().getHeight())/2), Block.class);
-
+        Block p2 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, ((getImage().getHeight())/2)-10, Block.class);
+        
+        
         ArrayList <Block> peds = new ArrayList<>();
-
+        
         peds.add(p);
         peds.add(p2);
-        peds.add(p3);
-
+        
         for(Block x : peds){
             if ((x != null))
             {//stops bus from moving
@@ -254,17 +248,40 @@ public class Runner extends Actor
         }
         return false;
     }
-
+    
+    public void checkOnPlatforms(){
+        //check if the player is on the platform
+        if(onPlatforms()==false)// if not on Platforms enable gravity().
+        {fall();
+        }
+        //need to reset the vSpeed because it would increase to infinite doing multiple jumps.
+        else
+        vSpeed=0;
+    }
+    
     public void endGame(){
-        if(this.isAtEdge()){
+        if(this.getX() < 0){
             Greenfoot.stop();
         }
     }
-
+    
     protected boolean onPlatforms()
     {                                   //Width= 0 (X) ,Height/2 (Y)- getImage().getHeight()/2, applying to the class Platforms
         Actor onPlatform = getOneObjectAtOffset(0,getImage().getHeight()/2,Platforms.class);
         return onPlatform !=null; // returns only if diffent from null
     }
-
+    
+    public void checkDoorPlayer(){
+        if(this.isTouching(EndBorder.class)){
+            Greenfoot.stop();
+        }
+    }
+    
+    
+    public void pushBack(){
+        if(getX() != 300){
+            setLocation(getX()+1, getY());
+        }
+    }
+    
 }
