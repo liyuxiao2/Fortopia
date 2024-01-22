@@ -14,9 +14,9 @@ public class UpsideDownSpike extends Obstacles
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public UpsideDownSpike(){
+    public UpsideDownSpike(int level){
         
-        GreenfootImage spike = new GreenfootImage("spike.png");
+        GreenfootImage spike = new GreenfootImage("spike" + level + ".png");
         
         spike.rotate(180);
         

@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Clouds extends Background
 {
-    public Clouds()
+    public Clouds(int level)
     {
-        image = new GreenfootImage("clouds.png");
+        image = new GreenfootImage("clouds" + level + ".png");
+        image.setTransparency(200);
         scrollSpeed = 2;
         setImage(image);
     }

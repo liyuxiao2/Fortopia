@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Trees extends Background
 {
-    public Trees()
+    public Trees(int level)
     {
-        image = new GreenfootImage("trees.png");
+        image = new GreenfootImage("trees" + level + ".png");
         image.setTransparency(150);
         scrollSpeed = 3;
         setImage(image);

@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sky extends Background
 {
-    public Sky()
+    public Sky(int level)
     {
-        image = new GreenfootImage("sky.png");
+        image = new GreenfootImage("sky" + level + ".png");
         scrollSpeed = 1;
         setImage(image);
     }

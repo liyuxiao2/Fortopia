@@ -1,16 +1,14 @@
 #BlueJ class context
 comment0.target=GameWorld
-comment0.text=\n\ This\ is\ the\ game\ world\ for\ the\ runner\ game\ \n\ \n\ \n\ \n\ \n\ @authors\ Liyu\ Xiao,\ Natalie\ Huang,\ Gisele\ Huang,\ Wendy\ Luo\n\ @version\ January\ 2024\n\ \n
+comment0.text=\r\n\ This\ is\ the\ game\ world\ for\ the\ runner\ game\ \r\n\ \r\n\ \r\n\ \r\n\ \r\n\ @authors\ Liyu\ Xiao,\ Natalie\ Huang,\ Gisele\ Huang,\ Wendy\ Luo\r\n\ @version\ January\ 2024\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=GameWorld()
-comment2.text=\n\ Constructor\ for\ the\ game\ world\n
-comment3.params=savedFile
-comment3.target=GameWorld(java.lang.String)
-comment4.params=
-comment4.target=void\ createGameWorld()
-comment4.text=\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\n
-comment5.params=x
-comment5.target=void\ addObstacles(java.lang.String[][])
-numComments=6
+comment2.text=\r\n\ Constructor\ for\ the\ game\ world\r\n
+comment3.params=level
+comment3.target=void\ createGameWorld(int)
+comment3.text=\r\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\r\n
+comment4.params=x\ level
+comment4.target=void\ addObstacles(java.lang.String[][],\ int)
+numComments=5

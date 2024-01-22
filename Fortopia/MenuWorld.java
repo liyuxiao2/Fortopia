@@ -33,14 +33,14 @@ public class MenuWorld extends World {
     }
     public void prepare(){
         addObject(button,490,230);
-        //Label labelW = new Label("Wendy's",30);
-        //addObject (labelW, 830, 40);
-        //Label labelY = new Label("Yuli",30);
-        //addObject (labelY, 630, 40);
-        //Label labelN = new Label("Neo",30);
-        //addObject (labelN, 530, 40);
-        //Label labelR = new Label("Yuli",30);
-        //addObject (labelR, 430, 40);
+        Label labelW = new Label("Wendy's",30);
+        addObject (labelW, 830, 40);
+        Label labelY = new Label("Yuli",30);
+        addObject (labelY, 630, 40);
+        Label labelN = new Label("Neo",30);
+        addObject (labelN, 530, 40);
+        Label labelR = new Label("Yuli",30);
+        addObject (labelR, 430, 40);
     }
     
 }
