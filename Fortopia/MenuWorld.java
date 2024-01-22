@@ -32,8 +32,7 @@ public class MenuWorld extends World {
         }
     }
     public void prepare(){
-        addObject(button,490,230);d
-        ad
+        addObject(button,490,230);
         Label labelW = new Label("Wendy's",30);
         addObject (labelW, 830, 40);
         Label labelY = new Label("Yuli",30);
