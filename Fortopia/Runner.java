@@ -225,10 +225,6 @@ public class Runner extends Actor
         }
     }
     
-    
-
-    
-    
     public boolean checkHitBlock () {
         Block p = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, 0, Block.class);
         Block p2 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, ((getImage().getHeight())/2)-10, Block.class);
@@ -259,11 +255,6 @@ public class Runner extends Actor
         vSpeed=0;
     }
     
-    public void endGame(){
-        if(this.getX() < 0){
-            Greenfoot.stop();
-        }
-    }
     
     protected boolean onPlatforms()
     {                                   //Width= 0 (X) ,Height/2 (Y)- getImage().getHeight()/2, applying to the class Platforms
@@ -271,12 +262,15 @@ public class Runner extends Actor
         return onPlatform !=null; // returns only if diffent from null
     }
     
+    
+    
     public void checkDoorPlayer(){
         if(this.isTouching(EndBorder.class)){
             Greenfoot.stop();
         }
     }
     
+
     
     public void pushBack(){
         if(getX() != 300){
@@ -284,4 +278,10 @@ public class Runner extends Actor
         }
     }
     
+    
+    public void endGame(){
+        if(this.getX() < 0){
+            Greenfoot.stop();
+        }
+    }
 }
