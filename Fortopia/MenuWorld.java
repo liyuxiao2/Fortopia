@@ -24,12 +24,14 @@ public class MenuWorld extends World {
             
             try{
                 Scanner fileScanner = new Scanner(new File(fileName));
-                Greenfoot.setWorld(new GameWorld());
+                //Greenfoot.setWorld(new GameWorld());
             }
             catch(FileNotFoundException e){
-                Greenfoot.setWorld(new GameWorld());
+                //Greenfoot.setWorld(new GameWorld());
             }
         }
+        //else if(Greenfoot.mouseClicked(worldmap1)){
+        
     }
     public void prepare(){
         addObject(button,490,230);

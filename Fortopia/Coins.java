@@ -9,21 +9,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Coins extends Consumables
 {
     static int collected =0;
-    int speed = 5;
+    
+    
+    
+    
     public void act()
     {
-        moveAround();
+        super.act();
         remove();
     }
-    public void moveAround(){
-        setLocation(getX() - speed, getY());
-    }
+    
+    
     public void remove(){
         if(isTouching(Runner.class)){
             GameWorld gw = (GameWorld)getWorld();
             gw.removeObject(this);
             collected++;
+            
         }
     }
+    
+    
+    public static int getCoins(){
+        return collected;
+    }
+    
     
 }
