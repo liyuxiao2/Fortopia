@@ -10,7 +10,8 @@ public class Clouds extends Background
 {
     public Clouds(int level)
     {
-        image = new GreenfootImage("clouds1.png");
+        image = new GreenfootImage("clouds" + level + ".png");
+        image.setTransparency(200);
         scrollSpeed = 2;
         setImage(image);
     }

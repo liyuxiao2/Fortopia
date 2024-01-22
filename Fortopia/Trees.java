@@ -10,7 +10,7 @@ public class Trees extends Background
 {
     public Trees(int level)
     {
-        image = new GreenfootImage("trees1.png");
+        image = new GreenfootImage("trees" + level + ".png");
         image.setTransparency(150);
         scrollSpeed = 3;
         setImage(image);

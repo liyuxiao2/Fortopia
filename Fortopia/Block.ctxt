@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Block
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Block\ here.\r\n\ \r\n@author\ Gisele\ Huang\r\n@version\ January\ 2024\r\n
-comment1.params=
-comment1.target=Block()
+comment0.text=\n\ Write\ a\ description\ of\ class\ Block\ here.\n\ \n@author\ Gisele\ Huang\n@version\ January\ 2024\n
+comment1.params=level
+comment1.target=Block(int)
 comment2.params=
 comment2.target=void\ act()
 numComments=3

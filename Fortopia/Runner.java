@@ -50,8 +50,8 @@ public class Runner extends Actor
         fall();
         animate();
         moveR();
-        //checkBlockPlayer();
-        //checkDoorPlayer();
+        checkBlockPlayer();
+        checkDoorPlayer();
     }
 
     public void checkKey()

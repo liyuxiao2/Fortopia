@@ -10,7 +10,7 @@ public class Sky extends Background
 {
     public Sky(int level)
     {
-        image = new GreenfootImage("sky1.png");
+        image = new GreenfootImage("sky" + level + ".png");
         scrollSpeed = 1;
         setImage(image);
     }

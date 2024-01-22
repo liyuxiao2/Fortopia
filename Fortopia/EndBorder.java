@@ -14,7 +14,7 @@ public class EndBorder extends Movable
         super.act();
     }
     
-    public EndBorder(){
+    public EndBorder(int level){
         GreenfootImage door = new GreenfootImage("door.png");
         door.scale(50,50);
         setImage(door);

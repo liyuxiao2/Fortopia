@@ -10,7 +10,7 @@ public class GreyPlatform extends MovingPlatforms
 {
     private GreenfootImage platform = new GreenfootImage("wood.png");
     
-    public void act()
+    public void act(int level)
     {
         setImage(platform);
         movingPlatforms(111.111);
