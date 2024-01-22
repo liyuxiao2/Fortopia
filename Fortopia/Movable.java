@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Movable extends Actor
 {
-    private static int speed = 8;
+    private static int speed = 5;
     
     
     public void act()
