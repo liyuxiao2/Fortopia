@@ -15,4 +15,10 @@ public class Trees extends Background
         scrollSpeed = 3;
         setImage(image);
     }
+    public Trees()
+    {
+        image = new GreenfootImage("menutrees.png");
+        scrollSpeed = 3;
+        setImage(image);
+    }
 }

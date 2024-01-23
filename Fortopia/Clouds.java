@@ -15,4 +15,10 @@ public class Clouds extends Background
         scrollSpeed = 2;
         setImage(image);
     }
+    public Clouds()
+    {
+        image = new GreenfootImage("menuclouds.png");
+        scrollSpeed = 2;
+        setImage(image);
+    }
 }
