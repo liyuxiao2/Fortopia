@@ -17,6 +17,7 @@ public class Hearts extends Consumables
     }
     
     public Hearts(int level){
+        collected = 3;
         setImage("heart" + level + ".png");
     }
     
