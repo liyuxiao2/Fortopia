@@ -228,14 +228,13 @@ public class Runner extends Actor
     
     
     public boolean checkHitSpike () {
-        Spike p = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, 0, Spike.class);
-        Spike p2 = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, ((getImage().getHeight())/2), Spike.class);
+        Spike p = (Spike)getOneObjectAtOffset(0, 0, Spike.class);
         
         
         ArrayList <Spike> peds = new ArrayList<>();
         
         peds.add(p);
-        peds.add(p2);
+        
         
         for(Spike x : peds){
             if ((x != null))
