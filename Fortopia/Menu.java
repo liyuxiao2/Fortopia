@@ -1,4 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.File;
 
 /**
  * Write a description of class tempmenu here.
@@ -119,6 +122,8 @@ class Save extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
+    
+    private static boolean [] mapCompletion = {false, false, false, false};
     public Save()
     {
         idle = new GreenfootImage("save.png");
@@ -128,14 +133,19 @@ class Save extends Actor
     public void act()
     {
         hovering();
-        if (Greenfoot.mouseClicked(this)) {
-            //add
+        if(Greenfoot.mouseClicked(this)){
+            GameInfo.saveGame(mapCompletion);
         }
-    }
+      
+        }
     protected void hovering()
     {
         if (Greenfoot.mouseMoved(this))setImage(hovered);
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
+    }
+    
+    public static void updateMapCompletion(int x){
+        mapCompletion[x] = true;
     }
 }
 class Load extends Actor
@@ -152,7 +162,13 @@ class Load extends Actor
     {
         hovering();
         if (Greenfoot.mouseClicked(this)) {
-            //add
+            Scanner scan = new Scanner(System.in);
+            System.out.println("enter your file name");
+            
+            String fileName = scan.nextLine();
+            
+            GameInfo.loadCompletedWorlds(fileName);
+            GameInfo.loadCoins(fileName);
         }
     }
     protected void hovering()

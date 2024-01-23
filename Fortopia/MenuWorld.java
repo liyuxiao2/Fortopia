@@ -21,7 +21,6 @@ public class MenuWorld extends World {
         super(1000, 700, 1);
     }
     public void act(){
-        prepare();
         if(Greenfoot.mouseClicked(button)){
             Scanner scan = new Scanner(System.in);
             System.out.println("enter your file name");
@@ -39,14 +38,7 @@ public class MenuWorld extends World {
         //else if(Greenfoot.mouseClicked(worldmap1)){
         
     }
-    public void prepare(){
-        addObject(button,800,80);
-        addObject(neo,100,330);
-        addObject(normal,100,150);
-        addObject(wendy,450,330);
-        addObject(yuli,450,150);
-        addObject(yuliI,450,200);
-    }
+   
     
 }
 
