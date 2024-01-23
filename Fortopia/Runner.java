@@ -18,14 +18,10 @@ public class Runner extends Actor
     private int direction = 1; // 1 = right and -1 = left
 
     //load the runner images for animation
-    private GreenfootImage run1r = new GreenfootImage("run1r.png");
-    private GreenfootImage run2r = new GreenfootImage("run2r.png");
-    private GreenfootImage run3r = new GreenfootImage("run3r.png");
-    private GreenfootImage run4r = new GreenfootImage("run4r.png");
-    private GreenfootImage run1l = new GreenfootImage("run1l.png");
-    private GreenfootImage run2l = new GreenfootImage("run2l.png");
-    private GreenfootImage run3l = new GreenfootImage("run3l.png");
-    private GreenfootImage run4l = new GreenfootImage("run4l.png");
+    private GreenfootImage run1r;
+    private GreenfootImage run2r;
+    private GreenfootImage run3r;
+    private GreenfootImage run4r;
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
@@ -36,7 +32,10 @@ public class Runner extends Actor
 
     
     public Runner() {
-
+        run1r = new GreenfootImage("3runr1.png");
+        run2r = new GreenfootImage("3runr2.png");
+        run3r = new GreenfootImage("3runr3.png");
+        run4r = new GreenfootImage("3runr4.png");
     }
 
     /**
@@ -185,27 +184,6 @@ public class Runner extends Actor
         frame++;
     }
 
-    public void animateL(){
-        if(frame == 1)
-        {
-            setImage(run1l);
-        }
-        else if(frame == 2)
-        {
-            setImage(run2l);
-        }
-        else if(frame == 3)
-        {
-            setImage(run3l);
-        }
-        else if(frame == 4)
-        {
-            setImage(run4l);
-            frame = 1;
-            return;
-        }
-        frame++;
-    }
     //runner falling down after jumping
     public void animate() {
         // Add any additional animation logic here
