@@ -119,24 +119,28 @@ class Save extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
+    private boolean [] mapCompletion = {false,false,false,false};
     public Save()
     {
         idle = new GreenfootImage("save.png");
         hovered = new GreenfootImage("pressedsave.png");
         setImage(idle);
     }
+    
     public void act()
     {
         hovering();
         if (Greenfoot.mouseClicked(this)) {
-            //add
+            GameInfo.saveGame(mapCompletion);
         }
     }
+    
     protected void hovering()
     {
         if (Greenfoot.mouseMoved(this))setImage(hovered);
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
     }
+    
 }
 class Load extends Actor
 {
