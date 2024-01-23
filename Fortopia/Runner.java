@@ -18,10 +18,10 @@ public class Runner extends Actor
     private int direction = 1; // 1 = right and -1 = left
 
     //load the runner images for animation
-    private GreenfootImage run1r;
-    private GreenfootImage run2r;
-    private GreenfootImage run3r;
-    private GreenfootImage run4r;
+    private GreenfootImage run1;
+    private GreenfootImage run2;
+    private GreenfootImage run3;
+    private GreenfootImage run4;
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
@@ -32,10 +32,10 @@ public class Runner extends Actor
 
     
     public Runner() {
-        run1r = new GreenfootImage("3runr1.png");
-        run2r = new GreenfootImage("3runr2.png");
-        run3r = new GreenfootImage("3runr3.png");
-        run4r = new GreenfootImage("3runr4.png");
+        run1 = new GreenfootImage("3runr1.png");
+        run2 = new GreenfootImage("3runr2.png");
+        run3 = new GreenfootImage("3runr3.png");
+        run4 = new GreenfootImage("3runr4.png");
     }
 
     /**
@@ -165,19 +165,19 @@ public class Runner extends Actor
     public void animateR(){
         if(frame == 1)
         {
-            setImage(run1r);
+            setImage(run1);
         }
         else if(frame == 2)
         {
-            setImage(run2r);
+            setImage(run2);
         }
         else if(frame == 3)
         {
-            setImage(run3r);
+            setImage(run3);
         }
         else if(frame == 4)
         {
-            setImage(run4r);
+            setImage(run4);
             frame = 1;
             return;
         }
