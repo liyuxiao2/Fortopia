@@ -3,4 +3,6 @@ comment0.target=Clouds
 comment0.text=\n\ Write\ a\ description\ of\ class\ Clouds\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=level
 comment1.target=Clouds(int)
-numComments=2
+comment2.params=
+comment2.target=Clouds()
+numComments=3

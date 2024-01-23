@@ -14,4 +14,10 @@ public class Sky extends Background
         scrollSpeed = 1;
         setImage(image);
     }
+    public Sky()
+    {
+        image = new GreenfootImage("menusky.png");
+        scrollSpeed = 1;
+        setImage(image);
+    }
 }

@@ -8,17 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GreyPlatform extends MovingPlatforms
 {
-    private GreenfootImage platform = new GreenfootImage("wood.png");
+    private GreenfootImage platform;
     
-    public void act(int level)
+    public void act()
     {
-        setImage(platform);
         movingPlatforms(111.111);
     }
-    public GreyPlatform()
+    public GreyPlatform(int level)
     {
         platformSize();
-        setImage("wood.png");
+        platform = new GreenfootImage("platform" + level + ".png");
+        setImage(platform);
     }
     
 }

@@ -1,42 +1,28 @@
 #BlueJ class context
 comment0.target=Runner
 comment0.text=\n\ \n\ \n\ \n\ @authors\ Liyu\ Xiao,\ Wendy\ Luo\n\ @version\ January\ 2024\n
-comment1.params=
-comment1.target=Runner()
+comment1.params=level
+comment1.target=Runner(int)
 comment10.params=
 comment10.target=void\ animate()
 comment11.params=
-comment11.target=void\ iFrames()
+comment11.target=void\ checkBlockPlayer()
+comment11.text=\n\ \n
 comment12.params=
-<<<<<<< Updated upstream
-comment12.target=void\ checkSpikePlayer()
-=======
-comment12.target=void\ checkBlockPlayer()
-comment12.text=\n\ \n
->>>>>>> Stashed changes
+comment12.target=boolean\ checkHitBlock()
 comment13.params=
-comment13.target=boolean\ checkHitSpike()
+comment13.target=void\ checkOnPlatforms()
 comment14.params=
-comment14.target=void\ checkBlockPlayer()
-comment14.text=\n\ \n
+comment14.target=boolean\ onPlatforms()
 comment15.params=
-comment15.target=boolean\ checkHitBlock()
+comment15.target=void\ checkDoorPlayer()
 comment16.params=
-comment16.target=void\ checkOnPlatforms()
+comment16.target=void\ pushBack()
 comment17.params=
-comment17.target=boolean\ onPlatforms()
-comment18.params=
-comment18.target=void\ checkDoorPlayer()
-comment19.params=
-comment19.target=void\ pushBack()
+comment17.target=void\ endGame()
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Here\ you\ can\ tell\ your\ actor\ what\ he\ has\ to\ do.\n
-<<<<<<< Updated upstream
-comment20.params=
-comment20.target=void\ endGame()
-=======
->>>>>>> Stashed changes
 comment3.params=
 comment3.target=void\ checkKey()
 comment4.params=
@@ -52,4 +38,4 @@ comment8.params=jumpHeight
 comment8.target=void\ jump(int)
 comment9.params=
 comment9.target=void\ animateR()
-numComments=21
+numComments=18
