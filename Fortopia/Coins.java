@@ -11,7 +11,9 @@ public class Coins extends Consumables
     static int collected =0;
     
     
-    
+    public Coins(int level){
+        setImage("coin" + level + ".png");
+    }
     
     public void act()
     {
