@@ -3,10 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class loadButton here.
  * 
- * @author (your name) 
+ * @Wendy Luo 
  * @version (a version number or a date)
  */
-public class loadButton extends Actor
+public class loadButton extends Buttons
 {
     /**
      * Act - do whatever the loadButton wants to do. This method is called whenever

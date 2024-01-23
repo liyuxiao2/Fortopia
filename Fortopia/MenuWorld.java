@@ -2,6 +2,7 @@ import greenfoot.*;
 import java.io.*;
 import java.util.Scanner;
 
+
 /**
  * Write a description of class Hearts here.
  * 
@@ -10,8 +11,13 @@ import java.util.Scanner;
  */
 public class MenuWorld extends World {
     // four worlds : Wendy's, Yuli, Neo, Normal
-    SaveButton button = new SaveButton();;
-    public MenuWorld() {
+    SaveButton button = new SaveButton();
+    NeoButton neo = new NeoButton();
+    NormalButton normal = new NormalButton();
+    WendyButton wendy = new WendyButton();
+    YuliButton yuli = new YuliButton();
+    YuliIcon yuliI = new YuliIcon();
+    public MenuWorld(){
         super(1000, 700, 1);
     }
     public void act(){
@@ -34,15 +40,12 @@ public class MenuWorld extends World {
         
     }
     public void prepare(){
-        addObject(button,490,230);
-        Label labelW = new Label("Wendy's",30);
-        addObject (labelW, 830, 40);
-        Label labelY = new Label("Yuli",30);
-        addObject (labelY, 630, 40);
-        Label labelN = new Label("Neo",30);
-        addObject (labelN, 530, 40);
-        Label labelR = new Label("Yuli",30);
-        addObject (labelR, 430, 40);
+        addObject(button,800,80);
+        addObject(neo,100,330);
+        addObject(normal,100,150);
+        addObject(wendy,450,330);
+        addObject(yuli,450,150);
+        addObject(yuliI,450,200);
     }
     
 }
