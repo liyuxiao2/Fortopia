@@ -159,15 +159,15 @@ public class GameWorld extends World
         };
         
     String[][] arrayMap11 =  {
-            {"x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"},
-            {"x","x","x","x","x","x","x","x","x","x","x","x","x","x","o","x","x","x","x","x","x"},
-            {"x","w","x","x","x","x","x","x","w","x","x","x","x","x","o","x","x","x","x","x","e"},
+            {"x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","o","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","x","x","x","x","x","x","x","o","x","x","x","x","x","x","x","x","x","x","x","x"},
+            {"x","w","x","x","x","x","x","x","e","x","x","x","x","x","x","x","x","x","x","x","x"},
         };
         
     //start of level 2
@@ -677,8 +677,8 @@ public class GameWorld extends World
         
         createGameWorld(level);//this method just adds some objects to the world.
 
-        addObject(heartCounter,300,200);
-        addObject(coinCounter,300,100);
+        addObject(heartCounter,100,20);
+        addObject(coinCounter,300,20);
     }
 
     /**
@@ -778,6 +778,7 @@ public class GameWorld extends World
                 else if(x[i][j].equals("e")){
                     addObject(new EndBorder(level), 1000+j*50, i*50);
                 }
+                
             }
         }
     }

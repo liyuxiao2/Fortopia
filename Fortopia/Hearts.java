@@ -16,6 +16,10 @@ public class Hearts extends Consumables
         remove();
     }
     
+    public Hearts(int level){
+        setImage("heart" + level + ".png");
+    }
+    
     public void remove(){
         if(isTouching(Runner.class)){
             GameWorld gw = (GameWorld)getWorld();
