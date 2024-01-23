@@ -31,11 +31,11 @@ public class Runner extends Actor
     private GameWorld world = (GameWorld)getWorld();
 
     
-    public Runner() {
-        run1 = new GreenfootImage("3runr1.png");
-        run2 = new GreenfootImage("3runr2.png");
-        run3 = new GreenfootImage("3runr3.png");
-        run4 = new GreenfootImage("3runr4.png");
+    public Runner(int level) {
+        run1 = new GreenfootImage(level + "runr1.png");
+        run2 = new GreenfootImage(level + "runr2.png");
+        run3 = new GreenfootImage(level + "runr3.png");
+        run4 = new GreenfootImage(level + "runr4.png");
     }
 
     /**
