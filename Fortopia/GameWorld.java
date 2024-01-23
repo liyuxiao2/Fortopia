@@ -676,9 +676,9 @@ public class GameWorld extends World
             addObject(new Ground(level), i * groundWidth,600);
         }
         if(counter % 2 == 0){
-            addObject(new GreyPlatform(),515,210);
+            addObject(new GreyPlatform(level),515,210);
         }
-        addObject(new Runner(), 300, 380);
+        addObject(new Runner(level), 300, 380);
         addObject(new HorryfyingMonkeys(level), 500, 350);
         if(level == 1){
             maps.add(arrayMap0);
