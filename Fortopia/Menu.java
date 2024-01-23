@@ -35,6 +35,8 @@ public class Menu extends World
         addObject(new Level(2), 666, 283);
         addObject(new Level(3), 334, 527);
         addObject(new Level(4), 666, 527);
+        addObject(new Save(), 182, 83);
+        addObject(new Load(), 818, 83);
     }
 }
 class MenuImg extends Actor
@@ -105,6 +107,52 @@ class Level extends Actor
         if (Greenfoot.mouseClicked(this)) {
             GameWorld game = new GameWorld(level);
             Greenfoot.setWorld(game);
+        }
+    }
+    protected void hovering()
+    {
+        if (Greenfoot.mouseMoved(this))setImage(hovered);
+        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
+    }
+}
+class Save extends Actor
+{
+    private GreenfootImage idle;
+    private GreenfootImage hovered;
+    public Save()
+    {
+        idle = new GreenfootImage("save.png");
+        hovered = new GreenfootImage("pressedsave.png");
+        setImage(idle);
+    }
+    public void act()
+    {
+        hovering();
+        if (Greenfoot.mouseClicked(this)) {
+            //add
+        }
+    }
+    protected void hovering()
+    {
+        if (Greenfoot.mouseMoved(this))setImage(hovered);
+        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
+    }
+}
+class Load extends Actor
+{
+    private GreenfootImage idle;
+    private GreenfootImage hovered;
+    public Load()
+    {
+        idle = new GreenfootImage("load.png");
+        hovered = new GreenfootImage("pressedload.png");
+        setImage(idle);
+    }
+    public void act()
+    {
+        hovering();
+        if (Greenfoot.mouseClicked(this)) {
+            //add
         }
     }
     protected void hovering()
