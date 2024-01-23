@@ -16,6 +16,8 @@ public class Runner extends Actor
     private int jumpStrength = 16;
     private int speed = 4;
     private int direction = 1; // 1 = right and -1 = left
+    public boolean hitBoxState = true; //the invincibility frames
+    private int contactTimer = 0;
 
     //load the runner images for animation
     private GreenfootImage run1r = new GreenfootImage("run1r.png");
@@ -52,6 +54,8 @@ public class Runner extends Actor
         moveR();
         checkBlockPlayer();
         checkDoorPlayer();
+        checkSpikePlayer();
+        iFrames();
     }
 
     public void checkKey()
@@ -185,27 +189,7 @@ public class Runner extends Actor
         frame++;
     }
 
-    public void animateL(){
-        if(frame == 1)
-        {
-            setImage(run1l);
-        }
-        else if(frame == 2)
-        {
-            setImage(run2l);
-        }
-        else if(frame == 3)
-        {
-            setImage(run3l);
-        }
-        else if(frame == 4)
-        {
-            setImage(run4l);
-            frame = 1;
-            return;
-        }
-        frame++;
-    }
+    
     //runner falling down after jumping
     public void animate() {
         // Add any additional animation logic here
@@ -216,6 +200,53 @@ public class Runner extends Actor
         }
     }
     
+    public void iFrames()
+    {
+        if (!hitBoxState)
+        {
+            contactTimer = (contactTimer + 1) % 50;
+            if (contactTimer == 0)
+            {
+                hitBoxState = true;
+                contactTimer = 0;
+            }
+        }
+    }
+
+    
+    public void checkSpikePlayer(){
+        if(checkHitSpike()){
+            if(Hearts.getHearts() == 0){
+                Greenfoot.stop();
+            }
+            else if(hitBoxState){
+                Hearts.removeHearts();
+                hitBoxState = false;
+            }
+        }
+    }
+    
+    
+    public boolean checkHitSpike () {
+        Spike p = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, 0, Spike.class);
+        Spike p2 = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, ((getImage().getHeight())/2), Spike.class);
+        
+        
+        ArrayList <Spike> peds = new ArrayList<>();
+        
+        peds.add(p);
+        peds.add(p2);
+        
+        for(Spike x : peds){
+            if ((x != null))
+            {//stops bus from moving
+
+                return true;
+            }
+        }
+        return false;
+    }
+    
     /**
      * 
      */
@@ -224,10 +255,6 @@ public class Runner extends Actor
             setLocation(getX()-Obstacles.getSpeed(), getY());
         }
     }
-    
-    
-
-    
     
     public boolean checkHitBlock () {
         Block p = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, 0, Block.class);
@@ -259,11 +286,6 @@ public class Runner extends Actor
         vSpeed=0;
     }
     
-    public void endGame(){
-        if(this.getX() < 0){
-            Greenfoot.stop();
-        }
-    }
     
     protected boolean onPlatforms()
     {                                   //Width= 0 (X) ,Height/2 (Y)- getImage().getHeight()/2, applying to the class Platforms
@@ -271,16 +293,25 @@ public class Runner extends Actor
         return onPlatform !=null; // returns only if diffent from null
     }
     
+    
+    
     public void checkDoorPlayer(){
         if(this.isTouching(EndBorder.class)){
             Greenfoot.stop();
         }
     }
     
-    
+
     public void pushBack(){
         if(getX() != 300){
             setLocation(getX()+1, getY());
+        }
+    }
+    
+    
+    public void endGame(){
+        if(this.getX() < 0){
+            Greenfoot.stop();
         }
     }
     
