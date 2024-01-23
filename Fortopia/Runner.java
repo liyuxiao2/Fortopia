@@ -16,18 +16,12 @@ public class Runner extends Actor
     private int jumpStrength = 16;
     private int speed = 4;
     private int direction = 1; // 1 = right and -1 = left
-    public boolean hitBoxState = true; //the invincibility frames
-    private int contactTimer = 0;
 
     //load the runner images for animation
-    private GreenfootImage run1r = new GreenfootImage("run1r.png");
-    private GreenfootImage run2r = new GreenfootImage("run2r.png");
-    private GreenfootImage run3r = new GreenfootImage("run3r.png");
-    private GreenfootImage run4r = new GreenfootImage("run4r.png");
-    private GreenfootImage run1l = new GreenfootImage("run1l.png");
-    private GreenfootImage run2l = new GreenfootImage("run2l.png");
-    private GreenfootImage run3l = new GreenfootImage("run3l.png");
-    private GreenfootImage run4l = new GreenfootImage("run4l.png");
+    private GreenfootImage run1;
+    private GreenfootImage run2;
+    private GreenfootImage run3;
+    private GreenfootImage run4;
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
@@ -37,8 +31,11 @@ public class Runner extends Actor
     private GameWorld world = (GameWorld)getWorld();
 
     
-    public Runner() {
-
+    public Runner(int level) {
+        run1 = new GreenfootImage(level + "runr1.png");
+        run2 = new GreenfootImage(level + "runr2.png");
+        run3 = new GreenfootImage(level + "runr3.png");
+        run4 = new GreenfootImage(level + "runr4.png");
     }
 
     /**
@@ -54,8 +51,6 @@ public class Runner extends Actor
         moveR();
         checkBlockPlayer();
         checkDoorPlayer();
-        checkSpikePlayer();
-        iFrames();
     }
 
     public void checkKey()
@@ -170,26 +165,25 @@ public class Runner extends Actor
     public void animateR(){
         if(frame == 1)
         {
-            setImage(run1r);
+            setImage(run1);
         }
         else if(frame == 2)
         {
-            setImage(run2r);
+            setImage(run2);
         }
         else if(frame == 3)
         {
-            setImage(run3r);
+            setImage(run3);
         }
         else if(frame == 4)
         {
-            setImage(run4r);
+            setImage(run4);
             frame = 1;
             return;
         }
         frame++;
     }
 
-    
     //runner falling down after jumping
     public void animate() {
         // Add any additional animation logic here
@@ -198,52 +192,6 @@ public class Runner extends Actor
         if(Greenfoot.isKeyDown("space")) {
             setLocation(getX(), getY() - 3);
         }
-    }
-    
-    public void iFrames()
-    {
-        if (!hitBoxState)
-        {
-            contactTimer = (contactTimer + 1) % 50;
-            if (contactTimer == 0)
-            {
-                hitBoxState = true;
-                contactTimer = 0;
-            }
-        }
-    }
-
-    
-    public void checkSpikePlayer(){
-        if(checkHitSpike()){
-            if(Hearts.getHearts() == 0){
-                Greenfoot.stop();
-            }
-            else if(hitBoxState){
-                Hearts.removeHearts();
-                hitBoxState = false;
-            }
-        }
-    }
-    
-    
-    public boolean checkHitSpike () {
-        Spike p = (Spike)getOneObjectAtOffset(0, 0, Spike.class);
-        
-        
-        ArrayList <Spike> peds = new ArrayList<>();
-        
-        peds.add(p);
-        
-        
-        for(Spike x : peds){
-            if ((x != null))
-            {//stops bus from moving
-
-                return true;
-            }
-        }
-        return false;
     }
     
     /**
@@ -301,6 +249,7 @@ public class Runner extends Actor
     }
     
 
+    
     public void pushBack(){
         if(getX() != 300){
             setLocation(getX()+1, getY());
@@ -313,5 +262,4 @@ public class Runner extends Actor
             Greenfoot.stop();
         }
     }
-    
 }

@@ -21,18 +21,19 @@ public class HorryfyingMonkeys extends Actor
             uyli1 = new GreenfootImage("uyil1.png");
             uyli2 = new GreenfootImage("uyil2.png");
         }
-        if(level == 2){
+        else if(level == 2){
             uyli1 = new GreenfootImage("neouyil1.png");
             uyli2 = new GreenfootImage("neouyil2.png");
         }
-        if(level == 3){
+        else if(level == 3){
             uyli1 = new GreenfootImage("cuteuyil1.png");
             uyli2 = new GreenfootImage("cuteuyil2.png");
         }
-        if(level == 4){
+        else if(level == 4){
             uyli1 = new GreenfootImage("uyil1.png");
             uyli2 = new GreenfootImage("uyil2.png");
         }
+        setImage(uyli1);
     }
     public void act()
     {

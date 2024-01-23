@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Spike
-comment0.text=\n\ Write\ a\ description\ of\ class\ Spike\ here.\n\ \n@author\ Gisele\ Huang\n@version\ January\ 2024\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Spike\ here.\r\n\ \r\n@author\ Gisele\ Huang\r\n@version\ January\ 2024\r\n
 comment1.params=level
 comment1.target=Spike(int)
 comment2.params=
