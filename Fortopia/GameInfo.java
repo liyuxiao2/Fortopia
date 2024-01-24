@@ -42,7 +42,8 @@ public class GameInfo
             fileScanner.nextLine();
             int counter = 0;
             while(fileScanner.hasNext()){
-                maps[counter] = fileScanner.nextInt();
+                maps[counter] = Integer.valueOf(fileScanner.nextLine());
+                counter++;
             }
             fileScanner.close();
             return maps;
@@ -54,13 +55,16 @@ public class GameInfo
     
     
     public static void saveGame(int [] maps){
+        Scanner scan = new Scanner(System.in);
+             
+        System.out.println("Save your progress under what name?");
+             
+        String fileName = scan.nextLine();
+        
         
         try{
-             Scanner scan = new Scanner(System.in);
              
-             System.out.println("Save your progress under what name?");
              
-             String fileName = scan.nextLine();
              
              FileWriter writer = new FileWriter(fileName);
              PrintWriter print = new PrintWriter(writer);
@@ -73,14 +77,14 @@ public class GameInfo
              }
                
              print.close();
-             writer.close();   
+             writer.close();
         } 
            
            
         catch(IOException e){    
                
         }
-         
+        scan.close();
             
         }
     }

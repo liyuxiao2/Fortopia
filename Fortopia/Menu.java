@@ -54,16 +54,16 @@ public class Menu extends World
     public void checkMapCompletion(int[] x){
         for(int i = 0; i < x.length; i++){
             if(i == 0 && x[i] == 1){
-                addObject(new CheckMark(), 300, 400);
+                addObject(new CheckMark(), 334, 283);
             }
             if(i == 1 && x[i] == 1){
-                addObject(new CheckMark(), 300, 400);
+                addObject(new CheckMark(), 666, 283);
             }
             if(i == 2 && x[i] == 1){
-                addObject(new CheckMark(), 300, 400);
+                addObject(new CheckMark(), 334, 527);
             }
             if(i == 3 && x[i] == 1){
-                addObject(new CheckMark(), 300, 400);
+                addObject(new CheckMark(), 666, 527);
             }
         }
     }
@@ -148,8 +148,8 @@ class Save extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
+    private static int [] maps = Load.getMaps();
     
-    public static int [] mapCompletion;
     public Save()
     {
         idle = new GreenfootImage("save.png");
@@ -160,8 +160,8 @@ class Save extends Actor
     {
         hovering();
         if(Greenfoot.mouseClicked(this)){
-            GameInfo.saveGame(mapCompletion);
-            Greenfoot.setWorld(new Menu(mapCompletion));
+            GameInfo.saveGame(maps);
+            Greenfoot.setWorld(new Menu(maps));
         }
       
     }
@@ -172,18 +172,21 @@ class Save extends Actor
     }
     
     public static void updateMapCompletion(int x){
-        mapCompletion[x] = 1;
+        maps[x] = 1;
     }
     
     protected static int[] getMaps(){
-        return mapCompletion;
+        return maps;
     }
 }
+
+
 class Load extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
-    private static int [] maps;
+    private static int [] maps = {0,0,0,0};
+    private static String fileName;
     
     
     public Load()
@@ -201,9 +204,8 @@ class Load extends Actor
             
 
             
-            String fileName = scan.nextLine();
+            fileName = scan.nextLine();
             
-            System.out.println("Loading");
             
             GameInfo.loadCoins(fileName);
             
@@ -211,7 +213,6 @@ class Load extends Actor
             
             Greenfoot.setWorld(new Menu(maps));
             
-            System.out.println("Loaded");
         }
     }
     
@@ -231,7 +232,7 @@ class CheckMark extends Actor{
     private GreenfootImage check;
     public CheckMark(){
         check = new GreenfootImage("completed.png");
-        check.scale(500,500);
+        check.scale(50,50);
         setImage(check);
     }
 }

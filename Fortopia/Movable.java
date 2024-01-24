@@ -14,6 +14,7 @@ public abstract class Movable extends Actor
     public void act()
     {
         setLocation(getX() - speed, getY());
+        //removeBlock();
     }
     
     public static void setSpeed(int x){
@@ -24,4 +25,12 @@ public abstract class Movable extends Actor
         return speed;
     }
     
+    private GameWorld world = (GameWorld)getWorld();
+    
+    
+    public void removeBlock(){
+        if(this.getX() < -300){
+            world.removeObject(this);
+        }
+    }
 }

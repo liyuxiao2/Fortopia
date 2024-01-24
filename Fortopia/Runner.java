@@ -215,7 +215,8 @@ public class Runner extends Actor
     public void checkSpikePlayer(){
         if(checkHitSpike()){
             if(Hearts.getHearts() == 0){
-                Greenfoot.setWorld(new Menu());
+                Save.updateMapCompletion(level);
+                Greenfoot.setWorld(new Menu(Save.getMaps()));
             }
             else if(hitBoxState){
                 Hearts.removeHearts();

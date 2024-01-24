@@ -7,4 +7,6 @@ comment2.params=x
 comment2.target=void\ setSpeed(int)
 comment3.params=
 comment3.target=int\ getSpeed()
-numComments=4
+comment4.params=
+comment4.target=void\ removeBlock()
+numComments=5
