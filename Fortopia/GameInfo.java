@@ -1,6 +1,9 @@
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Write a description of class GameInfo here.
@@ -46,32 +49,30 @@ public class GameInfo
     }
     
     
-    public static void saveGame(){
-        //ArrayList<boolean> maps = {true, false, false, true};
+    public static void saveGame(boolean [] maps){
         
-        /**
-         * try{
-         *     FileWriter writer = new FileWriter("hello.txt");
-         *     PrintWriter print = new PrintWriter(writer);
-         *     
-         *     
-         *     print.println(Coins.collected);
-         *     for(String x: maps){
-         *         print.println(x);
-               }
+        try{
+              FileWriter writer = new FileWriter("hello.txt");
+              PrintWriter print = new PrintWriter(writer);
+             
+              
+             print.println(Coins.collected);
+             
+             for(boolean x: maps){
+                  print.println(x);
+             }
                
                print.close();
                writer.close();
                 
                 
          
-         *     
-         *  } 
-         *  catch(IOException e){    
-         *      
+              
+           } 
+           catch(IOException e){    
+               
             }
-         *
-         */
+         
             
         }
     }
