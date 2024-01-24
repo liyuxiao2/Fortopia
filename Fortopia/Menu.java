@@ -1,4 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.File;
 
 /**
  * Write a description of class tempmenu here.
@@ -15,6 +18,15 @@ public class Menu extends World
         addDeco();
         addButtons();
     }
+    
+    public Menu(int[] x)
+    {    
+        super(1000, 700, 1, false); 
+        addDeco();
+        addButtons();
+        checkMapCompletion(x);
+    }
+    
     public void addDeco()
     {
         addObject(new Sky(), 500, 350);
@@ -37,6 +49,23 @@ public class Menu extends World
         addObject(new Level(4), 666, 527);
         addObject(new Save(), 182, 83);
         addObject(new Load(), 818, 83);
+    }
+    
+    public void checkMapCompletion(int[] x){
+        for(int i = 0; i < x.length; i++){
+            if(i == 0 && x[i] == 1){
+                addObject(new CheckMark(), 300, 400);
+            }
+            if(i == 1 && x[i] == 1){
+                addObject(new CheckMark(), 300, 400);
+            }
+            if(i == 2 && x[i] == 1){
+                addObject(new CheckMark(), 300, 400);
+            }
+            if(i == 3 && x[i] == 1){
+                addObject(new CheckMark(), 300, 400);
+            }
+        }
     }
 }
 class MenuImg extends Actor
@@ -119,33 +148,44 @@ class Save extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
-    private boolean [] mapCompletion = {false,false,false,false};
+    
+    public static int [] mapCompletion;
     public Save()
     {
         idle = new GreenfootImage("save.png");
         hovered = new GreenfootImage("pressedsave.png");
         setImage(idle);
     }
-    
     public void act()
     {
         hovering();
-        if (Greenfoot.mouseClicked(this)) {
+        if(Greenfoot.mouseClicked(this)){
             GameInfo.saveGame(mapCompletion);
+            Greenfoot.setWorld(new Menu(mapCompletion));
         }
+      
     }
-    
     protected void hovering()
     {
         if (Greenfoot.mouseMoved(this))setImage(hovered);
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
     }
     
+    public static void updateMapCompletion(int x){
+        mapCompletion[x] = 1;
+    }
+    
+    protected static int[] getMaps(){
+        return mapCompletion;
+    }
 }
 class Load extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
+    private static int [] maps;
+    
+    
     public Load()
     {
         idle = new GreenfootImage("load.png");
@@ -156,12 +196,42 @@ class Load extends Actor
     {
         hovering();
         if (Greenfoot.mouseClicked(this)) {
-            //add
+            Scanner scan = new Scanner(System.in);
+            System.out.println("enter your user name (the name that you saved under)");
+            
+
+            
+            String fileName = scan.nextLine();
+            
+            System.out.println("Loading");
+            
+            GameInfo.loadCoins(fileName);
+            
+            maps = GameInfo.loadCompletedWorlds(fileName);
+            
+            Greenfoot.setWorld(new Menu(maps));
+            
+            System.out.println("Loaded");
         }
     }
+    
     protected void hovering()
     {
         if (Greenfoot.mouseMoved(this))setImage(hovered);
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
+    }
+    
+    protected static int[] getMaps(){
+        return maps;
+    }
+    
+}
+
+class CheckMark extends Actor{
+    private GreenfootImage check;
+    public CheckMark(){
+        check = new GreenfootImage("completed.png");
+        check.scale(500,500);
+        setImage(check);
     }
 }

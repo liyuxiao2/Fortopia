@@ -8,11 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Coins extends Consumables
 {
-    static int collected =0;
+    static int collected;
     
     
     public Coins(int level){
-        setImage("coin" + level + ".png");
     }
     
     public void act()
@@ -35,6 +34,5 @@ public class Coins extends Consumables
     public static int getCoins(){
         return collected;
     }
-    
     
 }

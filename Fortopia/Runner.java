@@ -27,13 +27,14 @@ public class Runner extends Actor
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
-    
+    private int level;
     
     
     private GameWorld world = (GameWorld)getWorld();
 
     
     public Runner(int level) {
+        this.level = level; 
         run1 = new GreenfootImage(level + "runr1.png");
         run2 = new GreenfootImage(level + "runr2.png");
         run3 = new GreenfootImage(level + "runr3.png");
@@ -198,7 +199,7 @@ public class Runner extends Actor
         }
     }
     
-        public void iFrames()
+    public void iFrames()
     {
         if (!hitBoxState)
         {
@@ -292,6 +293,7 @@ public class Runner extends Actor
     
     public void checkDoorPlayer(){
         if(this.isTouching(EndBorder.class)){
+            Save.updateMapCompletion(level);
             Greenfoot.setWorld(new Menu());
         }
     }

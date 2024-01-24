@@ -755,7 +755,12 @@ public class GameWorld extends World
                 else if(x[i][j].equals("e")){
                     addObject(new EndBorder(level), 1000+j*50, i*50);
                 }
-                
+                else if(x[i][j].equals("c")){
+                    addObject(new Coins(level), 1000+j*50, i*50);
+                }
+                else if(x[i][j].equals("h")){
+                    addObject(new Hearts(level), 1000+j*50, i*50);
+                }
             }
         }
     }
