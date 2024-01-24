@@ -161,7 +161,7 @@ class Save extends Actor
         hovering();
         if(Greenfoot.mouseClicked(this)){
             GameInfo.saveGame(maps);
-            Greenfoot.setWorld(new Menu(maps));
+            //Greenfoot.setWorld(new Menu(maps));
         }
       
     }
@@ -171,9 +171,9 @@ class Save extends Actor
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
     }
     
-    public static void updateMapCompletion(int x){
-        maps[x] = 1;
-    }
+    //public static void updateMapCompletion(int x){
+        //maps[x] = 1;
+    //}
     
     protected static int[] getMaps(){
         return maps;

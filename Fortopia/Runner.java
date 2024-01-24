@@ -215,7 +215,8 @@ public class Runner extends Actor
     public void checkSpikePlayer(){
         if(checkHitSpike()){
             if(Hearts.getHearts() == 0){
-                Save.updateMapCompletion(level);
+                System.out.println(Save.getMaps());
+                //Greenfoot.setWorld(new Menu());
                 Greenfoot.setWorld(new Menu(Save.getMaps()));
             }
             else if(hitBoxState){
@@ -294,8 +295,8 @@ public class Runner extends Actor
     
     public void checkDoorPlayer(){
         if(this.isTouching(EndBorder.class)){
-            Save.updateMapCompletion(level);
-            Greenfoot.setWorld(new Menu());
+            //Save.updateMapCompletion(level-1);
+            Greenfoot.setWorld(new Menu(Save.getMaps()));
         }
     }
     
@@ -310,7 +311,8 @@ public class Runner extends Actor
     
     public void endGame(){
         if(this.getX() < 0){
-            Greenfoot.setWorld(new Menu());
+            Greenfoot.setWorld(new Menu(Save.getMaps()));
         }
     }
+    
 }

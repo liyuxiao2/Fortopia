@@ -624,7 +624,6 @@ public class GameWorld extends World
     Class[] actorClasses={Actor.class };
     private int level;
     public void act(){
-        System.out.println(getObjects(Actor.class).size());
         counter++;
         if(mapCount > maps.size() - 1){
             mapCount = 0;

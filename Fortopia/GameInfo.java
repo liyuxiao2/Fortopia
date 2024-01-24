@@ -36,7 +36,7 @@ public class GameInfo
     }
     
     public static int[] loadCompletedWorlds(String fileName){
-        int [] maps = new int[4];
+        int [] maps = new int[5];
         try{
             Scanner fileScanner = new Scanner(new File(fileName));
             fileScanner.nextLine();
