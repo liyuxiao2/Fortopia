@@ -1,4 +1,4 @@
-    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Coins here.
@@ -8,10 +8,10 @@
  */
 public class Coins extends Consumables
 {
-    static int collected =0;
+    static int collected;
     
     
-    public Coins(){
+    public Coins(int level){
     }
     
     public void act()
@@ -34,6 +34,5 @@ public class Coins extends Consumables
     public static int getCoins(){
         return collected;
     }
-    
     
 }

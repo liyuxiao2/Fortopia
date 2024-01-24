@@ -27,51 +27,59 @@ public class GameInfo
             Scanner fileScanner = new Scanner(new File(fileName));
             savedCoins = Integer.valueOf(fileScanner.nextLine());
             fileScanner.close();
+            
+            Coins.collected = savedCoins;
         }
         catch(FileNotFoundException e){
             
         }
     }
     
-    public static void loadCompletedWorlds(String fileName){
+    public static int[] loadCompletedWorlds(String fileName){
+        int [] maps = new int[4];
         try{
             Scanner fileScanner = new Scanner(new File(fileName));
             fileScanner.nextLine();
             int counter = 0;
             while(fileScanner.hasNext()){
-                //maps.get(counter).set(Boolean.valueOf(fileScanner.nextLine()));
+                maps[counter] = fileScanner.nextInt();
             }
             fileScanner.close();
+            return maps;
         }
         catch(FileNotFoundException e){
-            
+            return maps;
         }
     }
     
     
-    public static void saveGame(boolean [] maps){
+    public static void saveGame(int [] maps){
         
         try{
-              FileWriter writer = new FileWriter("hello.txt");
-              PrintWriter print = new PrintWriter(writer);
+             Scanner scan = new Scanner(System.in);
+             
+             System.out.println("Save your progress under what name?");
+             
+             String fileName = scan.nextLine();
+             
+             FileWriter writer = new FileWriter(fileName);
+             PrintWriter print = new PrintWriter(writer);
              
               
              print.println(Coins.collected);
              
-             for(boolean x: maps){
+             for(int x: maps){
                   print.println(x);
              }
                
-               print.close();
-               writer.close();
-                
-                
-         
-              
-           } 
-           catch(IOException e){    
+             print.close();
+             writer.close();   
+        } 
+           
+           
+        catch(IOException e){    
                
-            }
+        }
          
             
         }
