@@ -55,7 +55,7 @@ public class StoryWorld extends World
             setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
             addObject(next, 850, 600);
         } else if(storyFrame == 7){
-            Greenfoot.setWorld(new GameWorld(1));
+            Greenfoot.setWorld(new Menu());
         }
     }
 }

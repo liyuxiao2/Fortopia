@@ -10,4 +10,7 @@ comment3.params=fileName
 comment3.target=boolean[]\ loadCompletedWorlds(java.lang.String)
 comment4.params=maps
 comment4.target=void\ saveGame(boolean[])
+comment3.target=int[]\ loadCompletedWorlds(java.lang.String)
+comment4.params=maps
+comment4.target=void\ saveGame(int[])
 numComments=5

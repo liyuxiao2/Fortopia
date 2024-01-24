@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.PrintWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Write a description of class GameInfo here.
@@ -27,6 +27,7 @@ public class GameInfo
             Scanner fileScanner = new Scanner(new File(fileName));
             savedCoins = Integer.valueOf(fileScanner.nextLine());
             fileScanner.close();
+            
             Coins.collected = savedCoins;
         }
         catch(FileNotFoundException e){
@@ -34,15 +35,14 @@ public class GameInfo
         }
     }
     
-    public static boolean[] loadCompletedWorlds(String fileName){ 
-        boolean [] maps = new boolean [4];
+    public static int[] loadCompletedWorlds(String fileName){
+        int [] maps = new int[4];
         try{
             Scanner fileScanner = new Scanner(new File(fileName));
             fileScanner.nextLine();
             int counter = 0;
             while(fileScanner.hasNext()){
-                 maps[counter] = (Boolean.valueOf(fileScanner.nextLine()));
-                 counter++;
+                maps[counter] = fileScanner.nextInt();
             }
             fileScanner.close();
             return maps;
@@ -53,36 +53,33 @@ public class GameInfo
     }
     
     
-    public static void saveGame(boolean [] maps){
+    public static void saveGame(int [] maps){
         
-         try{
-              Scanner scan = new Scanner(System.in);
+        try{
+             Scanner scan = new Scanner(System.in);
+             
+             System.out.println("Save your progress under what name?");
+             
+             String fileName = scan.nextLine();
+             
+             FileWriter writer = new FileWriter(fileName);
+             PrintWriter print = new PrintWriter(writer);
+             
               
-              System.out.println("Enter file name you want to save to");
-              
-              
-              String fileName = scan.nextLine();
-              
-              
-              FileWriter writer = new FileWriter(fileName);
-              PrintWriter print = new PrintWriter(writer);
-              
-              
-              print.println(Coins.collected);
-              for(boolean x: maps){
+             print.println(Coins.collected);
+             
+             for(int x: maps){
                   print.println(x);
-               }
+             }
                
-               print.close();
-               writer.close();
-                
-                
-         
-              
-         } 
-          catch(IOException e){    
-              
-            }
+             print.close();
+             writer.close();   
+        } 
+           
+           
+        catch(IOException e){    
+               
+        }
          
             
         }

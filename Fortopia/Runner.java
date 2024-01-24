@@ -16,6 +16,8 @@ public class Runner extends Actor
     private int jumpStrength = 16;
     private int speed = 4;
     private int direction = 1; // 1 = right and -1 = left
+    public boolean hitBoxState = true; //the invincibility frames
+    private int contactTimer = 0;
 
     //load the runner images for animation
     private GreenfootImage run1;
@@ -28,12 +30,11 @@ public class Runner extends Actor
     private int level;
     
     
-    
     private GameWorld world = (GameWorld)getWorld();
 
     
     public Runner(int level) {
-        this.level = level;
+        this.level = level; 
         run1 = new GreenfootImage(level + "runr1.png");
         run2 = new GreenfootImage(level + "runr2.png");
         run3 = new GreenfootImage(level + "runr3.png");
@@ -53,6 +54,8 @@ public class Runner extends Actor
         moveR();
         checkBlockPlayer();
         checkDoorPlayer();
+        checkSpikePlayer();
+        iFrames();
     }
 
     public void checkKey()
@@ -196,6 +199,50 @@ public class Runner extends Actor
         }
     }
     
+    public void iFrames()
+    {
+        if (!hitBoxState)
+        {
+            contactTimer = (contactTimer + 1) % 50;
+            if (contactTimer == 0)
+            {
+                hitBoxState = true;
+                contactTimer = 0;
+            }
+        }
+    }
+    
+    public void checkSpikePlayer(){
+        if(checkHitSpike()){
+            if(Hearts.getHearts() == 0){
+                Greenfoot.setWorld(new Menu());
+            }
+            else if(hitBoxState){
+                Hearts.removeHearts();
+                hitBoxState = false;
+            }
+        }
+    }
+    
+    
+    public boolean checkHitSpike () {
+        Spike p = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, 0, Spike.class);
+        Spike p2 = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, ((getImage().getHeight())/2), Spike.class);
+        
+        
+        ArrayList <Spike> peds = new ArrayList<>();
+        
+        peds.add(p);
+        peds.add(p2);
+        
+        for(Spike x : peds){
+            if ((x != null))
+            {//stops bus from moving
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * 
      */
@@ -246,8 +293,8 @@ public class Runner extends Actor
     
     public void checkDoorPlayer(){
         if(this.isTouching(EndBorder.class)){
-            Greenfoot.stop();
             Save.updateMapCompletion(level);
+            Greenfoot.setWorld(new Menu());
         }
     }
     
@@ -262,8 +309,7 @@ public class Runner extends Actor
     
     public void endGame(){
         if(this.getX() < 0){
-            Greenfoot.stop();
+            Greenfoot.setWorld(new Menu());
         }
     }
-    
 }
