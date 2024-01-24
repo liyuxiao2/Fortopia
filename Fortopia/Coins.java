@@ -11,7 +11,7 @@ public class Coins extends Consumables
     static int collected;
     
     
-    public Coins(int level){
+    public Coins(){
     }
     
     public void act()
