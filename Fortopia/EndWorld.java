@@ -26,7 +26,9 @@ public class EndWorld extends World
     
     public void act(){
         if(Greenfoot.mouseClicked(startOver)){
+
             Greenfoot.setWorld(new Menu());
+
         }
     }
 }
