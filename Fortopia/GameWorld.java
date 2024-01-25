@@ -6,8 +6,35 @@ import java.util.LinkedList;
  * GameWorld is a Greenfoot World where the main game will be carried out
  * 
  * 
+ *  
+ * <p> Platform runner game where the team members Wendy,Liyu, Natalie and Gisele run away from the abominal beasts the YuLi's  </p>
+ * 
+ * 
+ * <p> Key Features: Hearts and coins (Coins to collect, hearts to stay alive), Spikes, blocks platforms (Obstacles getting in the way
+ *          `    of the characters journey), Music (Specific to each team member), The YuLi's (The monsters chasing our characters). </p>
+ * 
+ * 
+ * 
+ * 
+ * <p> Credits for Sound </p>
+ * 
+ * <p> Sticker by NCT 127: link
+ * <p> Cupid by FIFTY FIFTY: link
+ * <p> Baby by Justin Beiber: link
+ * <p> OMG by NewJeans: link
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * <p> KNOWN BUGS </p>
+ * <p> Music may not stop playing even after the world has ended </p>
+ * 
  * 
  * All graphics credit to Gisele Huang
+ * 
+ * 
  * @authors Liyu Xiao, Natalie Huang, Gisele Huang, Wendy Luo
  * @01/24/2024
  * 

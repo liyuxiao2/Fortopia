@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=PauseWorld
-comment0.text=\n\ Pauseworld\ is\ a\ Greenfoot\ World\ that\ players\ will\ see\ if\ they\ pause\ the\ game\n\ \n\ @Natalie\ Huang\n\ @version\ \:\ 01/24/2024\n
-comment1.params=gw
-comment1.target=PauseWorld(GameWorld)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ PauseWorld.\n\ @param\ gw\ stops\ the\ gameworld\n
-comment2.params=
-comment2.target=void\ act()
-numComments=3
