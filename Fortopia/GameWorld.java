@@ -682,6 +682,7 @@ public class GameWorld extends World
      * Creates an example world where the ScrollingActor can move.
      */
     public void createGameWorld(int level, Runner x) {
+        Hearts.setHearts(3);
         addObject(new Sky(level), 500, 90);
         addObject(new Sky(level), 1500, 90);
         addObject(new Clouds(level), 500, 90);

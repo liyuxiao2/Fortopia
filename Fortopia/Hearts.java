@@ -54,4 +54,8 @@ public class Hearts extends Consumables
     public static void removeHearts(){
         collected -= 1;
     }
+    
+    public static void setHearts(int x){
+        collected = x;
+    }
 }

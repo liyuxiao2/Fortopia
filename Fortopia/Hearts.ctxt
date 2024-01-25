@@ -16,4 +16,6 @@ comment4.text=\n\ will\ gather\ hearts\ and\ return\ collected\n
 comment5.params=
 comment5.target=void\ removeHearts()
 comment5.text=\n\ if\ hit,\ hearts\ will\ minus\ by\ 1\n
-numComments=6
+comment6.params=x
+comment6.target=void\ setHearts(int)
+numComments=7
