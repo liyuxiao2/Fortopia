@@ -1,13 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Clouds here.
+ * Clouds background for the graphics
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele
+ * @Jan 2024
  */
 public class Clouds extends Background
 {
+    /**
+     * Different cloud images and makes them scroll
+     * 
+     * @param level   different level means different cloud image
+     * @return int    level number
+     */
     public Clouds(int level)
     {
         image = new GreenfootImage("clouds" + level + ".png");

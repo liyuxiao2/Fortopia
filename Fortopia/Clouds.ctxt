@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Clouds
-comment0.text=\n\ Write\ a\ description\ of\ class\ Clouds\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Clouds\ background\ for\ the\ graphics\n\ \n\ @Gisele\n\ @Jan\ 2024\n
 comment1.params=level
 comment1.target=Clouds(int)
+comment1.text=\n\ Different\ cloud\ images\ and\ makes\ them\ scroll\n\ \n\ @param\ level\ \ \ different\ level\ means\ different\ cloud\ image\n\ @return\ int\ \ \ \ level\ number\n
 comment2.params=
 comment2.target=Clouds()
 numComments=3

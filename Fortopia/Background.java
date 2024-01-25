@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Background here.
+ * Shows the background for each world
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele Huang 
+ * @Jan 2024
  */
 public abstract class Background extends Actor
 {
@@ -14,6 +14,10 @@ public abstract class Background extends Actor
     {
         scroll();
     }
+    
+    /**
+     * Makes the world scroll
+     */
     protected void scroll()
     {
         setLocation(getX() - scrollSpeed, getY());

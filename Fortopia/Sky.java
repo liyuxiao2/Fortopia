@@ -1,13 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Sky here.
+ * The sky background that scrolls in the world
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele 
+ * @Jan 2024
  */
 public class Sky extends Background
 {
+    /**
+     * Different sky background for different levels
+     * 
+     * @param level   the level the player is at
+     * @return int    level number
+     */
     public Sky(int level)
     {
         image = new GreenfootImage("sky" + level + ".png");

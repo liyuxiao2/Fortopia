@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * WelcomeWorld is a Greenfoot World that welcomes players to the game  
+ * Write a description of class WelcomeWorld here.
  * 
  * @Natalie Huang
  * @January 2024
@@ -9,6 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class WelcomeWorld extends World
 {
     Button next = new Button();
+    
+    /**
+     * Constructor for objects of class WelcomeWorld.
+     * 
+     */
     public WelcomeWorld()
     {    
         super(1000, 700, 1); 

@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=GameInfo
-comment0.text=\n\ Write\ a\ description\ of\ class\ GameInfo\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=GameInfo()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameInfo\n
+comment0.text=\n\ GameInfo\ stores\ the\ data\ of\ player's\ game\ information\n\ like\ the\ worlds\ they\ completed\ and\ coin\ collected\n\ \n\ @Liyu\ Xiao\n\ @01/24/2024\n
+comment1.params=fileName
+comment1.target=void\ loadCoins(java.lang.String)
+comment1.text=\n\ loads\ the\ data\ for\ how\ many\ coins\ are\ collected\ \n\ @param\ fileName\ \:\ retrieves\ a\ desired\ name\ for\ the\ file\ from\ player\n
 comment2.params=fileName
-comment2.target=void\ loadCoins(java.lang.String)
-comment3.params=fileName
-comment3.target=int[]\ loadCompletedWorlds(java.lang.String)
-comment4.params=fileName
-comment4.target=void\ saveGame(java.lang.String)
-numComments=5
+comment2.target=int[]\ loadCompletedWorlds(java.lang.String)
+comment2.text=\n\ loads\ the\ data\ for\ the\ completed\ worlds\ \n\ @param\ fileName\ \:\ retrieves\ a\ desired\ name\ for\ the\ file\ from\ player\n\ @return\ int\ \:\ for\ the\ world\ level\ \n
+comment3.params=maps
+comment3.target=void\ saveGame(int[])
+comment3.text=\n\ saves\ the\ game\ progress\ by\ having\ a\ file\ name\ from\ player\ \n\ @param\ int\ \:\ gets\ the\ world\ level\ player\ ended\ with\n\ \n
+numComments=4

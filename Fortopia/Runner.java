@@ -27,13 +27,19 @@ public class Runner extends Actor
     private int frame = 1;
     private int animationCounter = 0;
     private long keyPressedTime;
+    
+    //the level the runner is on
     private int level;
     
-    
+    //used for getting methods from game world
     private GameWorld world = (GameWorld)getWorld();
     
 
-    
+    /**
+     * Constructor for the runner class
+     * 
+     * @param int level - the level the runner is on
+     */
     public Runner(int level) {
         this.level = level; 
         run1 = new GreenfootImage(level + "runr1.png");
@@ -43,7 +49,9 @@ public class Runner extends Actor
     }
 
     /**
-     * Here you can tell your actor what he has to do.
+     * The act method for runner
+     * 
+     * 
      */
     public void act() {
         pushBack();
@@ -58,7 +66,9 @@ public class Runner extends Actor
         checkSpikePlayer();
         iFrames();
     }
-
+    
+    // checks what keys are pressed
+    //if space key is pressed longer, the jump will be higher 
     public void checkKey()
     {
         if (Greenfoot.isKeyDown("space") && !jumping) {
@@ -79,14 +89,15 @@ public class Runner extends Actor
         }
     }
 
-
+    //runner running
     public void moveR(){
         if(animationCounter % 4 == 0)
         {
             animateR();
         }
     }
-
+    
+    //player falls after jumps and other commands
     public void fall()
     {
         setLocation(getX(), getY() + vSpeed);
@@ -125,7 +136,8 @@ public class Runner extends Actor
 
     }
 
-    
+    // checks key pressed
+    // mainly for the jump
     private void checkKeyPress() {
         if (Greenfoot.isKeyDown("space")) {
             if (keyPressedTime == 0) {
@@ -161,6 +173,12 @@ public class Runner extends Actor
         double ratio = Math.min(1.0, (double) elapsedTime / jumpDuration);
         return (int) (maxJumpHeight * ratio);
     }
+    
+    
+     /**
+     *  for the power up jump
+     *  @param jumpHeight : checks how high the power jump gives
+     */
 
     public void jump(int jumpHeight){
         vSpeed = vSpeed - jumpStrength;
@@ -200,6 +218,9 @@ public class Runner extends Actor
         }
     }
     
+    
+    //Used to detect whether a runner has already hit a spike if so
+    //Do not deduct another heart until timer is over
     public void iFrames()
     {
         if (!hitBoxState)
@@ -213,12 +234,16 @@ public class Runner extends Actor
         }
     }
     
+    /**
+     * checks if the player is hitting the spike or not
+     * @param checkHitSpike : Returns true if the player is dead
+     *                        to the spike
+     */
     public boolean checkSpikePlayer(){
         if(checkHitSpike()){
             if(Hearts.getHearts() == 0){
                 Greenfoot.setWorld(new Menu(MapList.getMapList()));
                 return true; //returns true if player is dead
-
             }
             else if(hitBoxState){
                 Hearts.removeHearts();
@@ -229,7 +254,11 @@ public class Runner extends Actor
         return false;
     }
     
-    
+     /**
+     * checks if the player is hitting the spike or not
+     * @param checkHitSpike : Returns true if the player is hitting the spike
+     */
+
     public boolean checkHitSpike () {
         Spike p = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, 0, Spike.class);
         Spike p2 = (Spike)getOneObjectAtOffset(getImage().getWidth()/2, ((getImage().getHeight())/2), Spike.class);
@@ -248,15 +277,23 @@ public class Runner extends Actor
         }
         return false;
     }
+    
+    
     /**
-     * 
+     * checks is the player is getting blocked by anything
      */
+
     public void checkBlockPlayer(){
         while(checkHitBlock()){
             setLocation(getX()-Obstacles.getSpeed(), getY());
         }
     }
     
+    /**
+     * checks if the player is hitting the block or not, gets pushed back if it does 
+     * @param checkHitBlock : Returns true if the player is hitting the blocks
+     */
+
     public boolean checkHitBlock () {
         Block p = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, 0, Block.class);
         Block p2 = (Block)getOneObjectAtOffset((int)speed + getImage().getWidth()/2, ((getImage().getHeight())/2)-10, Block.class);
@@ -276,6 +313,7 @@ public class Runner extends Actor
         return false;
     }
     
+    // method to check if the player is on platform or not 
     public void checkOnPlatforms(){
         //check if the player is on the platform
         if(onPlatforms()==false)// if not on Platforms enable gravity().
@@ -286,7 +324,11 @@ public class Runner extends Actor
         vSpeed=0;
     }
     
-    
+    /**
+     * variable to aid to check if player on platforms
+     * @param onPlatforms returns true if the player is on the platform
+     */
+
     protected boolean onPlatforms()
     {                                   //Width= 0 (X) ,Height/2 (Y)- getImage().getHeight()/2, applying to the class Platforms
         Actor onPlatform = getOneObjectAtOffset(0,getImage().getHeight()/2,Platforms.class);
@@ -294,7 +336,8 @@ public class Runner extends Actor
     }
     
     
-    
+    //check if it reaches the 'door' which is the end of the game
+    //then takes the player to menu world again
     public boolean checkDoorPlayer(){
         
         if(this.isTouching(EndBorder.class)){
@@ -306,14 +349,14 @@ public class Runner extends Actor
     }
     
 
-    
+    //Helps the player catch up to its original position if left behind 
     public void pushBack(){
         if(getX() != 300){
             setLocation(getX()+1, getY());
         }
     }
     
-    
+    //end of the game, gets player back to the menu
     public void endGame(){
         if(this.getX() < 0){
             Greenfoot.setWorld(new Menu(MapList.getMapList()));

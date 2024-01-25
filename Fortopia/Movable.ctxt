@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Movable
-comment0.text=\n\ Write\ a\ description\ of\ class\ Movable\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Moving\ objects\ in\ the\ world\n\ \n\ @Gisele\ \n\ @Jan\ 2024\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=x
 comment2.target=void\ setSpeed(int)
+comment2.text=\n\ Set\ the\ speed\ for\ the\ animations\n
 comment3.params=
 comment3.target=int\ getSpeed()
-comment4.params=
-comment4.target=void\ removeBlock()
-numComments=5
+comment3.text=\n\ Gets\ the\ speed\ for\ the\ animations\n
+numComments=4

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class YuliButton here.
+ * 
  * 
  * @Wendy Luo
- * @version (a version number or a date)
+ * @Jan 2024
  */
 public class YuliButton extends Buttons
 {

@@ -644,8 +644,9 @@ public class GameWorld extends World
         heartCounter.setValue(Hearts.getHearts());
         coinCounter.setValue(Coins.getCoins());
         song.play();
-        if(runner.getX() < 0 || runner.checkDoorPlayer()){
-            song.pause();
+        
+        if(runner.getX() < 0 || runner.checkDoorPlayer() || runner.checkSpikePlayer()){
+            song.stop();
         }
     }
 
@@ -666,9 +667,10 @@ public class GameWorld extends World
         createGameWorld(level, runner);//this method just adds some objects to the world.
         
         song = new GreenfootSound("song" + level + ".mp3");
+        
         addObject(heartCounter,100,20);
         addObject(coinCounter,300,20);
-        setPaintOrder(Counter.class, HorryfyingMonkeys.class, Block.class, Spike.class, UpsideDownSpike.class, Ground.class);
+        setPaintOrder(Runner.class, Counter.class, HorrifyingMonkeys.class, Consumables.class, Block.class, Spike.class, UpsideDownSpike.class, Ground.class);
     }
     
     public void stopped()
@@ -697,7 +699,7 @@ public class GameWorld extends World
             addObject(new GreyPlatform(level),515,210);
         }
         addObject(x, 300, 380);
-        addObject(new HorryfyingMonkeys(level), 500, 350);
+        addObject(new HorrifyingMonkeys(level), 500, 350);
         if(level == 1){
             maps.add(arrayMap0);
             maps.add(arrayMap1);

@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Consumables here.
+ * Objects the player consumes
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele
+ * @Jan 2024
  */
 public class Consumables extends Movable
 {
     /**
-     * Act - do whatever the Consumables wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act Method
      */
     public void act()
     {
         super.act();
     }
+    
 }

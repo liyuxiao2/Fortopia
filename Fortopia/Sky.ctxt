@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Sky
-comment0.text=\n\ Write\ a\ description\ of\ class\ Sky\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ The\ sky\ background\ that\ scrolls\ in\ the\ world\n\ \n\ @Gisele\ \n\ @Jan\ 2024\n
 comment1.params=level
 comment1.target=Sky(int)
+comment1.text=\n\ Different\ sky\ background\ for\ different\ levels\n\ \n\ @param\ level\ \ \ the\ level\ the\ player\ is\ at\n\ @return\ int\ \ \ \ level\ number\n
 comment2.params=
 comment2.target=Sky()
 numComments=3

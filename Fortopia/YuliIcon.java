@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class YuliIcon here.
+ * The icon for the yuli
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele  
+ * @Jan 2024
  */
 public class YuliIcon extends MapIcon
 {

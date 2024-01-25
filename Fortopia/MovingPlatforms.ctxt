@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.target=MovingPlatforms
-comment0.text=\n\ Write\ a\ description\ of\ class\ Moving_Platforms\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Moving_Platforms\ here.\n\ \n\ @Wendy\n\ @Jan\ 2024\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Moving_Platforms\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.text=\n\ Act\ does\ nothing\n
 comment2.params=
 comment2.target=void\ platformSize()
+comment2.text=\n\ Gives\ the\ platform\ the\ size\ and\ then\ resizes\ it\n
 comment3.params=xLimit
 comment3.target=void\ movingPlatforms(int)
-comment3.text=xLimit\ how\ much\ from\ the\ border\ do\ we\ want\ to\ go\ \nxLimit\ to\ \ 720-xLimit
+comment3.text=\n\ Moves\ the\ platform\ left\ and\ right\n\ \n\ @param\ xLimit\ \ \ the\ direction\ and\ limit\ it\ can\ go\ to\n\ @return\ int\ \ \ \ \ the\ number\ in\ which\ it\ goes\ left\ or\ right\n
 comment4.params=xLimit
 comment4.target=void\ movingPlatforms(double)
+comment4.text=\n\ Moves\ platform\ left\ and\ right\n\ \n\ @param\ xLimit\ \ \ the\ direction\ and\ limit\ it\ can\ go\n\ @return\ double\ \ move\ specific\ number\ in\ which\ it\ moves\ left\ and\ right\n
 numComments=5

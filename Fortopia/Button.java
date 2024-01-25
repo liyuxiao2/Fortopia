@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Button here.
+ * Button that is used in the welcome world to transition to story world
  * 
  * @Natalie 
- * @version (a version number or a date)
+ * @Jan 2024
  */
 public class Button extends Actor
 {

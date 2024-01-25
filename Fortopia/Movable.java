@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Movable here.
+ * Moving objects in the world
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele 
+ * @Jan 2024
  */
 public abstract class Movable extends Actor
 {
@@ -14,23 +14,20 @@ public abstract class Movable extends Actor
     public void act()
     {
         setLocation(getX() - speed, getY());
-        //removeBlock();
     }
     
+    /**
+     * Set the speed for the animations
+     */
     public static void setSpeed(int x){
         speed = x;
     }
     
+    /**
+     * Gets the speed for the animations
+     */
     public static int getSpeed(){
         return speed;
     }
     
-    private GameWorld world = (GameWorld)getWorld();
-    
-    
-    public void removeBlock(){
-        if(this.getX() < -300){
-            world.removeObject(this);
-        }
-    }
 }

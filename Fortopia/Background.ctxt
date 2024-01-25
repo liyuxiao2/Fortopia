@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Background
-comment0.text=\n\ Write\ a\ description\ of\ class\ Background\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Shows\ the\ background\ for\ each\ world\n\ \n\ @Gisele\ Huang\ \n\ @Jan\ 2024\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ scroll()
+comment2.text=\n\ Makes\ the\ world\ scroll\n
 numComments=3

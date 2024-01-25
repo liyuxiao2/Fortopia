@@ -1,21 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class HorryfyingMonkeys here.
+ * "Enemy" graphic 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele
+ * @Jan 2024
  */
-public class HorryfyingMonkeys extends Actor
+public class HorrifyingMonkeys extends Actor
 {
     int frame = 0;
     private GreenfootImage uyli1;
     private GreenfootImage uyli2;
     /**
-     * Act - do whatever the HorryfyingMonkeys wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Different enemy image for each different level
      */
-    public HorryfyingMonkeys(int level)
+    public HorrifyingMonkeys(int level)
     {
         if(level == 1){
             uyli1 = new GreenfootImage("uyil1.png");
@@ -40,6 +39,9 @@ public class HorryfyingMonkeys extends Actor
         animate();
     }
     
+    /**
+     * Different animation for each level
+     */
     public void animate(){
         if(frame == 20)
         {

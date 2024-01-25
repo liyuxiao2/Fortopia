@@ -1,13 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Grass here.
+ * Grass graphics in the background
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Gisele Huang
+ * @Jan 2024
  */
 public class Trees extends Background
 {
+    /**
+     * The trees background graphics
+     * 
+     * @param level   the level the player is at
+     * @return int    level number
+     */
     public Trees(int level)
     {
         image = new GreenfootImage("trees" + level + ".png");

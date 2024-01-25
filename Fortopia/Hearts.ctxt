@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=Hearts
-comment0.text=\n\ Write\ a\ description\ of\ class\ Hearts\ here.\n\ \n\ @Wendy\ Luo\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Player\ collects\ hearts\ to\ gain\ a\ life\n\ \n\ @Wendy\ Luo\n\ @Jan\ 2024\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\n\ will\ remove\ hearts\ if\ touched\n
 comment2.params=level
 comment2.target=Hearts(int)
+comment2.text=\n\ different\ level\ means\ different\ image\ for\ hearts\n\ \n\ @param\ level\ \ \ different\ level\ means\ different\ image\n\ @return\ int\ \ \ \ level\ number\n
 comment3.params=
 comment3.target=void\ remove()
+comment3.text=\n\ Will\ remove\ the\ heart\ when\ player\ touches\ it\n
 comment4.params=
 comment4.target=int\ getHearts()
+comment4.text=\n\ will\ gather\ hearts\ and\ return\ collected\n
 comment5.params=
 comment5.target=void\ removeHearts()
+comment5.text=\n\ if\ hit,\ hearts\ will\ minus\ by\ 1\n
 numComments=6

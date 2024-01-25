@@ -10,6 +10,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *
  * @author Amjad Altadmri 
  * @version 1.1
+ * 
+ * MODIFIED BY LIYU
+ * 
  */
 public class Label extends Actor
 {

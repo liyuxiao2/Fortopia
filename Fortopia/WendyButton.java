@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class WendyButton here.
  * 
  * @Wendy Luo
- * @version (a version number or a date)
+ * @Jan 2024
  */
 public class WendyButton extends Buttons
 {

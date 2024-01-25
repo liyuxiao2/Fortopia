@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=HorrifyingMonkeys
+comment0.text=\n\ "Enemy"\ graphic\ \n\ \n\ @Gisele\n\ @Jan\ 2024\n
+comment1.params=level
+comment1.target=HorrifyingMonkeys(int)
+comment1.text=\n\ Different\ enemy\ image\ for\ each\ different\ level\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ animate()
+comment3.text=\n\ Different\ animation\ for\ each\ level\n
+numComments=4

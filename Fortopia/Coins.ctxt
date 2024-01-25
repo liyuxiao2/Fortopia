@@ -1,14 +1,17 @@
 #BlueJ class context
 comment0.target=Coins
-comment0.text=\n\ Write\ a\ description\ of\ class\ Coins\ here.\n\ \n\ @Wendy\ Luo\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ The\ coins\ that\ the\ player\ will\ collect\n\ \n\ @Wendy\ Luo\n\ @Jan\ 2024\n
 comment1.params=
 comment1.target=Coins()
+comment1.text=\n\ Coins\ constructor\n\ \n\ @param\ level\ \ \ depends\ on\ the\ level\ the\ player\ is\ at\n\ @return\ int\ \ \ \ level\ number\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ remove()
+comment3.text=\n\ When\ the\ player\ touches\ the\ coin,\ it\ disappears\n\ and\ adds\ to\ the\ counter\ \n
 comment4.params=
 comment4.target=int\ getCoins()
+comment4.text=\n\ returns\ the\ collected\ coins\n
 comment5.params=x
 comment5.target=void\ setCoins(int)
 numComments=6

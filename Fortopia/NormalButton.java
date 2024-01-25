@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class NormalButton here.
  * 
  * @Wendy Luo
- * @version (a version number or a date)
+ * @Jan 2024
  */
 public class NormalButton extends Buttons
 {
