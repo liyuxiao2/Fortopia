@@ -263,7 +263,7 @@ class Load extends Actor
             }
             
             catch(FileNotFoundException e){
-                e.printStackTrace();
+                Greenfoot.setWorld(new Menu());
             }
             
             

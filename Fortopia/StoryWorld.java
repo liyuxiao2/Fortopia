@@ -39,24 +39,38 @@ public class StoryWorld extends World
     
     public void frames(){
         if(storyFrame == 1){
-            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 850, 600);
+            image = new GreenfootImage("0" + "storyFrame" + ".jpeg");
+            image.scale(1000,700);
+            setBackground(image);
+            addObject(next, 500, 600);
         } else if(storyFrame == 2){
-            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 850, 600);
+            image = new GreenfootImage("01" + "storyFrame" + ".jpeg");
+            image.scale(1000,700);
+            setBackground(image);
+            addObject(next, 500, 600);
         } else if(storyFrame == 3){
-            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 850, 600);
+            image = new GreenfootImage("02" + "storyFrame" + ".jpeg");
+            image.scale(1000,700);
+            setBackground(image);
+            addObject(next, 500, 600);
         } else if(storyFrame == 4){
-            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 850, 600);
+            image = new GreenfootImage("03" + "storyFrame" + ".jpeg");
+            image.scale(1000,700);
+            setBackground(image);
+            addObject(next, 500, 600);
         } else if(storyFrame == 5){
-            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 850, 600);
-        } else if(storyFrame == 6){
-            setBackground(image = new GreenfootImage("0" + storyFrame + ".png"));
-            addObject(next, 850, 600);
-        } else if(storyFrame == 7){
+            image = new GreenfootImage("04" + "storyFrame" + ".jpeg");
+            image.scale(1000,700);
+            setBackground(image);
+            addObject(next, 500, 600);
+        } 
+        else if(storyFrame == 6){
+            image = new GreenfootImage("04" + "storyFrame" + ".jpeg");
+            image.scale(1000,700);
+            setBackground(image);
+            addObject(next, 500, 600);
+        } 
+        else if(storyFrame == 7){
             Greenfoot.setWorld(new Menu());
         }
     }
