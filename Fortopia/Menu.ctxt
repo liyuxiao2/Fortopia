@@ -1,14 +1,17 @@
 #BlueJ class context
 comment0.target=Menu
-comment0.text=\n\ Write\ a\ description\ of\ class\ tempmenu\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Menu\ is\ a\ Greenfoot\ World\ that\ allows\ player\ to\ choose\ the\ maps\ and\ save/load\ option\n\ All\ graphics\ credit\ to\ Gisele\ Huang\n\ @Liyu\ Xiao,\ Gisele\ Huang,\ Wendy\ Luo\n\ @01/24/24\n
 comment1.params=
 comment1.target=Menu()
+comment1.text=\n\ main\ constructor\ of\ the\ MenuWorld,\ creates\ the\ world\ and\ displays\ \n\ the\ options\ on\ menu\n\ \n\ This\ constructor\ is\ used\ without\ any\ previous\ data\n
 comment2.params=x
 comment2.target=Menu(int[])
+comment2.text=\n\ main\ constructor\ of\ the\ MenuWorld,\ creates\ the\ world\ and\ displays\ \n\ the\ options\ on\ menu\n\ This\ constructor\ is\ used\ after\ completing\ a\ world,\ or\ when\ loading\ a\ users\ data\n\ \n\ @param\ int[]x\:\ \ the\ list\ of\ completed\ maps\ per\ the\ user\n\ \n
 comment3.params=
 comment3.target=void\ addDeco()
 comment4.params=
 comment4.target=void\ addButtons()
 comment5.params=x
 comment5.target=void\ checkMapCompletion(int[])
+comment5.text=\n\ checks\ the\ see\ if\ the\ game\ ends\ in\ the\ map\n\ @param\ int[]\ x\:\ A\ list\ of\ completed/non\ completed\ worlds\ by\ the\ user\n
 numComments=6

@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=GameWorld
-comment0.text=\n\ This\ is\ the\ game\ world\ for\ the\ runner\ game\ \n\ \n\ \n\ \n\ \n\ @authors\ Liyu\ Xiao,\ Natalie\ Huang,\ Gisele\ Huang,\ Wendy\ Luo\n\ @version\ January\ 2024\n\ \n
+comment0.text=\n\ GameWorld\ is\ a\ Greenfoot\ World\ where\ the\ main\ game\ will\ be\ carried\ out\n\ \n\ \n\ \n\ All\ graphics\ credit\ to\ Gisele\ Huang\n\ @authors\ Liyu\ Xiao,\ Natalie\ Huang,\ Gisele\ Huang,\ Wendy\ Luo\n\ @01/24/2024\n\ \n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\n\ The\ act\ method\ for\ the\ gameWorld\n\ \n\ Will\ loop\ through\ the\ set\ of\ maps\ designated\ for\ each\ level\ until\ it\ reaches\ the\ end\n
 comment2.params=level
 comment2.target=GameWorld(int)
 comment2.text=\n\ Constructor\ for\ the\ game\ world\n
@@ -13,4 +14,5 @@ comment4.target=void\ createGameWorld(int,\ Runner)
 comment4.text=\n\ Creates\ an\ example\ world\ where\ the\ ScrollingActor\ can\ move.\n
 comment5.params=x\ level
 comment5.target=void\ addObstacles(java.lang.String[][],\ int)
+comment5.text=\n\ add\ obstacles\ to\ the\ game\ world\ to\ make\ game\ more\ challenging\ to\ play\n\ @param\ x\ refrence\ to\ the\ array\ maps\n\ @param\ level\ check\ which\ level\ of\ the\ game\ we\ are\ dealing\ with\n
 numComments=6

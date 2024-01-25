@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MapList here.
  * 
- * @author (your name) 
+ * @Liyu Xiao 
  * @version (a version number or a date)
  */
 public class MapList extends Actor

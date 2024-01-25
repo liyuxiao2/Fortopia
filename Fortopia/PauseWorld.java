@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PauseWorld here.
+ * Pauseworld is a Greenfoot World that players will see if they pause the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie Huang
+ * @version : 01/24/2024
  */
 public class PauseWorld extends World
 {
@@ -13,7 +13,7 @@ public class PauseWorld extends World
     
     /**
      * Constructor for objects of class PauseWorld.
-     * 
+     * @param gw stops the gameworld
      */
     public PauseWorld(GameWorld gw)
     {

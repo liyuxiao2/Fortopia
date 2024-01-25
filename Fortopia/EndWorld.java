@@ -1,10 +1,11 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndWorld here.
- * 
- * @Natalie 
- * @version (a version number or a date)
+ * EndWorld is a Greenfoot World that players will be taken to as the game ends
+ * All graphics credit to Gisele Huang
+ * @Natalie Huang
+ * @01/24/2024
  */
 public class EndWorld extends World
 {
@@ -13,7 +14,7 @@ public class EndWorld extends World
     
     /**
      * Constructor for objects of class EndWorld.
-     * 
+     * adds the background and buttons to the endworld
      */
     public EndWorld(GreenfootImage background)
     {    
@@ -23,7 +24,7 @@ public class EndWorld extends World
         this.background = background;
         setBackground(background);
     }
-    
+    //allows menuworld to pop up again if needed 
     public void act(){
         if(Greenfoot.mouseClicked(startOver)){
 

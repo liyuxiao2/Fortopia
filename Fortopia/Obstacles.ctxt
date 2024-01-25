@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Obstacles
-comment0.text=\n\ Write\ a\ description\ of\ class\ Obstacles\ here.\n\ \n@author\ Gisele\ Huang,Liyu\ Xiao\n@version\ January\ 2024\n
+comment0.text=\n\ Obstacles\ is\ a\ Greenfoot\ Actor\ that\ creates\ obstacles\ for\ our\ game\n\ \n@author\ Gisele\ Huang,Liyu\ Xiao\n@version\ January\ 2024\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\n\ Implements\ both\ the\ obstacles\ moving\ and\ checking\ if\ its\ touching\n\ a\ runner\n

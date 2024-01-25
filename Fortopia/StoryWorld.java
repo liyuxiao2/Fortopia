@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StoryWorld here.
+ * StoryWorld is a Greenfoot World that will guide the player 
+ * through the background story of our game 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Natalie Huang
+ * @01/24/2024
  */
 public class StoryWorld extends World
 {
@@ -34,6 +35,7 @@ public class StoryWorld extends World
             storyFrame++;
         }
     }
+    //animation for the storyline
     
     public void frames(){
         if(storyFrame == 1){

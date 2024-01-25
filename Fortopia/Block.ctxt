@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Block
-comment0.text=\n\ Write\ a\ description\ of\ class\ Block\ here.\n\ \n@author\ Gisele\ Huang\n@version\ January\ 2024\n
+comment0.text=\n\ Block\ is\ a\ Greenfoot\ Actor\ that\ has\ the\ image\ of\ the\ blocks\ set\n\ \nall\ graphics\ credit\ to\ \:\ Gisele\ Huang\n@author\ Gisele\ Huang\n@version\ January\ 2024\n
 comment1.params=level
 comment1.target=Block(int)
+comment1.text=\n\ Sets\ the\ graphics\ of\ the\ blocks\ according\ the\ world\ level\n\ @param\ level\ For\ which\ world\ level\ we\ are\ dealinf\ with\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3

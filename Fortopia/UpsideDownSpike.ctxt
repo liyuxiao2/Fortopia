@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=UpsideDownSpike
-comment0.text=\n\ \n\ \n\ \n@author\ Gisele\ Huang\n@version\ January\ 2024\n
+comment0.text=\n\ UpsideDownSpike\ is\ a\ Greenfoot\ Actor\ that\ is\ under\ obstacles\ and\ \n\ sets\ the\ grahics\ of\ other\ spikes\ for\ different\ world\ level\n\ \n\ all\ graphics\ credit\ to\ \:\ Gisele\ Huang\n@author\ Gisele\ Huang\n@version\ January\ 2024\n
 comment1.params=level
 comment1.target=UpsideDownSpike(int)
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ UpsideDownSpike\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.text=\n\ sets\ the\ image\ for\ the\ UpsideDownSpike\ for\ different\ worlds\ \n\ @param\ level\ For\ what\ world\ level\ we\ are\ dealing\ with\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3

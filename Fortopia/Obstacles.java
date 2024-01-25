@@ -2,16 +2,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 /**
- * Write a description of class Obstacles here.
+ * Obstacles is a Greenfoot Actor that creates obstacles for our game
  * 
  *@author Gisele Huang,Liyu Xiao
  *@version January 2024
  */
 public class Obstacles extends Movable
 {
+    //over all speed for obstacles to generate is set to 8
     private static int speed = 8;
-    
-    
     /**
      * Implements both the obstacles moving and checking if its touching
      * a runner

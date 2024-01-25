@@ -7,13 +7,21 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 /**
- * Write a description of class tempmenu here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Menu is a Greenfoot World that allows player to choose the maps and save/load option
+ * All graphics credit to Gisele Huang
+ * @Liyu Xiao, Gisele Huang, Wendy Luo
+ * @01/24/24
  */
+
 public class Menu extends World
 {
+    /**
+     * main constructor of the MenuWorld, creates the world and displays 
+     * the options on menu
+     * 
+     * This constructor is used without any previous data
+     */
+
     public Menu()
     {    
         super(1000, 700, 1, false); 
@@ -21,6 +29,14 @@ public class Menu extends World
         addButtons();
     }
     
+    /**
+     * main constructor of the MenuWorld, creates the world and displays 
+     * the options on menu
+     * This constructor is used after completing a world, or when loading a users data
+     * 
+     * @param int[]x:  the list of completed maps per the user
+     * 
+     */
     public Menu(int[] x)
     {    
         super(1000, 700, 1, false); 
@@ -29,6 +45,7 @@ public class Menu extends World
         checkMapCompletion(x);
     }
     
+    //add all background graphics 
     public void addDeco()
     {
         addObject(new Sky(), 500, 350);
@@ -43,6 +60,8 @@ public class Menu extends World
         addObject(new Sprite(3), 150, 550);
         addObject(new Sprite(4), 850, 550);
     }
+    
+    //add all buttons 
     public void addButtons()
     {
         addObject(new Level(1), 334, 283);
@@ -53,6 +72,10 @@ public class Menu extends World
         addObject(new Load(), 818, 83);
     }
     
+    /**
+     * checks the see if the game ends in the map
+     * @param int[] x: A list of completed/non completed worlds by the user
+     */
     public void checkMapCompletion(int[] x){
         for(int i = 0; i < x.length; i++){
             if(i == 0 && x[i] == 1){
@@ -70,6 +93,8 @@ public class Menu extends World
         }
     }
 }
+
+//sets the background image for the menu world
 class MenuImg extends Actor
 {
     public MenuImg()
@@ -77,6 +102,8 @@ class MenuImg extends Actor
         setImage("menu.png");
     }
 }
+
+//sprite graphics for visuals in the menu
 class Sprite extends Actor
 {
     int frame = 0;

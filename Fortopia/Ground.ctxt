@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Ground
-comment0.text=\n\ Write\ a\ description\ of\ class\ Ground\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Ground\ is\ a\ Greenfoot\ Actor\ that\ creates\ the\ ground\ of\ our\ game\n\ which\ is\ the\ surface\ the\ players\ run\ on\n\ \n\ all\ graphics\ credit\ to\ \:\ Gisele\ Huang\n\ @author\ Gisele\ Huang\ \n\ @version\ 01/24/2024\n
 comment1.params=level
 comment1.target=Ground(int)
+comment1.text=\n\ Creates\ the\ ground\ graphics\ according\ the\ world\ level\n\ @param\ level\ What\ wolrd\ level\ we\ are\ dealing\ with\ \n
 numComments=2

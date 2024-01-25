@@ -7,6 +7,8 @@ import greenfoot.*;
   * currently appear.  If the world supplied was the active world, then not only is the state of the world paused due to changing
   * worlds, but it will visually appear to be paused, even though a different world (this world) is active.  You can either 
   * modify the 'act' method in this class or override it in a sub-class of the Pause class.</p>
+  * @Gisele Huang, Liyu Xiao
+  * @version : 01/24/2024
   */
 public class Pause extends World
 {
