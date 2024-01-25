@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ remove()
 comment4.params=
 comment4.target=int\ getCoins()
-numComments=5
+comment5.params=x
+comment5.target=void\ setCoins(int)
+numComments=6

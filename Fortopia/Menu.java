@@ -1,7 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.io.FileWriter;
 
 /**
  * Write a description of class tempmenu here.
@@ -11,7 +14,6 @@ import java.io.File;
  */
 public class Menu extends World
 {
-    
     public Menu()
     {    
         super(1000, 700, 1, false); 
@@ -148,47 +150,61 @@ class Save extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
-    private static int [] maps = Load.getMaps();
-    
     public Save()
     {
         idle = new GreenfootImage("save.png");
         hovered = new GreenfootImage("pressedsave.png");
         setImage(idle);
     }
+    
+    
+    
     public void act()
     {
         hovering();
-        if(Greenfoot.mouseClicked(this)){
-            GameInfo.saveGame(maps);
-            //Greenfoot.setWorld(new Menu(maps));
+        if (Greenfoot.mouseClicked(this)) {
+            if(Greenfoot.mouseClicked(this)){
+                
+            int[] maps = MapList.getMapList();    
+            String fileName = Greenfoot.ask("Save your progress under what name?");
+            
+            try{
+                 
+                 
+                 FileWriter writer = new FileWriter(fileName);
+                 PrintWriter print = new PrintWriter(writer);
+                 
+                  
+                 print.println(Coins.getCoins());
+                 
+                 for(int x: maps){
+                      print.println(x);
+                 }
+                   
+                 print.close();
+                 writer.close();
+            } 
+               
+               
+            catch(IOException e){    
+                   
+            }
         }
-      
+
+        }
     }
+    
+    
     protected void hovering()
     {
         if (Greenfoot.mouseMoved(this))setImage(hovered);
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
     }
-    
-    //public static void updateMapCompletion(int x){
-        //maps[x] = 1;
-    //}
-    
-    protected static int[] getMaps(){
-        return maps;
-    }
 }
-
-
 class Load extends Actor
 {
     private GreenfootImage idle;
     private GreenfootImage hovered;
-    private static int [] maps = {0,0,0,0};
-    private static String fileName;
-    
-    
     public Load()
     {
         idle = new GreenfootImage("load.png");
@@ -199,20 +215,32 @@ class Load extends Actor
     {
         hovering();
         if (Greenfoot.mouseClicked(this)) {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("enter your user name (the name that you saved under)");
-            
 
+            String fileName = Greenfoot.ask("enter your user name (the name that you saved under)");
             
-            fileName = scan.nextLine();
+            int[] maps = MapList.getMapList();
             
             
-            GameInfo.loadCoins(fileName);
+            try{
+                Scanner fileScanner = new Scanner(new File(fileName));
+                int savedCoins= Integer.valueOf(fileScanner.nextLine());
+                
+                Coins.setCoins(savedCoins);
+                
+                int counter = 0;
+                while(fileScanner.hasNext()){
+                        maps[counter] = Integer.valueOf(fileScanner.nextLine());
+                        counter++;
+                }
+                fileScanner.close();
+            }
             
-            maps = GameInfo.loadCompletedWorlds(fileName);
+            catch(FileNotFoundException e){
+                e.printStackTrace();
+            }
+            
             
             Greenfoot.setWorld(new Menu(maps));
-            
         }
     }
     
@@ -220,19 +248,5 @@ class Load extends Actor
     {
         if (Greenfoot.mouseMoved(this))setImage(hovered);
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))setImage(idle);
-    }
-    
-    protected static int[] getMaps(){
-        return maps;
-    }
-    
-}
-
-class CheckMark extends Actor{
-    private GreenfootImage check;
-    public CheckMark(){
-        check = new GreenfootImage("completed.png");
-        check.scale(50,50);
-        setImage(check);
     }
 }

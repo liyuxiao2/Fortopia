@@ -31,6 +31,7 @@ public class Runner extends Actor
     
     
     private GameWorld world = (GameWorld)getWorld();
+    
 
     
     public Runner(int level) {
@@ -212,18 +213,20 @@ public class Runner extends Actor
         }
     }
     
-    public void checkSpikePlayer(){
+    public boolean checkSpikePlayer(){
         if(checkHitSpike()){
             if(Hearts.getHearts() == 0){
-                System.out.println(Save.getMaps());
-                //Greenfoot.setWorld(new Menu());
-                Greenfoot.setWorld(new Menu(Save.getMaps()));
+                Greenfoot.setWorld(new Menu(MapList.getMapList()));
+                return true; //returns true if player is dead
+
             }
             else if(hitBoxState){
                 Hearts.removeHearts();
                 hitBoxState = false;
+                return false; //returns true if player is alive
             }
         }
+        return false;
     }
     
     
@@ -239,7 +242,7 @@ public class Runner extends Actor
         
         for(Spike x : peds){
             if ((x != null))
-            {//stops bus from moving
+            {//stops runner from moving
                 return true;
             }
         }
@@ -266,8 +269,7 @@ public class Runner extends Actor
         
         for(Block x : peds){
             if ((x != null))
-            {//stops bus from moving
-
+            {//stops runner from moving
                 return true;
             }
         }
@@ -293,11 +295,14 @@ public class Runner extends Actor
     
     
     
-    public void checkDoorPlayer(){
+    public boolean checkDoorPlayer(){
+        
         if(this.isTouching(EndBorder.class)){
-            //Save.updateMapCompletion(level-1);
-            Greenfoot.setWorld(new Menu(Save.getMaps()));
+            MapList.setMap(level-1);
+            Greenfoot.setWorld(new Menu(MapList.getMapList()));
+            return true;
         }
+        return false;
     }
     
 
@@ -311,7 +316,7 @@ public class Runner extends Actor
     
     public void endGame(){
         if(this.getX() < 0){
-            Greenfoot.setWorld(new Menu(Save.getMaps()));
+            Greenfoot.setWorld(new Menu(MapList.getMapList()));
         }
     }
     

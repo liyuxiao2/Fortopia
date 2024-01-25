@@ -623,6 +623,9 @@ public class GameWorld extends World
     Class[] paintOrder={Actor.class };
     Class[] actorClasses={Actor.class };
     private int level;
+    private GreenfootSound song;
+    private Runner runner;
+    
     public void act(){
         counter++;
         if(mapCount > maps.size() - 1){
@@ -636,6 +639,10 @@ public class GameWorld extends World
         if(Greenfoot.mouseClicked(null)) Greenfoot.setWorld(new Pause(this, actorClasses, paintOrder));
         heartCounter.setValue(Hearts.getHearts());
         coinCounter.setValue(Coins.getCoins());
+        song.play();
+        if(runner.getX() < 0 || runner.checkDoorPlayer()){
+            song.pause();
+        }
     }
 
     /**
@@ -650,16 +657,25 @@ public class GameWorld extends World
         
         this.level = level;
         
-        createGameWorld(level);//this method just adds some objects to the world.
-
+        runner = new Runner(level);
+        
+        createGameWorld(level, runner);//this method just adds some objects to the world.
+        
+        song = new GreenfootSound("song" + level + ".mp3");
         addObject(heartCounter,100,20);
         addObject(coinCounter,300,20);
+        setPaintOrder(Counter.class, HorryfyingMonkeys.class, Block.class, Spike.class, UpsideDownSpike.class, Ground.class);
     }
-
+    
+    public void stopped()
+    {
+        song.stop();
+    }
+    
     /**
      * Creates an example world where the ScrollingActor can move.
      */
-    public void createGameWorld(int level) {
+    public void createGameWorld(int level, Runner x) {
         addObject(new Sky(level), 500, 90);
         addObject(new Sky(level), 1500, 90);
         addObject(new Clouds(level), 500, 90);
@@ -676,7 +692,7 @@ public class GameWorld extends World
         if(counter % 2 == 0){
             addObject(new GreyPlatform(level),515,210);
         }
-        addObject(new Runner(level), 300, 380);
+        addObject(x, 300, 380);
         addObject(new HorryfyingMonkeys(level), 500, 350);
         if(level == 1){
             maps.add(arrayMap0);

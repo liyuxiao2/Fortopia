@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class GameInfo  
 {
-    private static int savedCoins;
+    private int savedCoins;
 
     /**
      * Constructor for objects of class GameInfo
@@ -22,21 +22,21 @@ public class GameInfo
     {
     }
 
-    public static void loadCoins(String fileName){
+    public void loadCoins(String fileName){
         try{
             Scanner fileScanner = new Scanner(new File(fileName));
             savedCoins = Integer.valueOf(fileScanner.nextLine());
             fileScanner.close();
             
-            Coins.collected = savedCoins;
+            Coins.setCoins(savedCoins);
         }
         catch(FileNotFoundException e){
             
         }
     }
     
-    public static int[] loadCompletedWorlds(String fileName){
-        int [] maps = new int[5];
+    public int[] loadCompletedWorlds(String fileName){
+        int [] maps = new int[4];
         try{
             Scanner fileScanner = new Scanner(new File(fileName));
             fileScanner.nextLine();
@@ -54,27 +54,19 @@ public class GameInfo
     }
     
     
-    public static void saveGame(int [] maps){
-        Scanner scan = new Scanner(System.in);
-             
-        System.out.println("Save your progress under what name?");
-             
-        String fileName = scan.nextLine();
-        
-        
+    public void saveGame(String fileName){
         try{
-             
              
              
              FileWriter writer = new FileWriter(fileName);
              PrintWriter print = new PrintWriter(writer);
              
               
-             print.println(Coins.collected);
+             print.println(Coins.getCoins());
              
-             for(int x: maps){
-                  print.println(x);
-             }
+             //for(int x: maps){
+                  //print.println(x);
+             //}
                
              print.close();
              writer.close();
@@ -84,7 +76,6 @@ public class GameInfo
         catch(IOException e){    
                
         }
-        scan.close();
             
         }
     }
