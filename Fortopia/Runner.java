@@ -62,9 +62,9 @@ public class Runner extends Actor
         animate();
         moveR();
         checkBlockPlayer();
-        checkDoorPlayer();
         checkSpikePlayer();
         iFrames();
+        checkDoorPlayer();
     }
     
     // checks what keys are pressed
@@ -339,16 +339,36 @@ public class Runner extends Actor
     //check if it reaches the 'door' which is the end of the game
     //then takes the player to menu world again
     public boolean checkDoorPlayer(){
+        if(checkHitDoor()){
+                MapList.setMap(level-1);
+                Greenfoot.setWorld(new Menu(MapList.getMapList()));
+                return true; //returns true if player is dead
+
+        }
+        else{
+            return false;
+        }
+    }
+    
+    
+    public boolean checkHitDoor () {
+        EndBorder p = (EndBorder)getOneObjectAtOffset(getImage().getWidth()/2, 0, EndBorder.class);
+        EndBorder p2 = (EndBorder)getOneObjectAtOffset(getImage().getWidth()/2, ((getImage().getHeight())/2), EndBorder.class);
         
-        if(this.isTouching(EndBorder.class)){
-            MapList.setMap(level-1);
-            Greenfoot.setWorld(new Menu(MapList.getMapList()));
-            return true;
+        
+        ArrayList <EndBorder> peds = new ArrayList<>();
+        
+        peds.add(p);
+        peds.add(p2);
+        
+        for(EndBorder x : peds){
+            if ((x != null))
+            {//stops runner from moving
+                return true;
+            }
         }
         return false;
     }
-    
-
     //Helps the player catch up to its original position if left behind 
     public void pushBack(){
         if(getX() != 300){

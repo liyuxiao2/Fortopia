@@ -24,4 +24,6 @@ public class EndBorder extends Movable
         GreenfootImage door = new GreenfootImage("door.png");
         setImage(door);
     }
+    
+    
 }

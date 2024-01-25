@@ -18,10 +18,10 @@ import java.util.LinkedList;
  * 
  * <p> Credits for Sound </p>
  * 
- * <p> Sticker by NCT 127: link
- * <p> Cupid by FIFTY FIFTY: link
- * <p> Baby by Justin Beiber: link
- * <p> OMG by NewJeans: link
+ * <p> Sticker by NCT 127: link https://www.youtube.com/watch?v=1oYWnbTSang
+ * <p> Cupid by FIFTY FIFTY: link https://www.youtube.com/watch?v=Qc7_zRjH808
+ * <p> Baby by Justin Beiber: link https://www.youtube.com/watch?v=kffacxfA7G4
+ * <p> OMG by NewJeans: link  https://www.youtube.com/watch?v=hc32lb0po9U
  * 
  * 
  * 
@@ -29,7 +29,7 @@ import java.util.LinkedList;
  * 
  * 
  * <p> KNOWN BUGS </p>
- * <p> Music may not stop playing even after the world has ended </p>
+ * <p> Music does not stop playing after you finisht the level, it stops when you die or lose, but doesnt stop when you win </p>
  * 
  * 
  * All graphics credit to Gisele Huang
@@ -672,10 +672,11 @@ public class GameWorld extends World
         coinCounter.setValue(Coins.getCoins());
         song.play();
         
-        if(runner.getX() < 0 || runner.checkDoorPlayer() || runner.checkSpikePlayer()){
+        if(runner.checkDoorPlayer() || runner.getX() < 0|| runner.checkSpikePlayer()){
             song.stop();
         }
     }
+    
 
     /**
      * Constructor for the game world
