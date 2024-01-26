@@ -342,6 +342,7 @@ public class Runner extends Actor
         if(checkHitDoor()){
                 MapList.setMap(level-1);
                 Greenfoot.setWorld(new Menu(MapList.getMapList()));
+                GameWorld.song.stop();
                 return true; //returns true if player is dead
 
         }

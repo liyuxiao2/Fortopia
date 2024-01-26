@@ -28,8 +28,6 @@ import java.util.LinkedList;
  * 
  * 
  * 
- * <p> KNOWN BUGS </p>
- * <p> Music does not stop playing after you finisht the level, it stops when you die or lose, but doesnt stop when you win </p>
  * 
  * 
  * All graphics credit to Gisele Huang
@@ -649,7 +647,7 @@ public class GameWorld extends World
     private int level;
     
     //the song for the specific world
-    private GreenfootSound song;
+    public static GreenfootSound song;
     private Runner runner;
     
     /**
@@ -701,10 +699,6 @@ public class GameWorld extends World
         setPaintOrder(Runner.class, Counter.class, HorrifyingMonkeys.class, Consumables.class, Block.class, Spike.class, UpsideDownSpike.class, Ground.class);
     }
     
-    public void stopped()
-    {
-        song.stop();
-    }
     
     /**
      * Creates an example world where the ScrollingActor can move.
