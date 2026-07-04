@@ -1,26 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Spike here.
+ *Spike is a Greenfoot Actor that hold the graphics of the obstacle spike
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * all graphics credit to : Gisele Huang
+ *@author Gisele Huang
+ *@version 01/24/2024
  */
 public class Spike extends Obstacles
 {
-    public Spike()
+    /**
+     * Sets the graphics for the spikes according to the world level
+     * @param level For what world level we are dealing with
+     */
+    public Spike(int level)
     {
-        setImage("spike.png");
+        setImage("spike" + level + ".png");
     }
+
     public void act()
     {
         super.act();
-        Runner runner = (Runner)getOneIntersectingObject(Runner.class);//change to offset later
-        if(runner != null)
-        {
-            //runner.subtractLife();
-        }
-        
-        
     }
+
 }

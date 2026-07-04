@@ -1,18 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Block here.
+ * Block is a Greenfoot Actor that has the image of the blocks set
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ *all graphics credit to : Gisele Huang
+ *@author Gisele Huang
+ *@version January 2024
  */
 public class Block extends Obstacles
 {
-    public Block()
+    /**
+     * Sets the graphics of the blocks according the world level
+     * @param level For which world level we are dealinf with
+     */
+    public Block(int level)
     {
-        setImage("block.png");
-        
+        setImage("block" + level + ".png");
+
     }
+
     public void act()
     {
         super.act();
